@@ -345,6 +345,30 @@ public:
 };
 ]]></programlisting>  
 	</para>
-    </section>                     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    </section>  
+<section>
+        <title>Vörös Pipacs Pokol/5x5x5 ObservationFromGrid</title>
+        <para>   
+       A feladatunk tulajdonképpen nem túl bonyolúlt. Eddig ugyebár csak 3x3x3 érzékelőink voltak vagyis Steve csak ezekről a blokkokról kapott információt. Ezt most azonban kiterjesztjük 5x5x5-re, az nb4tf4i_d.xml belepiszkálásával. Mindenképp ennek az átírásával kell kezdenünk, hisz a python fájlunk is ezt fogja majd használni.
+<programlisting language="c"><![CDATA[
+ <ObservationFromGrid>
+     <Grid name="nbr5x5">
+          <min x="-2" y="-2" z="-2"/>
+          <max x="2" y="2" z="2"/>
+     </Grid>
+ </ObservationFromGrid> 
+]]></programlisting> 
+Amint ez kész, kezdődhet a pipacs szedés egy jóval nagyob griddel. Azonban ne felejtsük el a programunkon belül is végrehajtani a módosításokat.
+<programlisting language="c"><![CDATA[
+            if world_state.number_of_observations_since_last_state != 0:
+
+                sensations = world_state.observations[-1].text
+                observations = json.loads(sensations)
+                nbr5x5x5 = observations.get("nbr5x5", 0)
+		print(" 5x5x5 neighborhood of Steve: ", nbr5x5x5)
+]]></programlisting> 
+Így ni, hajrá előre Haxorok!
+ 	</para>
+</section>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 </chapter>                

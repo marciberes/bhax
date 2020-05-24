@@ -703,8 +703,16 @@ public class MandelbrotHalmazNagyító extends MandelbrotHalmaz {
     }
 } ]]></programlisting>   
 	</para>
-
-
     </section>
+
+<section>
+        <title>Vörös Pipacs Pokol/fel a láváig és vissza</title>
+        <para>
+	Az ehhez használatos kód megtalálható a Mandelbrot nevű mappában, lentrolfel.py néven.
+	</para>
+	<para>
+
+	</para>
+</section>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>                

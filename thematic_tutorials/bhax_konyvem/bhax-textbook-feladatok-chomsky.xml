@@ -14,11 +14,55 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+             Megoldás forrása: Az előadás <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_1.pdf">27.</link> fóliája.               
         </para>
         <para>
-            Az első elképzelésem szerint haladtam miszerint az 1-es legyen a '|', a 2 legyen '||' és így tovább 5-ig ami pedig '||/||'.
+            Az első elképzelésem szerint haladtam miszerint az 1-es legyen a '|', a 2 legyen '||' és így tovább...
         </para>
+<para>
+<programlisting language="c++"><![CDATA[
+#include <stdio.h>
+int main(){
+int a = 0;
+	printf("Irj be egy számot: ");
+	scanf("%d",&a);
+	printf("Unáris megjelenése: ");
+	for(int i = 0; i<a;++i){
+		printf("|\n");
+}
+printf("\n");
+return 0;
+}
+]]></programlisting>
+Habár a programunk egy kicsit primitív és biztosan van ettől jobban, szebben működő is, egyelőre megteszi. Az egyetlen hátránya, hogy a nagyobb számoknál a kiiratás nem túlzottan kedvező a szemnek.
+<programlisting><![CDATA[
+hp@b3r3s:~/Dokumentumok$ g++ decimalis.c -o decimalis
+hp@b3r3s:~/Dokumentumok$ ./decimalis
+Irj be egy számot: 20
+Unáris megjelenése: ||||||||||||||||||||
+hp@b3r3s:~/Dokumentumok$ 
+]]></programlisting>
+</para>
+<para>
+	<figure>
+            <title>Az előadás során is tárgyalt Turing gép működése</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Chomsky/Turing.png" scale="50" />
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+</para>
+<para>
+Forrás a működés megértéséhez: <link xlink:href="http://bodaistvan.hu/infalap/infotort/Turing_gep.html">http://bodaistvan.hu/infalap/infotort/Turing_gep.html</link> 
+</para>
+<para>
+
+</para>
+
     </section>        
         
     <section>
@@ -27,23 +71,20 @@
             Mutass be legalább két környezetfüggő generatív grammatikát, amely ezt a nyelvet generálja!
         </para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
+              Megoldás forrása: Az előadás <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_1.pdf">30-32.</link> fóliája.               
         </para>
 	<para>
+Nézzük meg milyen amikor A,B,C változók és a,b,c konstansok:
 <programlisting language="R"><![CDATA[
 1. A -> aAB
 2. A -> aC
 3. CB -> bCc
 4. cB -> Bc
 5. C -> bc
-Például:
+
 A (A -> aC)
 aC (C -> bc)
 abc
-vagy:
 A (A -> aAB)
 aAB (A -> aAB)
 aaABB (A -> aC)
@@ -52,6 +93,9 @@ aaabCcB (cB -> Bc)
 aaabCBc (CB -> bCc)
 aaabbCcc (C -> bc)
 aaabbbccc
+]]></programlisting>
+Ez kicsit zavaró lehet, ezért adjunk a változóknak valami eltérő nevet, mondjuk S,X,Y a konstansaink pedig változatlanul is a,b,c.
+<programlisting language="R"><![CDATA[
 1. S -> abc
 2. S -> aXbc
 3. Xb -> bX
@@ -60,7 +104,7 @@ aaabbbccc
 6. aY -> aaX
 7. aY -> aa
 
-Például:
+
 S (S -> aXbc)
 aXbc (Xb -> bX)
 abXc (Xc -> Ybcc)
@@ -83,9 +127,6 @@ aaaYbbbbcccc (aY -> aa)
 aaaabbbbcccc
 ]]></programlisting>
 	</para>	
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
     </section>        
                 
     <section>
@@ -96,10 +137,7 @@ aaaabbbbcccc
             Majd mutass be olyan kódcsipeteket, amelyek adott szabvánnyal nem fordulnak (például C89), mással (például C99) igen.
         </para>
         <para>
-            Megoldás videó: 
-        </para>
-        <para>
-            Megoldás forrása:  
+            Megoldás forrása: Az előadás <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_1.pdf">63-65.</link> fóliája.          
         </para>
         <para>
 	Nézzünk egy programot erre a C89 és C99 közti különbségre a  <link xlink:href="https://www.geeksforgeeks.org/inline-function-in-c/">geeksforgeeks</link> segítségét felhasználva.
@@ -184,7 +222,7 @@ main ()
     <section>
         <title>Leetspeak</title>
         <para>
-           Egész biztos vagyok benne, hogy mindenki találkozott már a leetspek-el ég akkor is ha nem tudott róla, de a biztonság kedvéért <link xlink:href="https://www.urbandictionary.com/define.php?term=leet%20speak">ITT</link> egy gyorstalpaló róla. Az interneten gyorsan elterjedté és kedveltté vált. Én személy szerinte elsőnek egy számítógépes játékon belül találkoztam ezzel, ahol az illetőnek H3nt3s volt a felhasználóneve. Igaz akkor még csak azt tudtam, hogy mit helyettesítenek azok a hármasok, de a történetéről és a valódi hátteréről még nem sejtettem semmit.
+           Egész biztos vagyok benne, hogy mindenki találkozott már a leetspek-el még akkor is ha nem tudott róla, de a biztonság kedvéért <link xlink:href="https://www.urbandictionary.com/define.php?term=leet%20speak">ITT</link> egy gyorstalpaló róla. Az interneten gyorsan elterjedté és kedveltté vált. Én személy szerinte elsőnek egy számítógépes játékon belül találkoztam ezzel, ahol az illetőnek H3nt3s volt a felhasználóneve. Igaz akkor még csak azt tudtam, hogy mit helyettesítenek azok a hármasok, de a történetéről és a valódi hátteréről még nem sejtettem semmit.
         </para>
         <para>
             Megoldás videó: <link xlink:href="https://youtu.be/06C_PqDpD_k">https://youtu.be/06C_PqDpD_k</link>
@@ -366,16 +404,32 @@ main()
             </listitem>
         </orderedlist>
         <para>
-            Megoldás forrása:  
+Kezdjük tehát a legegyszerűbbtől, a bonyolultak felé, tehát fentről lefelé.
         </para>
-
-        <para>
-            Megoldás videó: 
-        </para>
-
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+	<para>
+i: Ha a SIGINT jel nem volt figyelmen kívül hagyva, akkor ezen túl se legyen. Ez a példánk nagyban hasonlít a mintapéldához, itt azonban a '!=' párossal úgymond negáljuk az egyenlőségjelet.
+	</para>
+	<para>
+ii: Jelen esetben van egy for ciklusunk ami előreláthatólag 5x fog lefutni ugyanis az i változónk rendelkezik egy kezdeti 0 értékkel (i=0) ami folyamatosan növekszik 1-el (++i) egészen addig amíg kisebb mint 5, vagyis 4-ig.
+	</para>
+	<para>
+iii: A példánk lényegében ugyan az mint az előző, annyi eltéréssel, hogy itt elsőnek megkapjuk az i értékét és aztán növeljük.
+	</para>
+	<para>
+iv: A ciklusunk változatlanul 5x fog lefutni, viszont bevezettünk egy tömböt is, melynek i-edik eleméhez folyamatosan (iterációnként) hozzárendeljük az i++ értékét.
+	</para>
+	<para>
+v: A forrásunk legfontosabb az az első ';' után található dupla feltétel, melynek mindkettőnek teljesülnie kell, hogy a ciklusunk tovább fusson.
+	</para>
+	<para>
+vi: Az már a legelején látszik, hogy két számot fogunk kiiratni, mégpedig a két f függvényünk egy-egy értékét.
+	</para>
+	<para>
+vii: A már jól megszokott kiiratást láthatjuk a printf felhasználásával, mégpedig az f függvény visszatérési értékét, majd pedig magát az 'a'-t (nem elfeledve, hogy 'a' jelen esetben egy szám lesz).
+	</para>
+	<para>
+viii: És végül de nem utolsó sorban, a már jól begyakorolt kiiratás fog lezajlani, elsőnek tehát f visszatérési értéke (Figyelem! Most a-nak a memóriacíme a paraméter.) majd pedig maga az 'a'.
+	</para>
 
     </section>                     
 
@@ -606,10 +660,19 @@ main ()
     return 0;
 }
 ]]></programlisting>            
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>                     
 
+
+    </section>   
+                  
+
+    <section>
+        <title>Vörös Pipacs Pokol/csiga diszkrét mozgási parancsokkal</title>
+	<para>
+	A feladatunk megoldás megtalálható a Chomsky mappában secondcircle.py néven.
+	</para>
+	<para>
+	A mappában található kód már egy kicsit előrehaladott, ugyanis tartalmazza a pipacsok érzékelését, illetve azoknak kiszedését is és ez alapján halad felfele az arénában.
+	</para>
+    </section>                     
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>                
