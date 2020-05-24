@@ -1,0 +1,350 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Welch!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Első osztályom</title>
+        <para>
+            Valósítsd meg C++-ban és Java-ban az módosított polártranszformációs algoritmust! A matek háttér 
+            teljesen irreleváns, csak annyiban érdekes, hogy az algoritmus egy számítása során két normálist
+            számol ki, az egyiket elspájzolod és egy további logikai taggal az osztályban jelzed, hogy van vagy
+            nincs eltéve kiszámolt szám.
+        </para>
+        <para>
+           Megoldás forrása: A második előadás <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG-BHAX/Prog1_5.pdf">17-22.</link> fóliában fellelhető.
+        </para>
+        <para>
+       <programlisting language="c++"><![CDATA[
+#ifndef POLARGEN_H
+#define POLARGEN_H
+#include <cstdlib>
+#include <cmath>
+#include <ctime>
+class PolarGen
+{
+	public:
+	PolarGen ()
+	{
+	nincsTarolt = true;
+	std::srand (std::time (NULL));
+	}
+	~PolarGen(){
+	}	
+	double kovetkezo();
+	private:
+	bool nincsTarolt;
+	double Tarolt;
+};
+#endif
+]]></programlisting>  
+        </para>
+        <para>
+          Ezután definiáljuk a Polargen osztályt:
+       <programlisting language="c++"><![CDATA[
+#include "polargen.h"
+
+double
+PolarGen::kovetkezo ()
+{
+	if(nincsTarolt){
+	double u1, u2, v1, v2, w;
+	do{
+	u1 = std::rand() / (RAND_MAX + 1.0);
+	u2 = std::rand() / (RAND_MAX + 1.0);
+	v1 = 2*u1 -1;
+	v2 = 2*u2 -1;
+	w = v1*v1+v2*v2;
+	}
+	while( w > 1);
+	double r = std::sqrt((-2*std::log(w)) / w);
+	#include "polargen.h"
+	Tarolt = r*v2;
+	nincsTarolt = !nincsTarolt;
+	return r*v1;
+	}
+	}
+	else
+	{
+	nincsTarolt = !nincsTarolt;
+
+	return Tarolt;
+	}
+}
+]]></programlisting>  
+        </para>
+	<para>
+Nem szabad megfeledkeznünk a main függvényünk megírásáról sem:
+<programlisting language="c++"><![CDATA[
+#include <iostream>
+#include "polargen.h"
+
+int main(int argc, char **argv){
+	PolarGen pg;
+	for (int i = 0; i < 10; ++i)
+	std::cout <<pg.kovetkezo() << std::endl;
+
+	return 0;
+}
+]]></programlisting>  
+	</para>  
+	<para>
+Nem marad el ezúttal sem a programunk fordítása majd futtatása ami a szokásos módon fog zajlani:
+<programlisting><![CDATA[
+hp@b3r3s:~/Dokumentumok$ g++ polar.cpp polargen.h polargen.cpp -o polargen
+hp@b3r3s:~/Dokumentumok$ ./polargen
+0.581635
+-0.330038
+-1.53916
+0.67204
+-1.56939
+1.89336
+-0.845487
+-1.09789
+-0.0786508
+-1.26333
+
+]]></programlisting>  
+	</para>              
+    </section>        
+
+    <section>
+        <title>LZW</title>
+        <para>
+            Valósítsd meg C-ben az LZW algoritmus fa-építését!
+        </para>
+        <para>
+     Megoldás forrása: <link xlink:href="https://progpater.blog.hu/2011/03/05/labormeres_otthon_avagy_hogyan_dolgozok_fel_egy_pedat">Programozó Páternoszter</link> by: Bátfai Norbert    
+        </para>
+        <para>
+        A feladatunk megoldását tartalmazza a 6.6 Mozgató szemantika feladata, illetve a Welch mappában a z.c fájl.  
+        </para>
+    </section>        
+        
+    <section>
+        <title> Fabejárás</title>
+        <para>
+            Járd be az előző (inorder bejárású) fát pre- és posztorder is!
+        </para>
+        <para>
+
+        </para>
+        <para>
+            Egy fát mint azt már az Adatszerkezetek és algoritmusok órán is elsajátíthattuk, 3 féle képpen tudjuk bejárni. Ezek a bejárások pedig a következők: Inorder, postorder és preorder. 
+	<para>
+	Ezek szemléltetésére igénybe kellet hogy vegyem a hatalmas paint tudásomat. Ha esetleg nem lenne elég egyértelmű, a zöld színnel jelölt számok, az egyes csomópontok beolvasási sorszámát jelöli. (1-től 7-ig)
+	</para> 
+	<para>
+ 	<figure>
+            <title>INORDER</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Welch/inorder.png" scale="50" />
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	<figure>
+            <title>POSTORDER</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Welch/postorder.png" scale="50" />
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	<figure>
+            <title>PREODER</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Welch/preorder.png" scale="50" />
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	</para>            
+        </para>
+    </section>        
+                        
+    <section>
+        <title>Tag a gyökér</title>
+        <para>
+            Az LZW algoritmust ültesd át egy C++ osztályba, legyen egy Tree és egy beágyazott Node
+            osztálya. A gyökér csomópont legyen kompozícióban a fával!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=_mu54BDkqiQ">https://www.youtube.com/watch?v=_mu54BDkqiQ</link>
+        </para>
+        <para>
+        A feladatunk megoldását tartalmazza a 6.6 Mozgató szemantika feladata.    
+        </para>
+    </section>        
+                
+    <section>
+        <title>Mutató a gyökér</title>
+        <para>
+            Írd át az előző forrást, hogy a gyökér csomópont ne kompozícióban, csak aggregációban legyen a 
+            fával!
+        </para>
+        <para>
+           Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=_mu54BDkqiQ">https://www.youtube.com/watch?v=_mu54BDkqiQ</link>
+        </para>
+        <para>
+        A feladatunk megoldását tartalmazza a 6.6 Mozgató szemantika feladata.    
+        </para>
+    </section>                     
+
+    <section>
+        <title>Mozgató szemantika</title>
+        <para>
+            Írj az előző programhoz mozgató konstruktort és értékadást, a mozgató konstruktor legyen a mozgató
+            értékadásra alapozva!
+        </para>
+        <para>
+Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=QBD3zh5OJ0Y">https://www.youtube.com/watch?v=QBD3zh5OJ0Y</link>
+        </para>
+	<para>
+	A feladat során csak pár kód csipetet jelenítünk meg de akinek szüksége lenne az egészre, az megtalálja a Welch mappában "LZWBinFa.cpp" néven.
+	<para>
+Természetesen ezekben a csipetekben fellelhetőek lesznek az előző feladatokban beígérteket is.
+	</para>
+        </para>
+        <para>
+	A program, vagyis a fa építése a BinRandTree class létrehozásával kezdődik, azon belül is a Node osztály elhelyezésével egy protected részben. Gondolom senkinek sem árulok el nagy titkot ha felfedem, hogy a node, a csomópontokat jelenti, vagyis ezeknek lehet (max) 1 jobb, illetve 1 bal oldali gyermeke. Természetesen minden ilyen gyermek egy-egy újabb csomópont lesz.
+        </para>
+        <para>
+<para>
+6.4
+</para>
+<programlisting language="c++"><![CDATA[
+template <typename ValueType>
+class BinRandTree {
+
+protected:
+    class Node {
+        
+    private:
+        ValueType value;
+        Node *left;
+        Node *right;
+        int count{0};
+        
+        Node(const Node &);
+        Node & operator=(const Node &);
+        Node(Node &&);
+        Node & operator=(Node &&);
+
+        
+    public:
+        Node(ValueType value, int count=0): value(value), count(count), left(nullptr), right(nullptr) {}
+        ValueType getValue() const { return value; }
+        Node * leftChild() const { return left; }
+        Node * rightChild() const { return right; }
+        void leftChild(Node * node){ left = node; }
+        void rightChild(Node * node){ right = node; }
+        int getCount() const { return count; }
+        void incCount() { ++count; }        
+    };
+]]></programlisting>  
+        </para>
+	<para>
+<para>
+6.5
+</para>
+	Mint azt már említettük, kelleni fognak a mutatók is, ezt a szerepet fogja betölteni a " * ". A *root értelemszerűen a gyökérmutatónka lesz, míg a *treep jelzi, hogy hol is járunk éppen.
+<programlisting language="c++"><![CDATA[
+    Node *root;
+    Node *treep;    
+    int depth{0};
+]]></programlisting>  
+        </para>
+	<para>
+Majd amiről a 6.6. fejezetünk is szól, jöhetnek a mozgató és másoló konstruktorok.
+<programlisting language="c++"><![CDATA[
+public:
+    BinRandTree(Node *root = nullptr, Node *treep = nullptr): root(root), treep(treep) {
+        std::cout << "BT ctor" << std::endl;        
+    }
+    
+    BinRandTree(const BinRandTree & old) {
+        std::cout << "BT copy ctor" << std::endl;
+        
+        root = cp(old.root, old.treep);
+        
+    }
+    
+    Node * cp(Node *node, Node *treep) 
+    {
+        Node * newNode = nullptr;
+        
+        if(node)
+        {
+            newNode = new Node(node->getValue(), 42 /*node->getCount()*/);
+            
+            newNode->leftChild(cp(node->leftChild(), treep));            
+            newNode->rightChild(cp(node->rightChild(), treep));
+            
+            if(node == treep)
+                this->treep = newNode;
+        }
+        
+        return newNode;
+    }
+    
+    
+    BinRandTree & operator=(const BinRandTree & old) {
+        std::cout << "BT copy assign" << std::endl;
+        
+        BinRandTree tmp{old};
+        std::swap(*this, tmp);
+        return *this;
+    }
+    
+    BinRandTree(BinRandTree && old) {
+        std::cout << "BT move ctor" << std::endl;
+        
+        root = nullptr;
+        *this = std::move(old);
+    }
+       
+    BinRandTree & operator=(BinRandTree && old) {
+        std::cout << "BT move assign" << std::endl;
+        
+        std::swap(old.root, root);
+        std::swap(old.treep, treep);
+        
+        return *this;
+    }
+    
+    ~BinRandTree(){
+        std::cout << "BT dtor" << std::endl;
+        deltree(root);
+    }
+    BinRandTree & operator<<(ValueType value);
+    void print(){print(root, std::cout);}
+    void printr(){print(*root, std::cout);}
+    void print(Node *node, std::ostream & os);
+    void print(const Node &cnode, std::ostream & os);
+    void deltree(Node *node); 
+
+    Unirand ur{std::chrono::system_clock::now().time_since_epoch().count(), 0, 2};
+
+    int whereToPut() {
+        
+            return ur();
+    }
+    
+};
+]]></programlisting>  
+	</para>
+    </section>                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

@@ -1,0 +1,67 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Gutenberg!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+        <cover>
+            <para>
+                Programozás tankönyvek rövid olvasónaplói.
+            </para>
+        </cover>
+    </info>
+    <section>
+        <title>Programozási alapfogalmak</title>
+        <para>         
+	<citation>PICI KONYV</citation> 
+	</para>
+	<para>
+	Kicsi a bors de erős!
+ 	<para>
+	Legelső sorban be kell, hogy valljam, az iskolás éveim alatt akárhányszor kötelező olvasmányt kaptunk, azt leginkább a hátam közepére kívántam volna mivel tipikusan olyan könyveket kellet olvasnunk ami nem az én érdeklődési körömbe tartozott. Sosem értettem, hogy miért nem adnak meg a gyereknek mondjuk 10 témát amiben keresgélhet és választani kell egy vagy több könyvet, (természeteset az általa kiválasztott témában) amit a saját szórakoztatására olvashat.
+        </para>
+	<para>
+	Ezúttal már láttam a fényt az alagút végén mivel habár az olvasás iránti szeretetem nem nőtt azóta de mostmár legalább olyan témáról kellet olvasnom ami érdekelt és tudtam, hogy a könyv tartalma a tanulmányi évim során még akár a hasznomra is válhat. Ez a meglátásom többynire be is igazolódott és miközben olvastam a könyvet, nem jött elő az régi és jólismert szituáció miszerint: csak olvasok és olvasok majd egy 10 perc után realizálom, hogy az eddigi elolvasott 'x' oldal teljesen kiesett és nem emlkészek belőle semmire. 
+        </para>
+	<para>
+	Összességében, habár számunkra nem az egész könyv volt feladva de biztos vagyok benne hogy a könyv töbi része is tartalmaz hasznos információkat és azoknak akik kicsit szeretnének belelátni a dolgokba kicsit mélyebben annak nyugodt szívvel tudom ajánlani. Mindamellet, hogy érdekesnek találtam a könyvet, ezzel egyidőben egyértelműen tudom ajánlani azoknak az embereknek is akik insomnia-val szenvednek ugyanis egy fárasztóbb nap után saját tabasztalatból mondhatom, hogy meglehetősen könnyen és gyorsan el tudtam mellette aludni.
+        </para>
+	
+		-
+        </para>
+    </section>     
+ 
+    <section>
+        <title>Bevezetés a mobilprogramozásba</title>
+        <para>                
+            <citation>MOBIL</citation>
+        </para>
+	<para>
+	A könyv ahogy azt a címéből is ésszerűen kikövetkeztethetjük, a mobilprogramozásról és amellett még a mobilok tulajdonságairól, funkcióiról és típusairól szól. A könyv olvasás közben azért néha elmosolyodunk az olyan kijelentéseken min, hogy a "Ez a legbővebb kategória, a ma  kapható készülékek jelentős része idetartozik". Nem, a könyv írója itt nem a mai okostelefonokra gondolt, hanem az akkoriban mindenki álatal használt egyszerűbb, általános mobilkészülékek. Ezek mára már elfeledetté váltak, csak nagyok kevesek által használt a technológiai visszamaradottsága miatt. Természetesen 5,10,20 év múlva a mi fiaink vagy később az unokáink valószínűleg ugyan így fognak érezni mint mi és röhögve fogják olvasni ezt a kis olvasónaplót.
+	</para>
+	<para>
+	Mindemmellett a könyv rengeteg hasznos dolgot leír és segít megértettni azokkal akik a közeljövőben a mobilprogramozásban képzelik el a jövőjüket. Számomra is nagyon vonzó ez a téma ugyanis mint mindenki énis napi rendszerességgel használom a telefonomat, legyen az zenehallgatás, olvasás, média és természetesen itt se felejthetjük el a játékokat, amik egyre inkább modernizálódnak és lassan már nem fogunk tudni különbséget tenni egy film és egy telefonos játék grafikája között. Habár engem nagyon kevés telefonos játék tud hosszabb időre lekötni, ennek ellenére ha rendelkeznék a megfelelő tudással programozás terén és felkérne egy cég, hogy segítsek nekik kifejleszteni a legújabb játékukat, valószínűleg szó nélkül és örömmel belemennék.
+	</para>
+	<para>
+	Természetesen azonban nem csak a játékokra kell gondolni amikor a programozásról beszélünk, ugyanis ez egy sokkal tágabb kör. Mindaz ami számunkra ma már természetesnek tűnhet a telefonunk használata közben, gondolok itt például az érintőképernyő, Face ID, wifi folytonos működésére, elérésére.
+	</para>
+    </section>   
+    <section>
+
+        <title>A C programozási nyelv</title>
+        <para>                
+            <citation>KERNIGHANRITCHIE</citation>
+        </para>
+        <para>
+		//csak példa
+            Megoldás videó: <link xlink:href="https://youtu.be/zmfT9miB-jY">https://youtu.be/zmfT9miB-jY</link>
+		//
+        </para>        
+    </section>        
+    <section>
+        <title>Szoftverfejlesztés C++ nyelven</title>
+        <para>                
+            <citation>BMECPP</citation>
+        </para>
+    </section>        
+</chapter>                

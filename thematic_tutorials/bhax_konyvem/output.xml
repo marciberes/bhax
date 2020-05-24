@@ -1,0 +1,3699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.1" xml:lang="hu">    
+    
+    <info xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+
+    <title xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">Univerzális programozás</title>               
+
+    <subtitle xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">Így neveld a programozód!</subtitle>               
+
+    <titleabbrev xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">BHAX KÖNYV</titleabbrev>               
+
+    <authorgroup xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <author>
+        <personname>
+            <honorific>Dr</honorific>
+            <surname>Bátfai</surname>
+            <firstname>Norbert</firstname>        
+        </personname>    
+        <affiliation>
+            <shortaffil>E. adjunktus, DE.</shortaffil>
+            <jobtitle>Egyetemi adjunktus</jobtitle>
+            <orgname>Debreceni Egyetem</orgname>
+            <orgdiv>Információtechnológiai Tanszék</orgdiv>
+            <address>
+                <email>batfai.norbert@inf.unideb.hu</email>
+                <email>nbatfai@gmail.com</email>
+            </address>
+        </affiliation>
+        <address>
+            <street>Kassai út 26.</street>
+            <city>Debrecen</city>
+            <postcode>4028</postcode>
+            <country>Magyarország</country>
+            <email>batfai.norbert@inf.unideb.hu</email>
+            <otheraddr>
+                <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/">https://arato.inf.unideb.hu/batfai.norbert/</link>
+            </otheraddr>
+        </address>
+    </author>   
+    <author>
+        <personname>       
+            <surname>Bátfai</surname>
+            <firstname>Mátyás</firstname>        
+        </personname>    
+        <affiliation>
+            <shortaffil>tanuló</shortaffil>
+            <jobtitle>tanuló</jobtitle>
+            <orgname>Debreceni Hunyadi János Általános Iskola</orgname>
+            <orgdiv>6/c</orgdiv>
+            <address>
+                <email>batfai.matyi@gmail.com</email>               
+            </address>
+        </affiliation>               
+    </author>  
+    
+    <author>
+        <personname>       
+            <surname>Bátfai</surname>
+            <firstname>Nándor</firstname>        
+        </personname>    
+        <affiliation>
+            <shortaffil>tanuló</shortaffil>
+            <jobtitle>tanuló</jobtitle>
+            <orgname>Debreceni Hunyadi János Általános Iskola</orgname>
+            <orgdiv>4/c</orgdiv>
+            <address>
+                <email>batfai.nandi@gmail.com</email>               
+            </address>
+        </affiliation>               
+    </author>  
+    
+    <author>
+        <personname>       
+            <surname>Bátfai</surname>
+            <firstname>Margaréta</firstname>        
+        </personname>    
+        <affiliation>
+            <shortaffil>tanuló</shortaffil>
+            <jobtitle>tanuló</jobtitle>
+            <orgname>Debreceni Hunyadi János Általános Iskola</orgname>
+            <orgdiv>4/c</orgdiv>
+            <address>
+                <email>batfai.greta@gmail.com</email>               
+            </address>
+        </affiliation>               
+    </author>  
+</authorgroup>               
+
+    <edition xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">BHAX, DEBRECEN, 2019. február 19, v. 0.0.4</edition>               
+
+    <pubdate>2019</pubdate>
+    <copyright>
+        <year>2019</year>
+        <holder>Dr. Bátfai Norbert</holder>
+    </copyright>
+    <legalnotice>           
+        <para>                
+            Copyright (C) 2019, Norbert Bátfai Ph.D., batfai.norbert@inf.unideb.hu, nbatfai@gmail.com, 
+        </para>
+        <para>
+            Permission is granted to copy, distribute and/or modify this document
+            under the terms of the GNU Free Documentation License, Version 1.3
+            or any later version published by the Free Software Foundation;
+            with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+            A copy of the license is included in the section entitled "GNU
+            Free Documentation License".                
+        </para>
+        <para>
+            <link xlink:href="https://www.gnu.org/licenses/fdl.html">https://www.gnu.org/licenses/fdl.html</link>                
+        </para>
+            
+        <para>
+            Engedélyt adunk Önnek a jelen dokumentum sokszorosítására, terjesztésére és/vagy módosítására 
+            a Free Software Foundation által kiadott GNU FDL 1.3-as, vagy bármely azt követő verziójának 
+            feltételei alapján. Nincs Nem Változtatható szakasz, nincs Címlapszöveg, nincs Hátlapszöveg.                
+        </para>
+        <para>
+            <link xlink:href="http://gnu.hu/fdl.html">http://gnu.hu/fdl.html</link>                
+        </para>
+    </legalnotice>   
+    
+    <revhistory xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <revision>
+        <revnumber>0.0.1</revnumber>
+        <date>2019-02-12</date>
+        <authorinitials>nbatfai</authorinitials>
+        <revremark>
+            Az iniciális dokumentum szerkezetének kialakítása.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.2</revnumber>
+        <date>2019-02-14</date>
+        <authorinitials>nbatfai</authorinitials>
+        <revremark>
+            Inciális feladatlisták összeállítása.
+        </revremark>
+    </revision>    
+    <revision>
+        <revnumber>0.0.3</revnumber>
+        <date>2019-02-16</date>
+        <authorinitials>nbatfai</authorinitials>
+        <revremark>
+            Feladatlisták folytatása.
+            Feltöltés a BHAX csatorna 
+            <link xlink:href="https://gitlab.com/nbatfai/bhax">https://gitlab.com/nbatfai/bhax</link>
+            repójába.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.4</revnumber>
+        <date>2019-02-19</date>
+        <authorinitials>nbatfai</authorinitials>
+        <revremark>
+            A Brun tételes feladat kidolgozása.
+        </revremark>
+    </revision>
+</revhistory>               
+                               
+</info>     
+        
+    <dedication xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <para>
+
+    </para>
+<blockquote>
+    <attribution>Gregory Chaitin, <citetitle>META MATH! The Quest for Omega</citetitle>, <citation>METAMATH</citation></attribution>
+    <para>
+        „To me, you understand something only if you can program it.  
+        (You, not someone else!)  Otherwise you don’t really understand it, 
+        you only think you understand it.”
+    </para>
+</blockquote>
+</dedication>     
+    
+    <preface xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <title>Előszó</title>
+    <para xml:id="bhax-textbook-pre.Eloszo">
+        Amikor programozónak terveztem állni, ellenezték a környezetemben, mondván, hogy kell  
+        szövegszerkesztő meg táblázatkezelő, de az már van... nem lesz programozói munka.
+    </para>                 
+    <para>
+        Tévedtek. Hogy egy generáció múlva kell-e még tömegesen hús-vér programozó vagy
+        olcsóbb lesz allokálni igény szerint pár robot programozót a felhőből?
+        A programozók dolgozók lesznek vagy papok?
+        Ki tudhatná ma. 
+    </para>
+    <para>
+        Mindenesetre a programozás a teoretikus kultúra csúcsa. A GNU mozgalomban látom annak 
+        garanciáját, hogy ebben a szellemi kalandban a gyerekeim is részt vehessenek majd. Ezért programozunk.
+    </para>          
+    <section>
+        <title>Hogyan forgasd</title>
+        <para>
+            A könyv célja egy stabil programozási szemlélet kialakítása az olvasóban. Módszere, hogy hetekre 
+            bontva ad egy tematikus feladatcsokrot. Minden feladathoz megadja a megoldás forráskódját és forrásokat
+            feldolgozó videókat.
+            Az olvasó feladata, hogy ezek tanulmányozása után maga adja meg a feladat megoldásának lényegi
+            magyarázatát, avagy írja meg a könyvet.
+        </para>
+        <para>
+            Miért univerzális? Mert az olvasótól (kvázi az írótól) függ, hogy kinek szól a könyv. 
+            Alapértelmezésben gyerekeknek, mert velük készítem az iniciális változatot. 
+            Ám tervezem felhasználását az egyetemi programozás oktatásban is. Ahogy szélesedni tudna a 
+            felhasználók köre, akkor lehetne kiadása különböző korosztályú gyerekeknek, családoknak, 
+            szakköröknek, programozás kurzusoknak, felnőtt és továbbképzési műhelyeknek és sorolhatnánk... 
+        </para>
+        <section>
+            <title>Milyen nyelven nyomjuk?</title>
+            <para>
+                C (mutatók), C++ (másoló és mozgató szemantika) és Java (lebutított C++) nyelvekből kell egy jó alap, 
+                ezt kell kiegészíteni pár R (vektoros szemlélet), Python (gépi tanulás bevezető), Lisp és Prolog (hogy lássuk
+                mást is) példával.
+            </para>
+        </section>
+        <section>
+            <title>Hogyan nyomjuk?</title>
+            <para>
+                Kapd le a <link xlink:href="https://gitlab.com/nbatfai/bhax">https://gitlab.com/nbatfai/bhax</link>
+                git repót, vagy ha már saját könyvön dolgozol, érdemesebb forkolnod belőle egyet magadnak!
+            
+                <screen><![CDATA[]]></screen> 
+            
+            </para>
+            <para>
+                Ha megvannak a könyv DocBook XML forrásai, 
+                akkor az alább látható <command>make</command> parancs ellenőrzi, hogy „jól formázottak” és 
+                „érvényesek-e” ezek az XML források, majd 
+                elkészíti a <application>dblatex</application> programmal a könyved pdf változatát, íme:
+                <screen><![CDATA[hp@b3r3s:~$ cd Dokumentumok/bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/
+hp@b3r3s:~/Dokumentumok/bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod$ make
+rm -f bhax-textbook-fdl.pdf
+xmllint --xinclude bhax-textbook-fdl.xml --output output.xml
+xmllint --relaxng http://docbook.org/xml/5.0/rng/docbookxi.rng output.xml --noout
+output.xml validates
+rm -f output.xml	
+dblatex bhax-textbook-fdl.xml -p bhax-textbook.xls
+Build the book set list...
+Build the listings...
+XSLT stylesheets DocBook - LaTeX 2e (0.3.10)
+===================================================
+Stripping NS from DocBook 5/NG document.
+Processing stripped document.
+Image 'dblatex' not found
+Build bhax-textbook-fdl.pdf
+'bhax-textbook-fdl.pdf' successfully built]]></screen>             
+
+            Ha minden jól ment, akkor most éppen ezt az elkészített <filename>bhax-textbook-fdl.pdf</filename> fájlt olvasod.
+            </para>
+<tip>
+              <title>A DocBook XML 5.1 új neked?</title>
+              <para>
+                  Ez esetben érdemes átnézned a <link xlink:href="https://tdg.docbook.org/tdg/5.1/">https://tdg.docbook.org/tdg/5.1/</link>
+                  könyvet, a végén találod az informatikai szövegek jelölésére használható gazdag „API” elemenkénti
+                  bemutatását.                  
+              </para>            
+            </tip>            
+        </section>
+        
+    </section>            
+
+</preface> 
+
+    <!-- 
+        <xi:include href="bhax-textbook-glossary.xml">
+            <xi:fallback>
+                <para>
+                    <emphasis>XInclude: bhax-textbook-glossary.xml file not found</emphasis>
+                </para>
+            </xi:fallback>
+        </xi:include> 
+    -->
+
+    <part xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <title>Bevezetés</title>
+    <partintro>
+        <para> 
+        </para>
+    </partintro>
+    <chapter>
+        <info>
+            <title>Vízió</title>
+            <keywordset>
+                <keyword/>
+            </keywordset>
+        </info>
+        <section>
+            <title>Mi a programozás?</title>
+            <para>
+                Ne cifrázzuk: programok írása. Mik akkor a programok? Mit jelent az írásuk?
+            </para>
+        </section>
+        <section>
+            <title>Milyen doksikat olvassak el?</title>
+            <itemizedlist>
+                <listitem>
+                    <para>Kezd ezzel: <link xlink:href="http://esr.fsf.hu/hacker-howto.html">http://esr.fsf.hu/hacker-howto.html</link>!</para>                        
+                </listitem>
+                <listitem>
+                    <para>Olvasgasd aztán a kézikönyv lapjait, kezd a <command>man man</command> parancs kiadásával. A C programozásban
+                    a 3-as szintű lapokat fogod nézegetni, például az első feladat kapcsán ezt a 
+                    <command>man 3 sleep</command> lapot</para>                        
+                </listitem>
+                <listitem>
+                    <para>C kapcsán a <citation>KERNIGHANRITCHIE</citation> könyv adott részei.</para>                        
+                </listitem>
+                <listitem>
+                    <para>C++ kapcsán a <citation>BMECPP</citation> könyv adott részei.</para>                        
+                </listitem>
+                <listitem>
+                    <para>Az igazi kockák persze csemegéznek a C nyelvi szabvány 
+                        <link xlink:href="https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf">ISO/IEC 9899:2017</link> kódcsipeteiből is.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>Amiből viszont a legeslegjobban lehet tanulni, az a 
+                        <link xlink:href="https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html">The GNU C Reference Manual</link>, mert gcc specifikus és programozókra
+                        van hangolva: szinte csak 1-2 lényegi mondat és apró, lényegi kódcsipetek! Aki pdf-ben jobban
+                        szereti olvasni: <link xlink:href="https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.pdf"/>
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>Az R kódok olvasása kis általános tapasztalat után automatikusan, erőfeszítés nélkül menni fog. 
+                        A Python nincs ennyire a spektrum magától értetődő végén, ezért ahhoz olvasd el a  
+                        <citation>BMECPP</citation> könyv - 20 oldalas gyorstalpaló részét.
+                    </para>                        
+                </listitem>
+            </itemizedlist>            
+        </section>
+        <section>
+            <title>Milyen filmeket nézzek meg?</title>
+            <itemizedlist>
+                <listitem>
+                    <para>21 - Las Vegas ostroma, 
+                        <link xlink:href="https://www.imdb.com/title/tt0478087/">https://www.imdb.com/title/tt0478087/</link>,
+                        benne a <link xlink:href="#bhax-textbook-feladatok-turing.MontyHall">Monty Hall probléma</link> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>Kódjátszma, 
+                        <link xlink:href="https://www.imdb.com/title/tt2084970">https://www.imdb.com/title/tt2084970</link>,
+                        benne a <link xlink:href="#bhax-textbook-feladatok-caesar.EXOR-toro">kódtörő feladat</link> élménye.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""/>,
+                        benne a <link xlink:href="#"/> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""/>,
+                        benne a <link xlink:href="#"/> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""/>,
+                        benne a <link xlink:href="#"/> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""/>,
+                        benne a <link xlink:href="#"/> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""/>,
+                        benne a <link xlink:href="#"/> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""/>,
+                        benne a <link xlink:href="#"/> bemutatása.
+                    </para>                        
+                </listitem>
+            </itemizedlist> 
+        </section>
+    </chapter>                
+</part> 
+
+    <part xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <title>Tematikus feladatok</title>
+    <partintro>
+        <para> 
+        </para>
+<tip>
+              <title>Bátf41 Haxor Stream</title>
+              <para>
+                  A feladatokkal kapcsolatos élő adásokat sugároz
+                  a <link xlink:href="https://www.twitch.tv/nbatfai">https://www.twitch.tv/nbatfai</link> csatorna,
+                  melynek permanens archívuma a <link xlink:href="https://www.youtube.com/c/nbatfai">https://www.youtube.com/c/nbatfai</link> 
+                  csatornán található.
+              </para>            
+            </tip>    
+        
+    </partintro>
+    
+    <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Turing!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Végtelen ciklus</title>
+        <para>
+            Írj olyan C végtelen ciklusokat, amelyek 0 illetve 100 százalékban dolgoztatnak egy magot és egy olyat, amely  
+            100 százalékban minden magot!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+        Ha csak azt akarjuk, hogy egy mag fusson 100 százalékban:
+	<programlisting language="c"><![CDATA[Egymag100
+
+	int main(){
+
+	for(;;);
+
+	return 0;
+	}
+	]]></programlisting> 
+        </para>  
+	<para>
+	Illetve ha minden magot ~100%-on akarunk látni:
+	<programlisting language="c"><![CDATA[Mindenmag100
+	#include <omp.h>
+
+	int main(){
+
+		#pragma omp parallel
+		{	
+		for(;;);
+		}
+
+	return 0;
+	}   
+	]]></programlisting>  
+	</para>
+	<para>
+	A végeredményt a top parancsal kiválóan tudjuk szemléltetni:
+	<programlisting><![CDATA[
+	PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND     
+ 	5327 hp        20   0   68356   1028    932 R 792,0  0,0   1:33.35 szazmag 
+   
+	top - 13:10:16 up  1:30,  1 user,  load average: 1,91, 0,71, 0,70
+	Tasks: 266 total,   2 running, 197 sleeping,   0 stopped,   0 zombie
+	%Cpu0  :100,0 us,  0,0 sy, 0,0 ni,  0,0 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
+	%Cpu1  :100,0 us,  0,0 sy, 0,0 ni,  0,0 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
+	%Cpu2  : 99,7 us,  0,0 sy, 0,0 ni,  0,0 id,  0,0 wa,  0,0 hi,  0,3 si,  0,0 st
+	%Cpu3  : 97,0 us,  2,3 sy, 0,0 ni,  0,0 id,  0,0 wa,  0,0 hi,  0,7 si,  0,0 st
+	%Cpu4  : 98,7 us,  1,3 sy, 0,0 ni,  0,0 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
+	%Cpu5  :100,0 us,  0,0 sy, 0,0 ni,  0,0 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
+	%Cpu6  : 99,0 us,  1,0 sy, 0,0 ni,  0,0 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
+	%Cpu7  : 99,3 us,  0,7 sy, 0,0 ni,  0,0 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
+	KiB Mem :  8036012 total,  3091312 free,  2655316 used,  2289384 buff/cache
+	KiB Swap:  2097148 total,  2097148 free,        0 used.  4664684 avail Mem 
+	]]></programlisting>
+
+	Láthatjuk, hogy ha nincs is mindegyik 100%-on de nagyon közel áll hozzá. Ettől még az így kapott eredményünk elfogadható
+	</para>          
+    </section>        
+        
+    <section>
+        <title>Lefagyott, nem fagyott, akkor most mi van?</title>
+        <para>
+            Mutasd meg, hogy nem lehet olyan programot írni, amely bármely más programról eldönti, hogy le fog-e fagyni vagy sem!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:  tegyük fel, hogy akkora haxorok vagyunk, hogy meg tudjuk írni a <function>Lefagy</function>
+            függvényt, amely tetszőleges programról el tudja dönteni, hogy van-e benne vlgtelen ciklus:              
+        </para>
+        <programlisting language="c"><![CDATA[Program T100
+{
+
+	boolean Lefagy(Program P)
+	{
+		 if(P-ben van végtelen ciklus)
+			return true;
+		 else
+			return false; 
+	}
+
+	main(Input Q)
+	{
+		Lefagy(Q)
+	}
+}]]></programlisting>            
+        <para>
+            A program futtatása, például akár az előző <filename>v.c</filename> ilyen pszeudókódjára:
+            <screen><![CDATA[T100(t.c.pseudo)
+true]]></screen>            
+            akár önmagára
+            <screen><![CDATA[T100(T100)
+false]]></screen>  
+            ezt a kimenetet adja.          
+        </para>
+        <para>
+            A T100-as programot felhasználva készítsük most el az alábbi T1000-set, amelyben a
+            Lefagy-ra épőlő Lefagy2 már nem tartalmaz feltételezett, csak csak konkrét kódot:
+        </para>
+        <programlisting language="c"><![CDATA[Program T1000
+{
+
+	boolean Lefagy(Program P)
+	{
+		 if(P-ben van végtelen ciklus)
+			return true;
+		 else
+			return false; 
+	}
+
+	boolean Lefagy2(Program P)
+	{
+		 if(Lefagy(P))
+			return true;
+		 else
+			for(;;); 
+	}
+
+	main(Input Q)
+	{
+		Lefagy2(Q)
+	}
+
+}]]></programlisting>            
+        <programlisting><![CDATA[]]></programlisting>            
+        <para>
+            Mit fog kiírni erre a <computeroutput>T1000(T1000)</computeroutput> futtatásra?
+                                
+            <itemizedlist>
+                <listitem>
+                    <para>Ha T1000 lefagyó, akkor nem fog lefagyni, kiírja, hogy true</para>                        
+                </listitem>
+                <listitem>
+                    <para>Ha T1000 nem fagyó, akkor pedig le fog fagyni...</para>                        
+                </listitem>
+            </itemizedlist>
+            Akkor most hogy fog működni? Sajnos legfőképp sehogy, mert ilyen <function>Lefagy</function>
+            függvényt, azaz a T100 program nem is létezik.                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+                
+    <section>
+        <title>Változók értékének felcserélése</title>
+        <para>
+            Írj olyan C programot, amely felcseréli két változó értékét, bármiféle logikai utasítás vagy kifejezés
+            nasználata nélkül!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk">https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=""/>
+        </para>
+        <para>
+            Változókat többféleképpen is fel tudunk cserélni. Talán az egyik legegyszerűbb módja (segéd változó nélkül) az alábbi példa:
+		 <programlisting language="c"><![CDATA[
+	#include <stdio.h>
+	int main(){
+
+	int a= 11;
+	int b= 7;
+
+	printf("Eredeti a: %d \n",a);
+	printf("Eredeti b: %d \n",b);
+
+	b=b-a;
+	a=a+b;
+	b=a-b;
+
+	printf("Új a: %d \n",a);
+	printf("Új b: %d \n",b);
+
+		return 0;
+		}
+	]]></programlisting> 
+        </para>
+ 		<para> Ezen kívül természetesen még létezik jópár megoldás az egyik általunk tanult XOR (másnéven a kizáró vagy) módszer is alkalmas erre a feladatra.
+	<programlisting language="c"><![CDATA[
+	#include <stdio.h>
+
+	int main(){
+
+	int a= 9;
+	int b= 13;
+
+	printf("Eredeti a: %d \n",a);
+	printf("Eredeti b: %d \n",b);
+
+	a= a^b;
+	b= b^a;
+	a= a^b;
+
+	printf("Új a: %d \n",a);
+	printf("Új b: %d \n",b);
+
+	return 0;
+	}
+	]]></programlisting> 
+        </para>
+    </section>                     
+
+    <section>
+        <title>Labdapattogás</title>
+        <para>
+            Először if-ekkel, majd bármiféle logikai utasítás vagy kifejezés
+            nasználata nélkül.
+        </para>
+	<para>
+	 Hogy mindenkiben tisztázódjon mit is jelent az a pattogtatás, érdemes megnézni az alábbi bemutató videót.
+	</para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/labdapattogas">https://bhaxor.blog.hu/2018/08/28/labdapattogas</link>
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+        <para>
+        Az első és talán a könnyebbik (if-es) verzió:
+        </para>
+	<para>
+	<programlisting language="c"><![CDATA[
+#include <stdio.h>
+#include <curses.h>
+#include <unistd.h>
+
+int main (void){
+
+	WINDOW *ablak;
+	ablak = initscr ();
+	
+	int x=0;
+	int y=0;
+
+	int deltax=1;
+	int deltay=1;
+
+	int mx;
+	int my;
+
+for (;;){
+
+	getmaxyx(ablak , mx , my);
+
+	myprintw(y , x , 'O');
+
+	refresh();
+	usleep(100000);
+
+	clear();
+
+	x=x+deltax;
+	y=y+deltay;
+
+
+	if( x <=0 ){
+		deltax=deltax * -1;
+	}
+	if( x >=mx-1 ){
+		deltax= deltax * -1;
+	}
+	if( y<=3){
+		deltay=deltay * -1;
+	}
+	if( y>=my-1){
+		deltay=deltay * -1;
+	}
+}
+return 0;
+}
+]]></programlisting> 
+
+	</para>
+	<para>
+Ahogy azt eddig is megszoktuk, a program itt is 'C' nyelvben íródott.
+	</para>
+    </section>                     
+
+    <section>
+        <title>Szóhossz és a Linus Torvalds féle BogoMIPS</title>
+        <para>
+            Írj egy programot, ami megnézi, hogy hány bites a szó a gépeden, azaz mekkora az <type>int</type> mérete.
+            Használd ugyanazt a while ciklus fejet, amit Linus Torvalds a BogoMIPS rutinjában! 
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href=""/>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=""/>
+        </para>
+        <para>
+	<programlisting language="C"><![CDATA[
+          #include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+    printf("Adj meg egy számot: ");
+    int a;
+    int count=0;
+    scanf("%d",&a);
+    while (a!=0)
+    {
+        a<<=1;
+        count++;
+    }
+    printf("%d\n",count);
+}
+	]]></programlisting> 
+        </para>
+	
+	<para>
+A programunk lényege nem más mint, hogy az általunk bekért (kettes számrendszerben) értelmezett számot folyamatosan eltolja eggyel balra, egyészen a túlcsordulásig. Ezzel megkapjuk, hogy a a szám utolső 1-es bitje hány eltolással fog eltűnni, vagyis mekkora lehet a maximális mérete.
+	</para>
+	<para>
+	<programlisting language="R"><![CDATA[
+hp@b3r3s:~/Dokumentumok/bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Turing$ ./a.out
+Adj meg egy számot: 1
+32
+	]]></programlisting> 
+	</para>
+    </section>                     
+
+    <section>
+        <title>Helló, Google!</title>
+        <para>
+            Írj olyan C programot, amely egy 4 honlapból álló hálózatra kiszámolja a négy lap Page-Rank 
+            értékét!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href=""/>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=""/>
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>
+
+    <section xml:id="Brun">
+        <title>100 éves a Brun tétel</title>
+        <para>
+            Írj R szimulációt a Brun tétel demonstrálására!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/xbYhp9G6VqQ">https://youtu.be/xbYhp9G6VqQ</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/Primek_R">https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/Primek_R</link>
+        </para>
+	<para>
+            Hogy érthetőbb legyen minden, vegyük az egészet lépésről, lépésre. Elsőnek is lépjünk be az 'R' programunkon belül a matlab library-be, hogy a következő matematikai lépések elérhetőek legyenek számunkra.
+	<programlisting language="R"><![CDATA[
+	hp@b3r3s:~$ R
+	> library(matlab)
+]]></programlisting> 
+        </para>
+	<para>
+Ebben a két sorban elmentjük majd kiiratjuk a primes paranccsal 1-től 100-ig a prímszámokat.
+	<programlisting language="R"><![CDATA[
+	> primes=primes(100)
+	> primes
+ 	[1]  2  3  5  7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+]]></programlisting> 
+	</para>
+	<para>
+Ezután kiiratjuk az egymást követő prímek különbségét, vagyis 3-2,5-3,stb..
+	<programlisting language="R"><![CDATA[
+	> diff = primes[2:length(primes)]-primes[1:length(primes)-1]
+	> diff
+ 	[1] 1 2 2 4 2 4 2 4 6 2 6 4 2 4 6 6 2 6 4 2 6 4 6 8
+]]></programlisting>
+	</para>
+	<para>
+Majd megnézzük, hogy ez a különbség melyik esetben lesz 2, majd azoknak az indexét kiiratjuk.
+	<programlisting language="R"><![CDATA[
+	> idx = which(diff==2)
+	> idx
+	[1]  2  3  5  7 10 13 17 20
+]]></programlisting>
+	</para>
+	<para>
+Ezután kiiratjuk a párok első:
+	<programlisting language="R"><![CDATA[
+	> t1primes = primes [idx]
+	> t1primes
+	[1]  3  5 11 17 29 41 59 71
+]]></programlisting>
+	Majd a második tagját is:
+	<programlisting language="R"><![CDATA[
+	> t2primes = primes[idx]+2
+	> t2primes
+	[1]  5  7 13 19 31 43 61 73
+]]></programlisting>
+	</para>
+	<para>
+Ezután pedig lefuttatjuk a már előre megírt 'stp' függvényt így ezzel el is mentjük R-ben.
+	<programlisting language="R"><![CDATA[
+	> stp <- function(x){
++ 
++     primes = primes(x)
++     diff = primes[2:length(primes)]-primes[1:length(primes)-1]
++     idx = which(diff==2)
++     t1primes = primes[idx]
++     t2primes = primes[idx]+2
++     rt1plust2 = 1/t1primes+1/t2primes
++     return(sum(rt1plust2))
++ }
+]]></programlisting>
+	</para>
+<para>
+Végül pedig ábrázoljuk az alábbi pontokat.
+	<programlisting language="R"><![CDATA[
+> x=seq(13, 1000000, by=10000)
+> y=sapply(x, FUN = stp)
+> plot(x,y,type="b")
+]]></programlisting>
+	</para>
+    </section>
+    
+    <section xml:id="bhax-textbook-feladatok-turing.MontyHall">
+        <title>A Monty Hall probléma</title>
+        <para>
+            Írj R szimulációt a Monty Hall problémára!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan">https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/MontyHall_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/MontyHall_R</link>
+        </para>
+        <para>
+	Ezt a Monty hall féle problémát vagy paradoxont, a forrásban lévő programsorokkal jól tudjuk szemléltetni de többeknek már biztosan ismerős akár sorozatokból, akár filmekből is.
+	Egy gyors talpaló előtte: A Monthy Hall probléma a Let’s make a deal nevű amerikai TV-s vetélkedo híres műsorvezetőjéről kapta a nevét. A probléma a következoképpen néz ki: a műsorvezető mutat 3 ajtót a játékosnak, amelyek közül ˝
+valamelyik mögött egy autó lapul. A játékos választ a 3 ajtó közül 1-et, majd ha a játékosnak nem sikerült beletrafálni, a műsorvezeto a maradék 2 ajtó közül kinyit egyet, amelyik mögött garantáltan nincsen a nyeremény. Ezután a játékos választhat, hogy a döntését megtartja-e vagy megváltoztatja a másik zárt ajtóra.
+	<programlisting language="R"><![CDATA[
+	hp@b3r3s:~$ R	
+
+	kiserletek_szama=10000000
+	kiserlet = sample(1:3, kiserletek_szama, replace=T)
+	jatekos = sample(1:3, kiserletek_szama, replace=T)
+	musorvezeto=vector(length = kiserletek_szama)
+
+	for (i in 1:kiserletek_szama) {
+
+	    if(kiserlet[i]==jatekos[i]){
+	    
+		mibol=setdiff(c(1,2,3), kiserlet[i])
+	    
+	    }else{
+	    
+		mibol=setdiff(c(1,2,3), c(kiserlet[i], jatekos[i]))
+	    
+	    }
+
+	    musorvezeto[i] = mibol[sample(1:length(mibol),1)]
+
+	}
+
+	nemvaltoztatesnyer= which(kiserlet==jatekos)
+	valtoztat=vector(length = kiserletek_szama)
+
+	for (i in 1:kiserletek_szama) {
+
+	    holvalt = setdiff(c(1,2,3), c(musorvezeto[i], jatekos[i]))
+	    valtoztat[i] = holvalt[sample(1:length(holvalt),1)]
+	    
+	}
+
+	valtoztatesnyer = which(kiserlet==valtoztat)
+
+
+	sprintf("Kiserletek szama: %i", kiserletek_szama)
+	length(nemvaltoztatesnyer)
+	length(valtoztatesnyer)
+	length(nemvaltoztatesnyer)/length(valtoztatesnyer)
+	length(nemvaltoztatesnyer)+length(valtoztatesnyer)
+	> 
+	> nemvaltoztatesnyer= which(kiserlet==jatekos)
+	> valtoztat=vector(length = kiserletek_szama)
+	> 
+	> for (i in 1:kiserletek_szama) {
+	+ 
+	+     holvalt = setdiff(c(1,2,3), c(musorvezeto[i], jatekos[i]))
+	+     valtoztat[i] = holvalt[sample(1:length(holvalt),1)]
+	+     
+	+ }
+]]></programlisting>
+	Jelen esetben 10millióra van álltíva a kísérletek száma de ezt állíthatjuk kedvünkre.
+        </para>
+    </section>
+
+</chapter>     
+    
+    <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Chomsky!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Decimálisból unárisba átváltó Turing gép</title>
+        <para>
+            Írjunnk egy olyan programot amely decimálisból unárisba váltja át majd iratja ki a számokat.
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Az első elképzelésem szerint haladtam miszerint az 1-es legyen a '|', a 2 legyen '||' és így tovább 5-ig ami pedig '||/||'.
+        </para>
+    </section>        
+        
+    <section>
+        <title>Az a<superscript>n</superscript>b<superscript>n</superscript>c<superscript>n</superscript> nyelv nem környezetfüggetlen</title>
+        <para>
+            Mutass be legalább két környezetfüggő generatív grammatikát, amely ezt a nyelvet generálja!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+	<para>
+<programlisting language="R"><![CDATA[
+1. A -> aAB
+2. A -> aC
+3. CB -> bCc
+4. cB -> Bc
+5. C -> bc
+Például:
+A (A -> aC)
+aC (C -> bc)
+abc
+vagy:
+A (A -> aAB)
+aAB (A -> aAB)
+aaABB (A -> aC)
+aaaCBB (CB -> bCc)
+aaabCcB (cB -> Bc)
+aaabCBc (CB -> bCc)
+aaabbCcc (C -> bc)
+aaabbbccc
+1. S -> abc
+2. S -> aXbc
+3. Xb -> bX
+4. Xc -> Ybcc
+5. bY -> Yb
+6. aY -> aaX
+7. aY -> aa
+
+Például:
+S (S -> aXbc)
+aXbc (Xb -> bX)
+abXc (Xc -> Ybcc)
+abYbcc (bY -> Yb)
+aYbbcc (aY -> aaX)
+aaXbbcc (Xb -> bX)
+aabXbcc (Xb -> bX)
+aabbXcc (Xc -> Ybcc)
+aabbYbccc (bY -> Yb)
+aabYbbccc (bY -> Yb)
+aaYbbbccc (aY -> aaX)
+aaaXbbbccc (Xb -> bX)
+aaabXbbccc (Xb -> bX)
+aaabbXbccc (Xb -> bX)
+aaabbbXccc (Xc -> Ybcc)
+aaabbbYbcccc (bY -> Yb)
+aaabbYbbcccc (bY -> Yb)
+aaabYbbbcccc (bY -> Yb)
+aaaYbbbbcccc (aY -> aa)
+aaaabbbbcccc
+]]></programlisting>
+	</para>	
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+                
+    <section>
+        <title>Hivatkozási nyelv</title>
+        <para>
+            A <citation>KERNIGHANRITCHIE</citation> könyv C referencia-kézikönyv/Utasítások melléklete alapján definiáld 
+            BNF-ben a C utasítás fogalmát!
+            Majd mutass be olyan kódcsipeteket, amelyek adott szabvánnyal nem fordulnak (például C89), mással (például C99) igen.
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+        <para>
+	Nézzünk egy programot erre a C89 és C99 közti különbségre a  <link xlink:href="https://www.geeksforgeeks.org/inline-function-in-c/">geeksforgeeks</link> segítségét felhasználva.
+             <programlisting language="c"><![CDATA[#include <stdio.h>
+static inline int foo() 
+{ 
+    return 2; 
+} 
+  
+
+int main() 
+{ 
+  
+    int ret; 
+  
+
+    ret = foo(); 
+  
+    printf("Output is: %d\n", ret); 
+    return 0; 
+} ]]></programlisting>
+Láthatjuk, hogy a C89 nem ismeri fel az 'inline'-t mivel az majd csak a C99-be került be.
+	 <programlisting><![CDATA[hp@b3r3s:~/Dokumentumok/bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Chomsky$ gcc 33.c -o proba1 -std=c89
+33.c:2:15: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘int’ static inline int foo()]]></programlisting>
+
+Mint ahogy arra számíthattunk is, a programunk ezúttal zavartalanul le is fordul.
+<programlisting><![CDATA[hp@b3r3s:~/Dokumentumok/bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Chomsky$ gcc 33.c -o proba2 -std=c99]]></programlisting>
+
+	
+        </para>
+    </section>                     
+
+    <section>
+        <title>Saját lexikális elemző</title>
+        <para>
+	A megírt programunknak a lényege, hogy számolja és megértse a bemeneten megjelenő valós számokat.
+	A forrásunk egy lex forrás ami saját maga csinál belőle egy C programot.	
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/9KnMqrkj_kU">https://youtu.be/9KnMqrkj_kU</link> (15:01-től).
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="Chomsky/realnumber.l">
+                <filename>bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Chomsky/realnumber.l</filename>
+            </link> 
+        </para>
+	<para>
+        <programlisting language="c"><![CDATA[%{
+#include <stdio.h>
+int realnumbers = 0;
+%}
+digit	[0-9]
+%%
+{digit}*(\.{digit}+)?	{++realnumbers; 
+    printf("[realnum=%s %f]", yytext, atof(yytext));}
+%%
+int
+main ()
+{
+ yylex ();
+ printf("The number of real numbers is %d\n", realnumbers);
+ return 0;
+}
+]]></programlisting>
+	</para>
+        <para>
+          Hogy mindenkineki értherő legyen, vegyük az egészet lépsről lépésre. Elsőnek is a realnum.é fájlból csinálnunk kell egy c forrást. 
+	</para>
+	<para>
+	 <programlisting><![CDATA[hp@b3r3s: lex -o realnumber.c -o realnumber.l]]></programlisting>
+	Ha ezzel megvagyunk, akkor a jól megszokott módon fordítjuk, és a -lfl paranccsal a végén linkeljük a flexet.
+	<programlisting><![CDATA[hp@b3r3s: gcc realnumber.c -o realnumber -lfl]]></programlisting>
+	A végén pedig csak le kell futtatnunk és ne féljünk megfejelni azt a billentyűzetet, a programunk majd kiválogatja a számára értékes és Valós számokat.
+	<programlisting><![CDATA[./realnumber
+	wdawgt4Z75S6ISRha5j6skhzxt
+	wdawgt[realnum=4 4.000000]Z[realnum=75 75.000000]S[realnum=6 6.000000]ISRha[realnum=5 5.000000]j[realnum=6 6.000000]skhzxt
+]]></programlisting>
+	Ahogy az végeredményként láthatjuk, a sok betű és szám közül megtalálta a 4-et, a 75-öt, a 6-ot, az 5-öt és ismételten a 6-ot. A programunk természetesen nem csak egész számokkal tud megbirkózni, ez csak szimpla véletlen hogy a homlokom ezeket a billentyűket nyomta le.
+        </para>
+    </section>                     
+
+    <section>
+        <title>Leetspeak</title>
+        <para>
+           Egész biztos vagyok benne, hogy mindenki találkozott már a leetspek-el ég akkor is ha nem tudott róla, de a biztonság kedvéért <link xlink:href="https://www.urbandictionary.com/define.php?term=leet%20speak">ITT</link> egy gyorstalpaló róla. Az interneten gyorsan elterjedté és kedveltté vált. Én személy szerinte elsőnek egy számítógépes játékon belül találkoztam ezzel, ahol az illetőnek H3nt3s volt a felhasználóneve. Igaz akkor még csak azt tudtam, hogy mit helyettesítenek azok a hármasok, de a történetéről és a valódi hátteréről még nem sejtettem semmit.
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/06C_PqDpD_k">https://youtu.be/06C_PqDpD_k</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="Chomsky/l337d1c7.l">
+                <filename>bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Chomsky/l337d1c7.l</filename>
+            </link>  
+        </para>
+	<para>
+	Az alábbi példa és a Chomsky mappában lévő doksi is C nyelvre specializálódott, így ajánlott elsőnek azzal próbálkozni. Természetesen aki szeretné később arra nyelvre alakítja át amelyikre szeretné.
+	</para>
+        <programlisting language="c"><![CDATA[%{
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <time.h>
+  #include <ctype.h>
+
+  #define L337SIZE (sizeof l337d1c7 / sizeof (struct cipher))
+    
+  struct cipher {
+    char c;
+    char *leet[4];
+  } l337d1c7 [] = {
+
+  {'a', {"4", "4", "@", "/-\\"}},
+  {'b', {"b", "8", "|3", "|}"}},
+  {'c', {"c", "(", "<", "{"}},
+  {'d', {"d", "|)", "|]", "|}"}},
+  {'e', {"3", "3", "3", "3"}},
+  {'f', {"f", "|=", "ph", "|#"}},
+  {'g', {"g", "6", "[", "[+"}},
+  {'h', {"h", "4", "|-|", "[-]"}},
+  {'i', {"1", "1", "|", "!"}},
+  {'j', {"j", "7", "_|", "_/"}},
+  {'k', {"k", "|<", "1<", "|{"}},
+  {'l', {"l", "1", "|", "|_"}},
+  {'m', {"m", "44", "(V)", "|\\/|"}},
+  {'n', {"n", "|\\|", "/\\/", "/V"}},
+  {'o', {"0", "0", "()", "[]"}},
+  {'p', {"p", "/o", "|D", "|o"}},
+  {'q', {"q", "9", "O_", "(,)"}},
+  {'r', {"r", "12", "12", "|2"}},
+  {'s', {"s", "5", "$", "$"}},
+  {'t', {"t", "7", "7", "'|'"}},
+  {'u', {"u", "|_|", "(_)", "[_]"}},
+  {'v', {"v", "\\/", "\\/", "\\/"}},
+  {'w', {"w", "VV", "\\/\\/", "(/\\)"}},
+  {'x', {"x", "%", ")(", ")("}},
+  {'y', {"y", "", "", ""}},
+  {'z', {"z", "2", "7_", ">_"}},
+  
+  {'0', {"D", "0", "D", "0"}},
+  {'1', {"I", "I", "L", "L"}},
+  {'2', {"Z", "Z", "Z", "e"}},
+  {'3', {"E", "E", "E", "E"}},
+  {'4', {"h", "h", "A", "A"}},
+  {'5', {"S", "S", "S", "S"}},
+  {'6', {"b", "b", "G", "G"}},
+  {'7', {"T", "T", "j", "j"}},
+  {'8', {"X", "X", "X", "X"}},
+  {'9', {"g", "g", "j", "j"}}
+  
+  };
+  
+%}
+%%
+.	{
+	  
+	  int found = 0;
+	  for(int i=0; i<L337SIZE; ++i)
+	  {
+	  
+	    if(l337d1c7[i].c == tolower(*yytext))
+	    {
+	    
+	      int r = 1+(int) (100.0*rand()/(RAND_MAX+1.0));
+	    
+          if(r<91)
+	        printf("%s", l337d1c7[i].leet[0]);
+          else if(r<95)
+	        printf("%s", l337d1c7[i].leet[1]);
+	      else if(r<98)
+	        printf("%s", l337d1c7[i].leet[2]);
+	      else 
+	        printf("%s", l337d1c7[i].leet[3]);
+
+	      found = 1;
+	      break;
+	    }
+	    
+	  }
+	  
+	  if(!found)
+	     printf("%c", *yytext);	  
+	  
+	}
+%%
+int 
+main()
+{
+  srand(time(NULL)+getpid());
+  yylex();
+  return 0;
+}
+]]></programlisting>
+	<para>
+	A chomsky mappában lévő fájlt elsőnek forítanunk kell C nyelvre, akiknek alapból nincs letöltve annak előtte a -sudo apt install flex- commanddal le kell töltenie a lex parancsot.
+	 <programlisting><![CDATA[hp@b3r3s: lex -o l337d1c7.c -o l337d1c7.l]]></programlisting>
+	Majd ha ez megtörtént a gcc paranccsal lefordíttatjuk.
+	<programlisting><![CDATA[hp@b3r3s: gcc l337d1c7.c -o l337d1c7 -lfl]]></programlisting>
+	Ha mindezzel sikeresen megvagyunk, futtathajuk is.
+	<programlisting><![CDATA[hp@b3r3s: ./l337d1c7 -lfl]]></programlisting>
+	Ezután kedvünkre írhatunk be a parancssorba bármit, a programunk majd teszi a dolgát ha mindent jól csináltunk.
+	<programlisting><![CDATA[hp@b3r3s: My name is Jeff
+					my |\|4m3 1$ j3ff
+ 	]]></programlisting>
+	</para>
+	<para>
+	Mivel ez a nyelv alapjába véve titkosítás céljaként jött létre, ennél fogva egyes betűknél érdemes benthagyni az eredeti verziót is, ezzel is nehezítjük a megfejthetőségét. Ezzel ugyanis adunk egy extra nehezítést mivel nem tudhatjuk biztosra, hogy a kiválasztott betű az valóban azt a betűt takarja vagy egy másiknak a kódolt verziója.
+	</para>
+	<para>
+	Az általunk megírt program természetesen nagyban hasonlít az összes többi, akár már az interneten is megtalálható <link xlink:href="https://1337.me/">átváltókhoz</link> amik valószínűleg hasonló algoritmus alapján működnek.
+	</para>
+    </section>                     
+
+
+    <section>
+        <title>A források olvasása</title>
+        <para>
+            Hogyan olvasod, hogyan értelmezed természetes nyelven az alábbi kódcsipeteket? Például
+            <programlisting><![CDATA[if(signal(SIGINT, jelkezelo)==SIG_IGN)
+    signal(SIGINT, SIG_IGN);]]></programlisting>
+            Ha a SIGINT jel kezelése figyelmen kívül volt hagyva, akkor ezen túl is legyen
+            figyelmen kívül hagyva, ha nem volt figyelmen kívül hagyva, akkor a jelkezelo függvény
+            kezelje. (Miután a <command>man 7 signal</command> lapon megismertem a SIGINT jelet, a
+            <command>man 2 signal</command> lapon pedig a használt rendszerhívást.)
+        </para>
+
+        <caution>
+            <title>Bugok</title>
+            <para>
+                Vigyázz, sok csipet kerülendő, mert bugokat visz a kódba! Melyek ezek és miért? 
+                Ha nem megy ránézésre, elkapja valamelyiket esetleg a splint vagy a frama?
+            </para>
+        </caution>
+            
+        <orderedlist numeration="lowerroman">
+            <listitem>                                    
+                <programlisting><![CDATA[if(signal(SIGINT, SIG_IGN)!=SIG_IGN)
+    signal(SIGINT, jelkezelo);]]></programlisting>
+            </listitem>
+            <listitem>                                    
+                <programlisting><![CDATA[for(i=0; i<5; ++i)]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[for(i=0; i<5; i++)]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[printf("%d %d", f(a, ++a), f(++a, a));]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[printf("%d %d", f(a), a);]]></programlisting>            
+            </listitem>
+            <listitem>                                    
+
+                <programlisting><![CDATA[printf("%d %d", f(&a), a);]]></programlisting>            
+            </listitem>
+        </orderedlist>
+        <para>
+            Megoldás forrása:  
+        </para>
+
+        <para>
+            Megoldás videó: 
+        </para>
+
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+
+    </section>                     
+
+    <section>
+        <title>Logikus</title>
+        <para>
+            Az alábbi Ar nyelvi példákat lefordítjuk a természetes nyelvre. Most összesen 4 típust nézünk meg de ezeken kívűl rengeteg féle kifejezést tudunk készíteni hasonló módon. Mindezt a tudást valószínűleg az első félévben az Informatika logikai alapjai tantárgy során remélhetőleg már elsajátítottátok így nem kell, hogy gondot jelentsen egyik tanulónak sem.
+        </para>
+
+	<para>
+	Mielőtt nekivágunk azonban tisztázzuk az előforduló a kifejezéseket, hogy ne merüljenek fel kételyek.
+	 "\forall" = ∀, "\exists" = ∃, "\wedge" = ∧, "\supset" = ⊃, "\neg" = ¬.
+	 Ezek tudatában már gyerekjátéknak kell hogy legyen.
+	</para>
+
+	<para>
+	Nézzük az elsőt, ígérem nem  lesz nehéz kitalálni. Minden x-nél létezik egy tőle nagyobb y prímszám, összegezve: végetelen sok prím van.
+        <programlisting language="tex"><![CDATA[$(\forall x \exists y ((x<y)\wedge(y \text{ prím})))$ ]]></programlisting> 
+	</para>
+
+	<para>
+	Ejtsd: Végtelen sok ikreprímszám van. Azaz minden x prímnél van egy 2-vel nagyobb y prím is.
+<programlisting language="tex"><![CDATA[$(\forall x \exists y ((x<y)\wedge(y \text{ prím})\wedge(SSy \text{ prím})))$]]></programlisting>
+	</para>
+
+	<para>
+	A következő példánk jelentése nem más mint, hogy véges sok prímszám van. Egy gyors magyarázat rá, hogy minden x prímszámhoz tartozik egy tőle nagyobb y szám.
+	<programlisting language="tex"><![CDATA[$(\exists y \forall x (x \text{ prím}) \supset (x<y)) $ ]]></programlisting> 
+	</para>
+
+	<para> 
+	Ne essünk kétségbe ha ugyanazt az eredményt kaptuk mint az előzőnél, ugyanis a jelentésük teljesen megegyezik, egyedül a szerkezetük más.
+	<programlisting language="tex"><![CDATA[$(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$]]></programlisting>  
+	</para>
+
+        <para>
+        Ha valami azonban mégse lenne világos, lejjebb görgetve találtok egy megoldás videót illetve annak forrását.
+        </para>
+
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/MatLog_LaTeX">https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/MatLog_LaTeX</link>
+        </para>
+
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/ZexiPy3ZxsA">https://youtu.be/ZexiPy3ZxsA</link>, <link xlink:href="https://youtu.be/AJSXOQFF_wk">https://youtu.be/AJSXOQFF_wk</link>
+        </para>
+
+
+    </section>                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    <section>
+        <title>Deklaráció</title>
+            
+        <para>
+            Vezesd be egy programba (forduljon le) a következőket: 
+        </para>
+
+        <itemizedlist>
+            <listitem>
+                <para>egész</para>                        
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutató</para>                        
+            </listitem>
+            <listitem>
+                <para>egész referenciája</para>                        
+            </listitem>
+            <listitem>
+                <para>egészek tömbje</para>                        
+            </listitem>
+            <listitem>
+                <para>egészek tömbjének referenciája (nem az első elemé)</para>                        
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutatók tömbje</para>                        
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutatót visszaadó függvény</para>                        
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutatót visszaadó függvényre mutató mutató</para>                        
+            </listitem>
+            <listitem>
+                <para>egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvény</para>                        
+            </listitem>            
+            <listitem>
+                <para>függvénymutató egy egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvényre</para>                        
+            </listitem>            
+        </itemizedlist>            
+
+        <para>
+            Mit vezetnek be a programba a következő nevek?
+        </para>
+
+        <itemizedlist>
+            <listitem>
+                <programlisting><![CDATA[int a;]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int *b = &a;]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int &r = a;]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int c[5];]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int (&tr)[5] = c;]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int *d[5];]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int *h ();]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int *(*l) ();]]></programlisting>            
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int (*v (int c)) (int a, int b)]]></programlisting>            
+            </listitem>            
+            <listitem>
+                <programlisting><![CDATA[int (*(*z) (int)) (int, int);]]></programlisting>            
+            </listitem>            
+        </itemizedlist>       
+
+
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+        <para>
+            Az utolsó két deklarációs példa demonstrálására két olyan kódot
+            írtunk, amelyek összahasonlítása azt mutatja meg, hogy miért 
+            érdemes a <command>typedef</command> használata: <link xlink:href="Chomsky/fptr.c">
+                <filename>bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Chomsky/fptr.c</filename>
+            </link>,
+            <link xlink:href="Chomsky/fptr2.c">
+                <filename>bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Chomsky/fptr2.c</filename>.
+            </link>  
+            
+        </para>
+        <programlisting><![CDATA[#include <stdio.h>
+
+int
+sum (int a, int b)
+{
+    return a + b;
+}
+
+int
+mul (int a, int b)
+{
+    return a * b;
+}
+
+int (*sumormul (int c)) (int a, int b)
+{
+    if (c)
+        return mul;
+    else
+        return sum;
+
+}
+
+int
+main ()
+{
+
+    int (*f) (int, int);
+
+    f = sum;
+
+    printf ("%d\n", f (2, 3));
+
+    int (*(*g) (int)) (int, int);
+
+    g = sumormul;
+
+    f = *g (42);
+
+    printf ("%d\n", f (2, 3));
+
+    return 0;
+}]]></programlisting>            
+        <programlisting><![CDATA[#include <stdio.h>
+
+typedef int (*F) (int, int);
+typedef int (*(*G) (int)) (int, int);
+
+int
+sum (int a, int b)
+{
+    return a + b;
+}
+
+int
+mul (int a, int b)
+{
+    return a * b;
+}
+
+F sumormul (int c)
+{
+    if (c)
+        return mul;
+    else
+        return sum;
+}
+
+int
+main ()
+{
+
+    F f = sum;
+
+    printf ("%d\n", f (2, 3));
+
+    G g = sumormul;
+
+    f = *g (42);
+
+    printf ("%d\n", f (2, 3));
+
+    return 0;
+}
+]]></programlisting>            
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>                     
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>     
+
+    <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Caesar!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title><type>double **</type> háromszögmátrix</title>
+        <para>
+            Írj egy olyan <function>malloc</function> és <function>free</function>
+            párost használó C programot, amely helyet foglal
+            egy alsó háromszög mátrixnak a szabad tárban!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/1MRTuKwRsB0">https://youtu.be/1MRTuKwRsB0</link>,
+            <link xlink:href="https://youtu.be/RKbX5-EWpzA">https://youtu.be/RKbX5-EWpzA</link>.
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="Caesar/tm.c">
+                <filename>bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Caesar/tm.c</filename>
+            </link> 
+        </para>
+        <programlisting language="c"><![CDATA[#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+int nr = 5;
+double**tm;
+
+	if ((tm = (double**) malloc (nr*sizeof (double*))) == NULL)
+	{
+		return -1;
+	}
+	for (int i = 0; i < nr; ++i)
+	{
+		if ((tm[i] = (double*) malloc ((i + 1)*sizeof (double))) == NULL)
+		{
+		return -1;
+		}
+	}
+	
+	for (int i = 0; i < nr; ++i)
+		for (int j = 0; j < i + 1; ++j)
+			tm[i][j] = i*(i + 1) / 2 + j;
+	for (int i = 0; i < nr; ++i)
+	{
+		for (int j = 0; j < i + 1; ++j)
+			printf ("%f, ", tm[i][j]);
+		printf ("\n");
+	}
+
+	tm[3][0] = 42.0;
+	(*(tm + 3))[1] = 43.0; 
+	*(tm[3] + 2) = 44.0;
+	*(*(tm + 3) + 3) = 45.0;
+	for (int i = 0; i < nr; ++i)
+	{
+		for (int j = 0; j < i + 1; ++j)
+			printf ("%f, ", tm[i][j]);
+		printf ("\n");
+	}
+	for (int i = 0; i < nr; ++i)
+		free (tm[i]);
+
+	free (tm);
+return 0;
+}]]></programlisting>
+        <figure>
+            <title>A <type>double **</type> háromszögmátrix a memóriában</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="img/doublecscs.png" scale="50"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A <type>double **</type> háromszögmátrix a memóriában</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>                             
+        <para>
+Hogy miképpen történik az alsó háromszög mátrix tárolása? A magyarázat az, hogy a mátrix felsőhárom-
+szög mátrixa 0-val lesz tele, emiatt ezt nem szükséges eltárolnunk (ezért is hívjuk helytakarékosnak), csak a fontos adatot, vagyis az alsó részt.
+Miután a malloc sikeresen lefutott, az jóesetben visszaadja az adatra mutató pointer-t. Amennyiben a futtatása nem sikerül, egy null pointert kapunk vissza.
+A lefoglalt terület nagyságát malloc paramétereként kell megadni.
+(legelső esetben nr* sizeof(double *), nr = 5 esetén 40 bájt). ???még nem fix???
+        </para>            
+    </section>        
+    <section>
+        <title>C EXOR titkosító</title>
+        <para>
+            Írj egy EXOR titkosítót C-ben!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+	<para>
+	Itt látható a C nyelvben íródott titkosítóprogram.
+	 <programlisting language="c"><![CDATA[
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+
+#define MAX_KULCS 100
+#define BUFFER_MERET 245
+
+int main(int argc, char **argv){
+
+char kulcs[MAX_KULCS];
+char buffer[BUFFER_MERET];
+
+int kulcs_index = 0;
+int olvasott_bajtok = 0;
+
+int kulcs_meret = strlen (argv[1]);
+strncpy (kulcs, argv[1], MAX_KULCS);
+
+while ((olvasott_bajtok = read (0, (void * ) buffer, BUFFER_MERET)))
+	{
+		for(int i=0; i<olvasott_bajtok; ++i)
+		{
+		buffer[i] = buffer [i] ^ kulcs[kulcs_index];
+		kulcs_index = (kulcs_index + 1) % kulcs_meret;
+		}
+	
+	write (1, buffer, olvasott_bajtok);
+	}
+
+}
+}]]></programlisting>
+	</para>
+        <para>
+    	A titkosító programunk mellé szükségünk lesz, egy sima szöveges állományra is amibe egy általunk kiválasztott szöveget másolhatunk. Ezt fogjuk később titkosítani, majd feloldani. Nevezzük el ezt a fájlt tiszta.szoveg -nek. Én a BIblia I. fejezetéből választottam. Ha megvan a titkosítattni kívánt szöveg, kezdjük is meg a szemléltetését. Elsőnek is fordítsuk le a programunkat a következőképpen:
+ <programlisting><![CDATA[
+hp@b3r3s:~/Dokumentumok/prog1$ gcc e.c -o e -std=c99
+]]></programlisting>
+	Ezután a már megírt titkosítóba bevisszük a tiszta szövegünket majd az így keletkezett "bináris szemetet" a titkos.szoveg fájlba tároljuk el. Így ni:
+<programlisting><![CDATA[
+hp@b3r3s:~/Dokumentumok/prog1$ ./e kercerece <tiszta.szoveg >titkos.szoveg
+]]></programlisting>
+	Ezt ha nem baj most nem reprezentálnám, hogy mi lesz belőle ugyanis csupa krikszkraszokból fog állni a terminál ha végigpörgetjük. Akit azonban mégis érdekelne a sajátja, vagy csak letesztelné hogy működik-e, az az alábbi paranccsal.
+<programlisting><![CDATA[
+hp@b3r3s:~/Dokumentumok/prog1$ more titkos.szoveg
+ZERCE9
+...
+]]></programlisting>
+	Mindez azonban fordítva is működik, azaz a mások által ugyan ezzel a programmal lefordított szövegeket tudjuk dekódolni is. Mondanám, hogy aki nem hiszi járjon utána de ez esetben mi is így teszünk. Nem nehéz kitalálni az eddigiek alapján, hogy hogyan is kell visszafejteni de a biztonság kedvéért bemutatom:
+<programlisting><![CDATA[
+hp@b3r3s:~/Dokumentumok/prog1$ ./e kercerece <titkos.szoveg
+1    Kezdetben vala az Íge, és az Íge vala az Istennél, és Isten vala az Íge.
+2    Ez kezdetben az Istennél vala.
+...
+]]></programlisting>
+
+        </para>
+	<para>
+	Ez eddigiek során számomra talán ez volt az egyik legizgalmasabb és leglátványosabb feladat. Alapból mindig is érdekelt a számítástechnikának ez az ágazata. Nagyon elcsépelt szöveg de valóban általános iskolás korom óta etikus hacker szeretnék lenni. Még akkor is ha mindez nagyon távol áll ettől az álomtól, akkor is talán mondhatni, ez egy amolyan kis "bevezető" lehet ebbe a világba. Így hát nem mondok el nagy titkot ha azt állítom, hogy (személy szerint) ez volt az eddigi legjobb feladat. Természetesen a kódsorozat gyorsan és könnyen elkészíthetősége miatt is tetszett de ez már csak hab a tortán.
+	</para>            
+    </section>        
+    <section>
+        <title>Java EXOR titkosító</title>
+        <para>
+           Az előző programunkból kiindulva , megírjuk a java féle titkosítónkat is, ezúttal azonban az eddigiektől eltérően, Java-t fogunk használni.
+        </para>
+	<para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#exor_titkosito">https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#exor_titkosito</link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>       
+	<para>
+<programlisting language="java"><![CDATA[
+public class NullaEgyDump {
+    public NullaEgyDump() {
+                
+        try {
+            
+            byte [] buffer = new byte[1];
+            
+            while(System.in.read(buffer) != -1) {
+                
+                for(int i=0; i<8; ++i) {
+
+                    int egye = buffer[0] & 0x00000080;
+                    
+                    if((egye>>>7) == 1)
+                        System.out.print(1);
+                    else
+                        System.out.print(0);
+
+                    buffer[0] <<= 1;
+                }
+            }
+            
+        } catch(java.io.IOException e) {
+            
+            System.out.println("Hiba az olvasáskor, kilépek. " + e);
+            
+        }
+        
+    }
+    
+    public static void main(String[] args) {
+        
+        new NullaEgyDump();
+        
+    }
+    
+}
+]]></programlisting>
+	Remélem ezúttal senki sem fog megharagudni illetve pánikba esik ha azt mondom, hogy nem fogok minden parancsot külön-külön elmagyarázni, hogy mit is csinál, ugyanis minden megegyezik a C programéval. Ettől függetlenül természetesen bemutatom, hogy mit is kell a terminálba ügyeskednünk.
+ <programlisting><![CDATA[ 
+hp@b3r3s:~/Dokumentumok/prog1$ javac ExorTitkosító.java
+hp@b3r3s:~/Dokumentumok/prog1$ java ExorTitkosító erdeti > kodolt.szöveg
+Malmö Svédország harmadik legnépesebb városa. 
+hp@b3r3s:~/Dokumentumok/prog1$ more kodolt.szöveg
+...valami olvashatatlan...
+hp@b3r3s:~/Dokumentumok/prog1$ java ExorTitkosító eredeti < kodolt.szöveg
+Malmö Svédország harmadik legnépesebb városa. 
+]]></programlisting>
+	</para>
+             
+    </section>        
+    <section xml:id="bhax-textbook-feladatok-caesar.EXOR-toro">
+        <title>C EXOR törő</title>
+        <para>
+            Írj egy olyan C programot, amely megtöri az első feladatban előállított titkos szövegeket!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+A program írásánál arra kell figyelnünk, pontosabban az mindennek az alapja, hogy tudnunk kell a kulcs hosszát illetve annak az 'X' hosszúságú kulcs elemeit.
+Emellet tudjuk a nyelvét is erre azonban csak a szöveg gyorsabb és egyszerűbb megtalalása miatt van szükség.
+Ezt úgy döntjük el, hogy a "feltört" szövegnél megnézzük, hogy tartalmazza-e a leg-
+gyakoribb magyar szavakat (pl.: hogy, nem, az, ha) és ha igen, akkor csak ezeket a szövegeket írjuk ki az
+output-ra.
+Az én esetemben a kulcs 6 karakter hosszúságúra sikeredett és nagyon kreatív módon a [s, b, e, r, e, m] karaktereket kapta. Gondolom senkinek sem jelent nagyobb fejtörést, hogy honnan jöttek ezek a betűk.
+</para>
+<para>
+A programunkba lényegében vektort hozhatunk létre, amiben tárolni fogjuk a használatos karaktereket. A léptetéssel nekünk nem kell bajlódni, arra ott lesz a for ciklusunk, a kulcs hossz pedig azt adja meg, hogy hány helyen kell
+léptetnünk az adott karaktereket, vagyis a for ciklusok számát adja meg.
+A törés nagyon hasonlít az előző feladatokban tárgyalt és bemutatott titkosító algoritmusainkra, annyi különbséggel, hogy most nem adunk meg argumentumokat. Mivel ismerjük a kulcsot (hiszen mi adjuk meg), így könnyen visszakapjuk az eredeti szöveget is.
+        </para>     
+	<para>
+Illetve bemutatom előtte a program fordítását, futtatását.
+</para>
+<para>
+ <programlisting><![CDATA[ 
+hp@b3r3s:~/Dokumentumok/bhax/prog1$  gcc toro_c.c -o toro_c -O3
+hp@b3r3s:~/Dokumentumok/bhax/prog1$  ./brute_c < titkos.szoveg
+]]></programlisting>
+</para>
+<para>
+Ha a kulcsunk és a tiszta szöveg megjelenik, akkor sikerrel jártunk.
+<programlisting><![CDATA[ 
+Kulcs: [beresm]
+Tiszta szoveg: Kezdetben vala az Íge, és az Íge vala az Istennél, és Isten vala az Íge.
+Ez kezdetben az Istennél vala.
+Minden ő általa lett és nála nélkül semmi sem lett, ami lett...
+]]></programlisting>
+</para>
+<para>
+A programunk megértéséhez elegendő lesz ez a toro.c kódból származó 'kisebb' kódcsipet.
+<programlisting language="c"><![CDATA[
+  char letters[] = {'s','b','e','r','e','m'};
+  int letterCount = sizeof(letters)/sizeof(letters[0]);
+
+  for (int ii = 0; ii <= letterCount; ++ii)
+    for (int ji = 0; ji <= letterCount; ++ji)
+      for (int ki = 0; ki <= letterCount; ++ki)
+	      for (int li = 0; li <= letterCount; ++li)
+	        for (int mi = 0; mi <= letterCount; ++mi)
+	          for (int ni = 0; ni <= letterCount; ++ni)
+	            for (int oi = 0; oi <= letterCount; ++oi)
+		          {
+                kulcs[0] = letters[ii];
+                kulcs[1] = letters[ji];
+                kulcs[2] = letters[ki];
+                kulcs[3] = letters[li];
+                kulcs[4] = letters[mi];
+                kulcs[5] = letters[ni];
+                kulcs[6] = letters[oi];
+                if (exor_tores (kulcs, KULCS_MERET, titkos, p - titkos))
+                  printf("Kulcs: [%c%c%c%c%c%c%c]\nTiszta szoveg: [%s]\n",letters[ii], letters[ji], letters[ki], letters[li], letters[mi], letters[ni], letters[oi], titkos);
+
+
+                exor (kulcs, KULCS_MERET, titkos, p - titkos);
+              }
+  return 0;
+}
+]]></programlisting>
+	</para>       
+    </section>        
+    <section>
+        <title>Neurális OR, AND és EXOR kapu</title>
+        <para>
+            R
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/Koyw6IH5ScQ">https://youtu.be/Koyw6IH5ScQ</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R</link>               
+        </para>
+	<para>
+	Azoknak esetleg akiknek újdonság lenne a neurális hálózat mint fogalom, itt egy gyorstalapló a <link xlink:href="https://regi.tankonyvtar.hu/hu/tartalom/tamop425/0026_neuralis_4_4/ch01.html">tankonyvtar</link> oldaláról:
+Neurális hálózatnak nevezzük azt a hardver vagy szoftver megvalósítású párhuzamos, elosztott működésre képes információfeldolgozó eszközt, amely:
+</para>
+<para>
+
+    -azonos, vagy hasonló típusú – általában nagyszámú – lokális feldolgozást végző műveleti elem, neuron (processing element, neuron) többnyire rendezett topológiájú, nagymértékben összekapcsolt rendszeréből áll,
+</para>
+<para>
+
+    -rendelkezik tanulási algoritmussal (learning algorithm), mely általában minta alapján való tanulást jelent, és amely az információfeldolgozás módját határozza meg,
+</para>
+<para>
+
+    -rendelkezik a megtanult információ felhasználását lehetővé tevő információ előhívási, vagy röviden előhívási algoritmussal (recall algorithm).
+	</para>
+	<para>
+	<programlisting><![CDATA[
+	library(neuralnet)
+
+a1    <- c(0,1,0,1)
+a2    <- c(0,0,1,1)
+OR    <- c(0,1,1,1)
+
+or.data <- data.frame(a1, a2, OR)
+
+nn.or <- neuralnet(OR~a1+a2, or.data, hidden=0, linear.output=FALSE, stepmax = 1e+07, threshold = 0.000001)
+
+plot(nn.or)
+
+compute(nn.or, or.data[,1:2])
+
+
+a1    <- c(0,1,0,1)
+a2    <- c(0,0,1,1)
+OR    <- c(0,1,1,1)
+AND   <- c(0,0,0,1)
+
+orand.data <- data.frame(a1, a2, OR, AND)
+
+nn.orand <- neuralnet(OR+AND~a1+a2, orand.data, hidden=0, linear.output=FALSE, stepmax = 1e+07, threshold = 0.000001)
+
+plot(nn.orand)
+
+compute(nn.orand, orand.data[,1:2])
+
+
+
+a1      <- c(0,1,0,1)
+a2      <- c(0,0,1,1)
+EXOR    <- c(0,1,1,0)
+
+exor.data <- data.frame(a1, a2, EXOR)
+
+nn.exor <- neuralnet(EXOR~a1+a2, exor.data, hidden=0, linear.output=FALSE, stepmax = 1e+07, threshold = 0.000001)
+
+plot(nn.exor)
+
+compute(nn.exor, exor.data[,1:2])
+
+
+
+a1      <- c(0,1,0,1)
+a2      <- c(0,0,1,1)
+EXOR    <- c(0,1,1,0)
+
+exor.data <- data.frame(a1, a2, EXOR)
+
+nn.exor <- neuralnet(EXOR~a1+a2, exor.data, hidden=c(6, 4, 6), linear.output=FALSE, stepmax = 1e+07, threshold = 0.000001)
+
+plot(nn.exor)
+
+compute(nn.exor, exor.data[,1:2])	
+	]]></programlisting>
+	</para>
+        <para>
+          A fenti programban a neuralnet libraryt használjuk. A program első részében az OR logikai műveletet mutatjuk be és taníttatjuk meg a programunkkal. Az OR művelet eredménye 1, ha a két tag közül legalább az egyik 1-es. Ezt a szabályt adjuk meg neki a program elején az ’a1’, ’a2’ és ’OR’ segítségével.
+A program többi részében is ezt láthatjuk az EXOR-ral és az AND-del. A program a szabályok megadásával
+megtanulja, hogy az EXOR ( különböző bitek -&gt; 1, azonos bitek -&gt; 0 ) és az AND ( különböző vagy 0 bitekUniverzális programozás
+-&gt; 0, két 1-es bit -&gt; 1 ) hogyan működik.
+
+        </para> 
+	<figure>
+            <title>Gráf alapú modell</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Caesar/neural.png" scale="40"/>
+                </imageobject>
+                <textobject>
+                    <phrase>Gráf alapú modell</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+           
+    </section>        
+    <section>
+        <title>Hiba-visszaterjesztéses perceptron</title>
+        <para>
+            C++
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/XpBnR31BRJY">https://youtu.be/XpBnR31BRJY</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/nbatfai/nahshon/blob/master/ql.hpp#L64">https://github.com/nbatfai/nahshon/blob/master/ql.hpp#L64</link>               
+        </para>
+        <para>
+<programlisting language="c"><![CDATA[
+#include <iostream>
+#include "mlp.hpp"
+#include <png++/png.hpp>
+int main ( int argc, char **argv){
+png::image <png::rgb_pixel> png_image (argv[1]);
+int size = png_image.get_width()*png_image.get_height();
+Perceptron* p = new Perceptron (3, size, 256, 1);
+double* image = new double[size];
+for ( int i {0}; i < png_image.get_width(); ++i)
+for ( int j {0}; j < png_image.get_height(); ++j)
+image[i*png_image.get_width() +j] = png_image[i][j].red;
+double value = (*p)(image);
+std::cout<< value <<std::endl;
+delete p;
+delete [] image;
+FT
+}
+]]></programlisting>
+<figure>
+            <title>Gráf alapú modell</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Caesar/mandel.png" scale="40"/>
+                </imageobject>
+                <textobject>
+                    <phrase>Gráf alapú modell</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+        </para>  
+	<para>
+A teszteléshez a ql.hpp-ben található Perceptron osztályt használjuk. Ezzel a programmal a mandelbrot
+halmaznak a képét olvassuk be a neurális hálónk bemenetébe a következőképpen:
+<programlisting><![CDATA[
+hp@b3r3s:~/Dokumentumok/bhax/prog1$ gcc main.cpp mlp.cpp -o percep -lpng
+hp@b3r3s:~/Dokumentumok/bhax/prog1$ ./percep mandel.png
+]]></programlisting>
+Egy neurális háló 3 rétegből áll. Az első réteg
+a bemeneti réteg, ennek a rétegnek a mérete a kép szélessége * kép magassága. A második réteg a rejtett
+réteg, itt alakítjuk át a bemeneten kapott információt, itt számolások történnek, a fenti kódban ez a két for
+ciklussal történik. A harmadik réteg a kimeneti réteg, itt a kapott eredményt iratjuk ki.
+	</para>          
+    </section>        
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>     
+
+    <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Mandelbrot!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section xml:id="bhax-textbook-feladatok-mandelbrot.Mandelbrot">
+        <title>A Mandelbrot halmaz</title>
+        <para>
+            Írj olyan C programot, amely kiszámolja a Mandelbrot halmazt!     
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/gvaqijHlRUs">https://youtu.be/gvaqijHlRUs</link>
+        </para>
+        <para>
+            Megoldás forrása:                
+ <link xlink:href="../../../bhax/attention_raising/CUDA/mandelpngt.c++">
+                <filename>bhax/attention_raising/CUDA/mandelpngt.c++</filename>
+            </link> nevű állománya.            
+        </para>
+	<figure>
+            <title>A Mandelbrot halmaz a komplex síkon</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Caesar/mandel.png" scale="40"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz a komplex síkon</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+        <para>
+            A Mandelbrot halmazt 1980-ban találta meg Benoit Mandelbrot a 
+            komplex számsíkon. Komplex számok azok a számok, amelyek körében 
+            válaszolni lehet az olyan egyébként értelmezhetetlen kérdésekre, 
+            hogy melyik az a két szám, amelyet összeszorozva -9-et kapunk, 
+            mert ez a szám például a 3i komplex szám.
+        </para>
+        <para>             
+            A Mandelbrot halmazt úgy láthatjuk meg, hogy a sík origója középpontú 4 
+            oldalhosszúságú négyzetbe lefektetünk egy, mondjuk 800x800-as 
+            rácsot és kiszámoljuk, hogy a rács pontjai mely komplex számoknak 
+            felelnek meg. A rács minden pontját megvizsgáljuk a 
+            z<subscript>n+1</subscript>=z<subscript>n</subscript>
+            <superscript>2</superscript>+c, 
+            (0&lt;=n) képlet alapján úgy, hogy a c az éppen vizsgált rácspont. 
+            A z0 az origó. Alkalmazva a képletet a 
+        </para>
+
+        <itemizedlist>
+            <listitem>
+                <para>
+                    z<subscript>0</subscript> = 0
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    z<subscript>1</subscript> = 0<superscript>2</superscript>+c = c
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    z<subscript>2</subscript> = c<superscript>2</superscript>+c
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    z<subscript>3</subscript> = (c<superscript>2</superscript>+c)<superscript>2</superscript>+c
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    z<subscript>4</subscript> = ((c<superscript>2</superscript>+c)<superscript>2</superscript>+c)<superscript>2</superscript>+c
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    ... s így tovább.
+                </para>
+            </listitem>
+        </itemizedlist>
+        <para>
+            Azaz kiindulunk az origóból (z<subscript>0</subscript>) 
+            és elugrunk a rács első pontjába a z<subscript>1</subscript> = c-be, 
+            aztán a c-től függően a további z-kbe. Ha ez az utazás kivezet a 
+            2 sugarú körből, akkor azt mondjuk, hogy az a vizsgált rácspont 
+            nem a Mandelbrot halmaz eleme. Nyilván nem tudunk végtelen sok 
+            z-t megvizsgálni, ezért csak véges sok z elemet nézünk meg minden 
+            rácsponthoz. Ha eközben nem lép ki a körből, akkor feketére 
+            színezzük, hogy az a c rácspont a halmaz része. (Színes meg úgy 
+            lesz a kép, hogy változatosan színezzük, például minél későbbi 
+            z-nél lép ki a körből, annál sötétebbre). 
+        </para> 
+	<para>
+<programlisting language="c"><![CDATA[
+#include <iostream>
+#include "png++/png.hpp"
+#include <sys/times.h>
+#define MERET 600
+#define ITER_HAT 32000
+void
+mandel (int kepadat[MERET][MERET]) {
+// Mérünk időt (PP 64)
+clock_t delta = clock ();
+// Mérünk időt (PP 66)
+struct tms tmsbuf1, tmsbuf2;
+times (&tmsbuf1);
+// számítás adatai
+float a = -2.0, b = .7, c = -1.35, d = 1.35;
+int szelesseg = MERET, magassag = MERET, iteraciosHatar = ITER_HAT;
+// a számítás
+float dx = (b - a) / szelesseg;
+float dy = (d - c) / magassag;
+float reC, imC, reZ, imZ, ujreZ, ujimZ;
+// Hány iterációt csináltunk?
+int iteracio = 0;
+// Végigzongorázzuk a szélesség x magasság rácsot:
+for (int j = 0; j < magassag; ++j)
+{
+//sor = j;
+for (int k = 0; k < szelesseg; ++k)
+{
+// c = (reC, imC) a rács csomópontjainak
+// megfelelő komplex szám
+reC = a + k * dx;Univerzális programozás
+
+imC = d - j * dy;
+// z_0 = 0 = (reZ, imZ)
+reZ = 0;
+imZ = 0;
+iteracio = 0;
+// z_{n+1} = z_n * z_n + c iterációk
+// számítása, amíg |z_n| < 2 vagy még
+// nem értük el a 255 iterációt, ha
+// viszont elértük, akkor úgy vesszük,
+// hogy a kiinduláci c komplex számra
+// az iteráció konvergens, azaz a c a
+// Mandelbrot halmaz eleme
+while (reZ * reZ + imZ * imZ < 4 && iteracio < iteraciosHatar)
+{
+// z_{n+1} = z_n * z_n + c
+ujreZ = reZ * reZ - imZ * imZ + reC;
+ujimZ = 2 * reZ * imZ + imC;
+reZ = ujreZ;
+imZ = ujimZ;
+++iteracio;
+}
+kepadat[j][k] = iteracio;
+}
+}
+times (&tmsbuf2);
+std::cout << tmsbuf2.tms_utime - tmsbuf1.tms_utime
++ tmsbuf2.tms_stime - tmsbuf1.tms_stime << std::endl;
+delta = clock () - delta;
+std::cout << (float) delta / CLOCKS_PER_SEC << " sec" << std::endl;
+}
+int
+main (int argc, char *argv[])
+{
+if (argc != 2)
+{
+std::cout << "Hasznalat: ./mandelpng fajlnev";
+return -1;
+}
+int kepadat[MERET][MERET];
+mandel(kepadat);
+png::image < png::rgb_pixel > kep (MERET, MERET);
+FT
+for (int j = 0; j < MERET; ++j)
+{
+//sor = j;
+for (int k = 0; k < MERET; ++k)
+{
+kep.set_pixel (k, j,
+png::rgb_pixel (255 -
+(255 * kepadat[j][k]) / ITER_HAT ←-
+,
+255 -
+(255 * kepadat[j][k]) / ITER_HAT ←-
+,
+255 -
+(255 * kepadat[j][k]) / ITER_HAT ←-
+));
+}
+}
+kep.write (argv[1]);
+std::cout << argv[1] << " mentve" << std::endl;
+}
+]]></programlisting>
+	</para>      
+        <para>
+Ezután már csak annyi dolgunk van, hogy a programunkat lefordítsuk, majd futtassuk a szokásos parancsokkal.        
+        </para>
+
+    </section>        
+        
+    <section>
+        <title>A Mandelbrot halmaz a <filename>std::complex</filename> osztállyal</title>
+        <para>
+            Írj olyan C++ programot, amely kiszámolja a Mandelbrot halmazt!                     
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/gvaqijHlRUs">https://youtu.be/gvaqijHlRUs</link>
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>        
+A <link xlink:href="#bhax-textbook-feladatok-mandelbrot.Mandelbrot">Mandelbrot halmaz</link> pontban vázolt
+ismert algoritmust valósítja meg a repó <link xlink:href="../../../bhax/attention_raising/Mandelbrot/3.1.2.cpp">
+                <filename>bhax/attention_raising/Mandelbrot/3.1.2.cpp</filename>
+            </link> nevű állománya.
+        </para>
+        
+        <programlisting language="c++"><![CDATA[
+#include <iostream>
+#include "png++/png.hpp"
+#include <complex>
+int
+main ( int argc, char *argv[] )
+{
+int szelesseg = 1920;
+int magassag = 1080;
+int iteraciosHatar = 255;
+double a = -1.9;
+double b = 0.7;
+double c = -1.3;
+double d = 1.3;
+if ( argc == 9 )
+{
+szelesseg = atoi ( argv[2] );
+magassag = atoi ( argv[3] );
+iteraciosHatar = atoi ( argv[4] );
+a = atof ( argv[5] );
+b = atof ( argv[6] );
+c = atof ( argv[7] );
+d = atof ( argv[8] );
+}
+else
+{
+std::cout << "Hasznalat: ./3.1.2 fajlnev szelesseg magassag n a b c d ←-
+" << std::endl;
+return -1;
+}
+png::image < png::rgb_pixel > kep ( szelesseg, magassag );
+double dx = ( b - a ) / szelesseg;
+double dy = ( d - c ) / magassag;
+double reC, imC, reZ, imZ;
+int iteracio = 0;
+std::cout << "Szamitas\n";
+FT
+// j megy a sorokon
+for ( int j = 0; j < magassag; ++j )
+{
+// k megy az oszlopokon
+for ( int k = 0; k < szelesseg; ++k )
+{
+// c = (reC, imC) a halo racspontjainak
+// megfelelo komplex szam
+reC = a + k * dx;
+imC = d - j * dy;
+std::complex<double> c ( reC, imC );
+std::complex<double> z_n ( 0, 0 );
+iteracio = 0;
+while ( std::abs ( z_n ) < 4 && iteracio < iteraciosHatar )
+{
+z_n = z_n * z_n + c;
+++iteracio;
+}
+kep.set_pixel ( k, j,
+png::rgb_pixel ( iteracio%255, (iteracio*iteracio ←-
+)%255, 0 ) );
+}
+int szazalek = ( double ) j / ( double ) magassag * 100.0;
+std::cout << "\r" << szazalek << "%" << std::flush;
+}
+kep.write ( argv[1] );
+std::cout << "\r" << argv[1] << " mentve." << std::endl;
+}
+]]></programlisting>  
+
+      <figure>
+            <title>A Mandelbrot halmaz</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Mandelbrot/mandel.png" scale="15"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+
+    </section>        
+                
+    <section>
+        <title>Biomorfok</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/IJMbgRzY76E">https://youtu.be/IJMbgRzY76E</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf</link>
+        </para>
+        <para>
+            A biomorfokra (a Julia halmazokat rajzoló bug-os programjával) 
+            rátaláló Clifford Pickover azt hitte természeti törvényre 
+            bukkant: <link xlink:href="https://www.emis.de/journals/TJNSA/includes/files/articles/Vol9_Iss5_2305--2315_Biomorphs_via_modified_iterations.pdf">https://www.emis.de/journals/TJNSA/includes/files/articles/Vol9_Iss5_2305--2315_Biomorphs_via_modified_iterations.pdf</link> (lásd a 2307. oldal aljától).
+        </para>       
+        <para>
+            A különbség a <link xlink:href="#bhax-textbook-feladatok-mandelbrot.Mandelbrot">Mandelbrot halmaz</link>
+            és a Julia halmazok között az, hogy a komplex iterációban az előbbiben a c változó, utóbbiban pedig állandó. 
+            A következő Mandelbrot csipet azt mutatja, hogy a c befutja a vizsgált összes rácspontot.
+        </para>       
+        <programlisting language="c++">
+<![CDATA[  // j megy a sorokon
+  for ( int j = 0; j < magassag; ++j )
+    {
+      for ( int k = 0; k < szelesseg; ++k )
+        {
+
+          // c = (reC, imC) a halo racspontjainak
+          // megfelelo komplex szam
+
+          reC = a + k * dx;
+          imC = d - j * dy;
+          std::complex<double> c ( reC, imC );
+
+          std::complex<double> z_n ( 0, 0 );
+          iteracio = 0;
+
+          while ( std::abs ( z_n ) < 4 && iteracio < iteraciosHatar )
+            {
+              z_n = z_n * z_n + c;
+
+              ++iteracio;
+            }
+]]>
+        </programlisting>        
+        <para>
+            Ezzel szemben a Julia halmazos csipetben a cc nem változik, hanem minden vizsgált
+            z rácspontra ugyanaz.
+        </para>
+        <programlisting language="c++">
+<![CDATA[    // j megy a sorokon
+    for ( int j = 0; j < magassag; ++j )
+    {
+        // k megy az oszlopokon
+        for ( int k = 0; k < szelesseg; ++k )
+        {
+            double reZ = a + k * dx;
+            double imZ = d - j * dy;
+            std::complex<double> z_n ( reZ, imZ );
+
+            int iteracio = 0;
+            for (int i=0; i < iteraciosHatar; ++i)
+            {
+                z_n = std::pow(z_n, 3) + cc;
+                if(std::real ( z_n ) > R || std::imag ( z_n ) > R)
+                {
+                    iteracio = i;
+                    break;
+                }
+            }
+]]>
+        </programlisting>                         
+        
+        <para>
+            A bimorfos algoritmus pontos megismeréséhez ezt a cikket javasoljuk: 
+            <link xlink:href="https://www.emis.de/journals/TJNSA/includes/files/articles/Vol9_Iss5_2305--2315_Biomorphs_via_modified_iterations.pdf">https://www.emis.de/journals/TJNSA/includes/files/articles/Vol9_Iss5_2305--2315_Biomorphs_via_modified_iterations.pdf</link>.
+            Az is jó gyakorlat, ha magából ebből a cikkből from scratch kódoljuk be a sajátunkat, de mi a királyi úton járva a 
+            korábbi <link xlink:href="#bhax-textbook-feladatok-mandelbrot.Mandelbrot">Mandelbrot halmazt</link> kiszámoló 
+            forrásunkat módosítjuk. Viszont a program változóinak elnevezését összhangba hozzuk a közlemény jelöléseivel:
+        </para>       
+        <programlisting language="c++">
+<![CDATA[
+#include <iostream>
+#include "png++/png.hpp"
+#include <complex>
+
+int
+main ( int argc, char *argv[] )
+{
+
+    int szelesseg = 1920;
+    int magassag = 1080;
+    int iteraciosHatar = 255;
+    double xmin = -1.9;
+    double xmax = 0.7;
+    double ymin = -1.3;
+    double ymax = 1.3;
+    double reC = .285, imC = 0;
+    double R = 10.0;
+
+    if ( argc == 12 )
+    {
+        szelesseg = atoi ( argv[2] );
+        magassag =  atoi ( argv[3] );
+        iteraciosHatar =  atoi ( argv[4] );
+        xmin = atof ( argv[5] );
+        xmax = atof ( argv[6] );
+        ymin = atof ( argv[7] );
+        ymax = atof ( argv[8] );
+        reC = atof ( argv[9] );
+        imC = atof ( argv[10] );
+        R = atof ( argv[11] );
+
+    }
+    else
+    {
+        std::cout << "Hasznalat: ./3.1.2 fajlnev szelesseg magassag n a b c d reC imC R" << std::endl;
+        return -1;
+    }
+
+    png::image < png::rgb_pixel > kep ( szelesseg, magassag );
+
+    double dx = ( xmax - xmin ) / szelesseg;
+    double dy = ( ymax - ymin ) / magassag;
+
+    std::complex<double> cc ( reC, imC );
+
+    std::cout << "Szamitas\n";
+
+    // j megy a sorokon
+    for ( int y = 0; y < magassag; ++y )
+    {
+        // k megy az oszlopokon
+
+        for ( int x = 0; x < szelesseg; ++x )
+        {
+
+            double reZ = xmin + x * dx;
+            double imZ = ymax - y * dy;
+            std::complex<double> z_n ( reZ, imZ );
+
+            int iteracio = 0;
+            for (int i=0; i < iteraciosHatar; ++i)
+            {
+
+                z_n = std::pow(z_n, 3) + cc;
+                //z_n = std::pow(z_n, 2) + std::sin(z_n) + cc;
+                if(std::real ( z_n ) > R || std::imag ( z_n ) > R)
+                {
+                    iteracio = i;
+                    break;
+                }
+            }
+
+            kep.set_pixel ( x, y,
+                            png::rgb_pixel ( (iteracio*20)%255, (iteracio*40)%255, (iteracio*60)%255 ));
+        }
+
+        int szazalek = ( double ) y / ( double ) magassag * 100.0;
+        std::cout << "\r" << szazalek << "%" << std::flush;
+    }
+
+    kep.write ( argv[1] );
+    std::cout << "\r" << argv[1] << " mentve." << std::endl;
+
+}
+]]>
+        </programlisting>   
+      <figure>
+            <title>A biomorf</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Mandelbrot/biomorf.png" scale="15"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>                              
+                                          
+                                                                            
+    </section>                     
+
+    <section>
+        <title>A Mandelbrot halmaz CUDA megvalósítása</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/gvaqijHlRUs">https://youtu.be/gvaqijHlRUs</link>
+        </para>
+        <para>
+            Megoldás forrása:                
+ <link xlink:href="../../../bhax/attention_raising/CUDA/mandelpngc_60x60_100.cu">
+                <filename>bhax/attention_raising/CUDA/mandelpngc_60x60_100.cu</filename>
+            </link> nevű állománya.            
+        </para>
+    </section>                     
+
+    <section>
+        <title>Mandelbrot nagyító és utazó C++ nyelven</title>
+        <para>
+            Építs GUI-t a Mandelbrot algoritmusra, lehessen egérrel nagyítani egy területet, illetve egy pontot
+            egérrel kiválasztva vizualizálja onnan a komplex iteréció bejárta z<subscript>n</subscript> komplex számokat!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href=""/>
+            Illetve <link xlink:href="https://bhaxor.blog.hu/2018/09/02/ismerkedes_a_mandelbrot_halmazzal">https://bhaxor.blog.hu/2018/09/02/ismerkedes_a_mandelbrot_halmazzal</link>.        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG-BHAX/Prog1_5.pdf"> 26-33 </link> fólián át láthatjuk, illetve az <link xlink:href="https://sourceforge.net/p/udprog/code/ci/master/tree/source/binom/Batfai-Barki/frak/"> ITT </link> látható repóban is.
+        </para>
+	<para>
+	A program fordítása és futtatás után a lenti képet fogjuk kapni eredményül, amin belül az egér segítségével nagyíthatunk kedvünkre.
+	</para>
+	<figure>
+            <title>A felnagyított Mandelbrot halmaz</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Mandelbrot/nagyito.png" scale="30"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure> 
+    </section>                     
+                                                                                                                                                                            
+    <section>
+        <title>Mandelbrot nagyító és utazó Java nyelven</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/Ui3B6IJnssY">https://youtu.be/Ui3B6IJnssY</link>, 4:27-től.
+            Illetve <link xlink:href="https://bhaxor.blog.hu/2018/09/02/ismerkedes_a_mandelbrot_halmazzal">https://bhaxor.blog.hu/2018/09/02/ismerkedes_a_mandelbrot_halmazzal</link>.
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apbs02.html#id570518">https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apbs02.html#id570518</link>
+        </para>
+	<para>
+A forrásban fellelhető kódunk ezúttal, ahogy azt a feladat is megköveteli, Java nyelven íródott de ez ne ijesszen meg senkit, ugyan úgy működik akár a c++-ban megírt program.
+       <programlisting language="java"><![CDATA[
+public class MandelbrotHalmazNagyító extends MandelbrotHalmaz {
+    /** A nagyítandó kijelölt területet bal felső sarka. */
+    private int x, y;
+    /** A nagyítandó kijelölt terület szélessége és magassága. */
+    private int mx, my;
+    /**
+     * Létrehoz egy a Mandelbrot halmazt a komplex sík
+     * [a,b]x[c,d] tartománya felett kiszámoló és nygítani tudó
+     * <code>MandelbrotHalmazNagyító</code> objektumot.
+     *
+     * @param      a              a [a,b]x[c,d] tartomány a koordinátája.
+     * @param      b              a [a,b]x[c,d] tartomány b koordinátája.
+     * @param      c              a [a,b]x[c,d] tartomány c koordinátája.
+     * @param      d              a [a,b]x[c,d] tartomány d koordinátája.
+     * @param      szélesség      a halmazt tartalmazó tömb szélessége.
+     * @param      iterációsHatár a számítás pontossága.
+     */
+    public MandelbrotHalmazNagyító(double a, double b, double c, double d,
+            int szélesség, int iterációsHatár) {
+        // Az ős osztály konstruktorának hívása
+        super(a, b, c, d, szélesség, iterációsHatár);
+        setTitle("A Mandelbrot halmaz nagyításai");
+        // Egér kattintó események feldolgozása:
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            // Egér kattintással jelöljük ki a nagyítandó területet
+            // bal felső sarkát vagy ugyancsak egér kattintással
+            // vizsgáljuk egy adott pont iterációit:
+            public void mousePressed(java.awt.event.MouseEvent m) {
+                // Az egérmutató pozíciója
+                x = m.getX();
+                y = m.getY();
+                // Az 1. egér gombbal a nagyítandó terület kijelölését
+                // végezzük:
+                if(m.getButton() == java.awt.event.MouseEvent.BUTTON1 ) {
+                    // A nagyítandó kijelölt területet bal felső sarka: (x,y)
+                    // és szélessége (majd a vonszolás növeli)
+                    mx = 0;
+                    my = 0;
+                    repaint();
+                } else {
+                    // Nem az 1. egér gombbal az egérmutató mutatta c
+                    // komplex számból indított iterációkat vizsgálhatjuk
+                    MandelbrotIterációk iterációk =
+                            new MandelbrotIterációk(
+                            MandelbrotHalmazNagyító.this, 50);
+                    new Thread(iterációk).start();
+                }
+            }
+            // Vonszolva kijelölünk egy területet...
+            // Ha felengedjük, akkor a kijelölt terület
+            // újraszámítása indul:
+            public void mouseReleased(java.awt.event.MouseEvent m) {
+                if(m.getButton() == java.awt.event.MouseEvent.BUTTON1 ) {
+                    double dx = (MandelbrotHalmazNagyító.this.b
+                            - MandelbrotHalmazNagyító.this.a)
+                            /MandelbrotHalmazNagyító.this.szélesség;
+                    double dy = (MandelbrotHalmazNagyító.this.d
+                            - MandelbrotHalmazNagyító.this.c)
+                            /MandelbrotHalmazNagyító.this.magasság;
+                    // Az új Mandelbrot nagyító objektum elkészítése:
+                    new MandelbrotHalmazNagyító(
+                            MandelbrotHalmazNagyító.this.a+x*dx,
+                            MandelbrotHalmazNagyító.this.a+x*dx+mx*dx,
+                            MandelbrotHalmazNagyító.this.d-y*dy-my*dy,
+                            MandelbrotHalmazNagyító.this.d-y*dy,
+                            600,
+                            MandelbrotHalmazNagyító.this.iterációsHatár);
+                }
+            }
+        });
+        // Egér mozgás események feldolgozása:
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            // Vonszolással jelöljük ki a négyzetet:
+            public void mouseDragged(java.awt.event.MouseEvent m) {
+                // A nagyítandó kijelölt terület szélessége és magassága:
+                mx = m.getX() - x;
+                my = m.getY() - y;
+                repaint();
+            }
+        });
+    }
+    /**
+     * Pillanatfelvételek készítése.
+     */
+    public void pillanatfelvétel() {
+        // Az elmentendő kép elkészítése:
+        java.awt.image.BufferedImage mentKép =
+                new java.awt.image.BufferedImage(szélesség, magasság,
+                java.awt.image.BufferedImage.TYPE_INT_RGB);
+        java.awt.Graphics g = mentKép.getGraphics();
+        g.drawImage(kép, 0, 0, this);
+        g.setColor(java.awt.Color.BLACK);
+        g.drawString("a=" + a, 10, 15);
+        g.drawString("b=" + b, 10, 30);
+        g.drawString("c=" + c, 10, 45);
+        g.drawString("d=" + d, 10, 60);
+        g.drawString("n=" + iterációsHatár, 10, 75);
+        if(számításFut) {
+            g.setColor(java.awt.Color.RED);
+            g.drawLine(0, sor, getWidth(), sor);
+        }
+        g.setColor(java.awt.Color.GREEN);
+        g.drawRect(x, y, mx, my);
+        g.dispose();
+        // A pillanatfelvétel képfájl nevének képzése:
+        StringBuffer sb = new StringBuffer();
+        sb = sb.delete(0, sb.length());
+        sb.append("MandelbrotHalmazNagyitas_");
+        sb.append(++pillanatfelvételSzámláló);
+        sb.append("_");
+        // A fájl nevébe belevesszük, hogy melyik tartományban
+        // találtuk a halmazt:
+        sb.append(a);
+        sb.append("_");
+        sb.append(b);
+        sb.append("_");
+        sb.append(c);
+        sb.append("_");
+        sb.append(d);
+        sb.append(".png");
+        // png formátumú képet mentünk
+        try {
+            javax.imageio.ImageIO.write(mentKép, "png",
+                    new java.io.File(sb.toString()));
+        } catch(java.io.IOException e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * A nagyítandó kijelölt területet jelző négyzet kirajzolása.
+     */
+    public void paint(java.awt.Graphics g) {
+        // A Mandelbrot halmaz kirajzolása
+        g.drawImage(kép, 0, 0, this);
+        // Ha éppen fut a számítás, akkor egy vörös
+        // vonallal jelöljük, hogy melyik sorban tart:
+        if(számításFut) {
+            g.setColor(java.awt.Color.RED);
+            g.drawLine(0, sor, getWidth(), sor);
+        }
+        // A jelző négyzet kirajzolása:
+        g.setColor(java.awt.Color.GREEN);
+        g.drawRect(x, y, mx, my);
+    }
+    /**
+     * Hol áll az egérmutató?
+     * @return int a kijelölt pont oszlop pozíciója.
+     */    
+    public int getX() {
+        return x;
+    }
+    /**
+     * Hol áll az egérmutató?
+     * @return int a kijelölt pont sor pozíciója.
+     */    
+    public int getY() {
+        return y;
+    }
+    /**
+     * Példányosít egy Mandelbrot halmazt nagyító obektumot.
+     */
+    public static void main(String[] args) {
+        // A kiinduló halmazt a komplex sík [-2.0, .7]x[-1.35, 1.35]
+        // tartományában keressük egy 600x600-as hálóval és az
+        // aktuális nagyítási pontossággal:
+        new MandelbrotHalmazNagyító(-2.0, .7, -1.35, 1.35, 600, 255);
+    }
+} ]]></programlisting>   
+	</para>
+
+
+    </section>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>     
+
+    <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Welch!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Első osztályom</title>
+        <para>
+            Valósítsd meg C++-ban és Java-ban az módosított polártranszformációs algoritmust! A matek háttér 
+            teljesen irreleváns, csak annyiban érdekes, hogy az algoritmus egy számítása során két normálist
+            számol ki, az egyiket elspájzolod és egy további logikai taggal az osztályban jelzed, hogy van vagy
+            nincs eltéve kiszámolt szám.
+        </para>
+        <para>
+           Megoldás forrása: A második előadás <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG-BHAX/Prog1_5.pdf">17-22.</link> fóliában fellelhető.
+        </para>
+        <para>
+       <programlisting language="c++"><![CDATA[
+#ifndef POLARGEN_H
+#define POLARGEN_H
+#include <cstdlib>
+#include <cmath>
+#include <ctime>
+class PolarGen
+{
+	public:
+	PolarGen ()
+	{
+	nincsTarolt = true;
+	std::srand (std::time (NULL));
+	}
+	~PolarGen(){
+	}	
+	double kovetkezo();
+	private:
+	bool nincsTarolt;
+	double Tarolt;
+};
+#endif
+]]></programlisting>  
+        </para>
+        <para>
+          Ezután definiáljuk a Polargen osztályt:
+       <programlisting language="c++"><![CDATA[
+#include "polargen.h"
+
+double
+PolarGen::kovetkezo ()
+{
+	if(nincsTarolt){
+	double u1, u2, v1, v2, w;
+	do{
+	u1 = std::rand() / (RAND_MAX + 1.0);
+	u2 = std::rand() / (RAND_MAX + 1.0);
+	v1 = 2*u1 -1;
+	v2 = 2*u2 -1;
+	w = v1*v1+v2*v2;
+	}
+	while( w > 1);
+	double r = std::sqrt((-2*std::log(w)) / w);
+	#include "polargen.h"
+	Tarolt = r*v2;
+	nincsTarolt = !nincsTarolt;
+	return r*v1;
+	}
+	}
+	else
+	{
+	nincsTarolt = !nincsTarolt;
+
+	return Tarolt;
+	}
+}
+]]></programlisting>  
+        </para>
+	<para>
+Nem szabad megfeledkeznünk a main függvényünk megírásáról sem:
+<programlisting language="c++"><![CDATA[
+#include <iostream>
+#include "polargen.h"
+
+int main(int argc, char **argv){
+	PolarGen pg;
+	for (int i = 0; i < 10; ++i)
+	std::cout <<pg.kovetkezo() << std::endl;
+
+	return 0;
+}
+]]></programlisting>  
+	</para>  
+	<para>
+Nem marad el ezúttal sem a programunk fordítása majd futtatása ami a szokásos módon fog zajlani:
+<programlisting><![CDATA[
+hp@b3r3s:~/Dokumentumok$ g++ polar.cpp polargen.h polargen.cpp -o polargen
+hp@b3r3s:~/Dokumentumok$ ./polargen
+0.581635
+-0.330038
+-1.53916
+0.67204
+-1.56939
+1.89336
+-0.845487
+-1.09789
+-0.0786508
+-1.26333
+
+]]></programlisting>  
+	</para>              
+    </section>        
+
+    <section>
+        <title>LZW</title>
+        <para>
+            Valósítsd meg C-ben az LZW algoritmus fa-építését!
+        </para>
+        <para>
+     Megoldás forrása: <link xlink:href="https://progpater.blog.hu/2011/03/05/labormeres_otthon_avagy_hogyan_dolgozok_fel_egy_pedat">Programozó Páternoszter</link> by: Bátfai Norbert    
+        </para>
+        <para>
+        A feladatunk megoldását tartalmazza a 6.6 Mozgató szemantika feladata, illetve a Welch mappában a z.c fájl.  
+        </para>
+    </section>        
+        
+    <section>
+        <title> Fabejárás</title>
+        <para>
+            Járd be az előző (inorder bejárású) fát pre- és posztorder is!
+        </para>
+        <para>
+
+        </para>
+        <para>
+            Egy fát mint azt már az Adatszerkezetek és algoritmusok órán is elsajátíthattuk, 3 féle képpen tudjuk bejárni. Ezek a bejárások pedig a következők: Inorder, postorder és preorder. 
+	<para>
+	Ezek szemléltetésére igénybe kellet hogy vegyem a hatalmas paint tudásomat. Ha esetleg nem lenne elég egyértelmű, a zöld színnel jelölt számok, az egyes csomópontok beolvasási sorszámát jelöli. (1-től 7-ig)
+	</para> 
+	<para>
+ 	<figure>
+            <title>INORDER</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Welch/inorder.png" scale="50"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	<figure>
+            <title>POSTORDER</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Welch/postorder.png" scale="50"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	<figure>
+            <title>PREODER</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Welch/preorder.png" scale="50"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	</para>            
+        </para>
+    </section>        
+                        
+    <section>
+        <title>Tag a gyökér</title>
+        <para>
+            Az LZW algoritmust ültesd át egy C++ osztályba, legyen egy Tree és egy beágyazott Node
+            osztálya. A gyökér csomópont legyen kompozícióban a fával!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=_mu54BDkqiQ">https://www.youtube.com/watch?v=_mu54BDkqiQ</link>
+        </para>
+        <para>
+        A feladatunk megoldását tartalmazza a 6.6 Mozgató szemantika feladata.    
+        </para>
+    </section>        
+                
+    <section>
+        <title>Mutató a gyökér</title>
+        <para>
+            Írd át az előző forrást, hogy a gyökér csomópont ne kompozícióban, csak aggregációban legyen a 
+            fával!
+        </para>
+        <para>
+           Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=_mu54BDkqiQ">https://www.youtube.com/watch?v=_mu54BDkqiQ</link>
+        </para>
+        <para>
+        A feladatunk megoldását tartalmazza a 6.6 Mozgató szemantika feladata.    
+        </para>
+    </section>                     
+
+    <section>
+        <title>Mozgató szemantika</title>
+        <para>
+            Írj az előző programhoz mozgató konstruktort és értékadást, a mozgató konstruktor legyen a mozgató
+            értékadásra alapozva!
+        </para>
+        <para>
+Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=QBD3zh5OJ0Y">https://www.youtube.com/watch?v=QBD3zh5OJ0Y</link>
+        </para>
+	<para>
+	A feladat során csak pár kód csipetet jelenítünk meg de akinek szüksége lenne az egészre, az megtalálja a Welch mappában "LZWBinFa.cpp" néven.
+	<para>
+Természetesen ezekben a csipetekben fellelhetőek lesznek az előző feladatokban beígérteket is.
+	</para>
+        </para>
+        <para>
+	A program, vagyis a fa építése a BinRandTree class létrehozásával kezdődik, azon belül is a Node osztály elhelyezésével egy protected részben. Gondolom senkinek sem árulok el nagy titkot ha felfedem, hogy a node, a csomópontokat jelenti, vagyis ezeknek lehet (max) 1 jobb, illetve 1 bal oldali gyermeke. Természetesen minden ilyen gyermek egy-egy újabb csomópont lesz.
+        </para>
+        <para>
+<para>
+6.4
+</para>
+<programlisting language="c++"><![CDATA[
+template <typename ValueType>
+class BinRandTree {
+
+protected:
+    class Node {
+        
+    private:
+        ValueType value;
+        Node *left;
+        Node *right;
+        int count{0};
+        
+        Node(const Node &);
+        Node & operator=(const Node &);
+        Node(Node &&);
+        Node & operator=(Node &&);
+
+        
+    public:
+        Node(ValueType value, int count=0): value(value), count(count), left(nullptr), right(nullptr) {}
+        ValueType getValue() const { return value; }
+        Node * leftChild() const { return left; }
+        Node * rightChild() const { return right; }
+        void leftChild(Node * node){ left = node; }
+        void rightChild(Node * node){ right = node; }
+        int getCount() const { return count; }
+        void incCount() { ++count; }        
+    };
+]]></programlisting>  
+        </para>
+	<para>
+<para>
+6.5
+</para>
+	Mint azt már említettük, kelleni fognak a mutatók is, ezt a szerepet fogja betölteni a " * ". A *root értelemszerűen a gyökérmutatónka lesz, míg a *treep jelzi, hogy hol is járunk éppen.
+<programlisting language="c++"><![CDATA[
+    Node *root;
+    Node *treep;    
+    int depth{0};
+]]></programlisting>  
+        </para>
+	<para>
+Majd amiről a 6.6. fejezetünk is szól, jöhetnek a mozgató és másoló konstruktorok.
+<programlisting language="c++"><![CDATA[
+public:
+    BinRandTree(Node *root = nullptr, Node *treep = nullptr): root(root), treep(treep) {
+        std::cout << "BT ctor" << std::endl;        
+    }
+    
+    BinRandTree(const BinRandTree & old) {
+        std::cout << "BT copy ctor" << std::endl;
+        
+        root = cp(old.root, old.treep);
+        
+    }
+    
+    Node * cp(Node *node, Node *treep) 
+    {
+        Node * newNode = nullptr;
+        
+        if(node)
+        {
+            newNode = new Node(node->getValue(), 42 /*node->getCount()*/);
+            
+            newNode->leftChild(cp(node->leftChild(), treep));            
+            newNode->rightChild(cp(node->rightChild(), treep));
+            
+            if(node == treep)
+                this->treep = newNode;
+        }
+        
+        return newNode;
+    }
+    
+    
+    BinRandTree & operator=(const BinRandTree & old) {
+        std::cout << "BT copy assign" << std::endl;
+        
+        BinRandTree tmp{old};
+        std::swap(*this, tmp);
+        return *this;
+    }
+    
+    BinRandTree(BinRandTree && old) {
+        std::cout << "BT move ctor" << std::endl;
+        
+        root = nullptr;
+        *this = std::move(old);
+    }
+       
+    BinRandTree & operator=(BinRandTree && old) {
+        std::cout << "BT move assign" << std::endl;
+        
+        std::swap(old.root, root);
+        std::swap(old.treep, treep);
+        
+        return *this;
+    }
+    
+    ~BinRandTree(){
+        std::cout << "BT dtor" << std::endl;
+        deltree(root);
+    }
+    BinRandTree & operator<<(ValueType value);
+    void print(){print(root, std::cout);}
+    void printr(){print(*root, std::cout);}
+    void print(Node *node, std::ostream & os);
+    void print(const Node &cnode, std::ostream & os);
+    void deltree(Node *node); 
+
+    Unirand ur{std::chrono::system_clock::now().time_since_epoch().count(), 0, 2};
+
+    int whereToPut() {
+        
+            return ur();
+    }
+    
+};
+]]></programlisting>  
+	</para>
+    </section>                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>     
+
+    <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Conway!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Hangyaszimulációk</title>
+        <para>
+            Írj Qt C++-ban egy hangyaszimulációs programot, a forrásaidról utólag reverse engineering jelleggel
+            készíts UML osztálydiagramot is!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/10/10/myrmecologist">https://bhaxor.blog.hu/2018/10/10/myrmecologist</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/-/tree/master/attention_raising%2FMyrmecologist"/>               
+        </para>
+	<para>
+A programunnk nem véletlenül kapta a hangyaszimuláció nevet, ugyanis a kész kódunk ha minden jól sül el, pontosan a hangyák véletlenszerű mozgását próbálja szemléltetni. Mindez egy 2 dimenziós felületen fog zajlani de erről később képet is láthatunk.
+	</para>
+        <para>
+ 	<figure>
+            <title>A hangyaszimulációs program UML diagramja</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Conway/hangya.png" scale="40"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+Ahogy azt a diagrammon is látjuk, a programunk 3 főbb osztályból fog kialakulni ezek pedig névszerint: AntWin, AntThread és az Ant.
+        </para>  
+	<para>
+ 	<figure>
+            <title>A szimuláció</title>						
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Conway/hangya2.png" scale="25"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	</para>          
+    </section>        
+    <section>
+        <title>Java életjáték</title>
+        <para>
+            Írd meg Java-ban a John Horton Conway-féle életjátékot, 
+            valósítsa meg a sikló-kilövőt!
+        </para>
+        <para>
+            A feladathoz szükséges forráskódunk megtalálható az alább beágyazott linken, illetve a Conway mappában is, "Sejtautomata.java" néven.
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://regi.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apb.html#conway">https://regi.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apb.html#conway</link>               
+        </para>
+        <para>
+ " Itt egy sejt egy sejttér eleme, a sejt állapota lehet élő vagy halott. A diszkrét időben működő sejttér adott sejtjének állapotát a következő időpillanatban a következő átmeneti szabályok alapján számolhatjuk ki:
+</para>
+<para>
+Élő sejt élő marad, ha kettő vagy három élő szomszédja van, különben halott lesz.
+<para>
+Halott sejt halott marad, ha három élő szomszédja van, különben élő lesz.
+</para>             
+<para>
+Ezeket az átmeneti szabályokat az időFejlődés() függvényben fogalmaztuk meg. "
+ </para>            
+  </para> 
+<para>
+A programunk fordítás illetve futtatása bizonyára senkinek sem jelent már gondot de azért parancsorosn belül gyorsan bemutatom.
+<programlisting><![CDATA[
+hp@b3r3s:~/Dokumentumok$ javac Sejtautomata.java  
+hp@b3r3s:~/Dokumentumok$ java Sejtautomata 
+]]></programlisting>  
+Ha minden rendeltetésszerűen működik, az alsó képet kell kapnunk eredményül, természetesen nem PNG formátumba hanem egy folyamatosan futó java program verziót, amibe ha szeretnénk mi is belenyúlhatunk a kurzor segítségével.
+</para>
+	<para>
+ 	<figure>
+            <title>Életjáték</title>						
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Conway/sejt1.png" scale="25"/>
+                </imageobject>
+                <textobject>
+                    <phrase>Életjáték</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	</para> 
+	<para>
+ 	<figure>
+            <title>Életjáték, miután közbeavatkoztunk</title>						
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Conway/sejt2.png" scale="25"/>
+                </imageobject>
+                <textobject>
+                    <phrase>Életjáték, miután közbeavatkoztunk</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	</para>            
+    </section>        
+    <section>
+        <title>Qt C++ életjáték</title>
+        <para>
+            Most Qt C++-ban!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://bhaxor.blog.hu/2018/09/09/ismerkedes_az_eletjatekkal">https://bhaxor.blog.hu/2018/09/09/ismerkedes_az_eletjatekkal</link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+    <section>
+        <title>BrainB Benchmark</title>
+        <para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/nbatfai/esport-talent-search">https://github.com/nbatfai/esport-talent-search</link>               
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://www.twitch.tv/videos/139186614">https://www.twitch.tv/videos/139186614</link>               
+        </para>
+        </para>
+        <para>
+Ez a feladatunk tulajdonképpen egy teszt lenne, ami azt méri, hogy mennyire tudjuk követni a karakterünket (jelen esetben egy négyzetet) az egyre növekedő káoszban. Akik játszottak már a League of Legends játékkal, azoknak biztosan ismerős az az 5 az 5 elleni teamfight helyzet, hogy nyomja a spelleket bízván abba, hogy azok be is találnak hiába sejtelme sincs a hőse helyzetéről a nagy kavalkádban. Ez a program pontosan az ilyen helyzetek leküzdésének fejlesztésére szolgál.
+</para>
+<para>
+A mi feladatunk egész pontosan, hogy a saját négyzetünket kövessük az egérmutatónkkal miközben nyomva tartjuk a balegérgombunkat. Erre időlimit van ami maximum 10 perc. Végül kapunk
+egy eredményt abból számítva, hogy hányszor vesztettük el a négyzetünket vagy éppen mennyire tudtuk követni.
+        </para>
+       <para>
+
+
+        </para>            
+    </section>        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>     
+
+    <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Schwarzenegger!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Szoftmax Py MNIST</title>
+        <para>
+            Python
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/j7f9SkJR3oc">https://youtu.be/j7f9SkJR3oc</link>      
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/tensorflow/tensorflow/releases/tag/v0.9.0">https://github.com/tensorflow/tensorflow/releases/tag/v0.9.0</link> (/tensorflow-0.9.0/tensorflow/examples/tutorials/mnist/), <link xlink:href="https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol">https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol</link>  
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+
+<!--
+    <section>
+        <title>Szoftmax R MNIST</title>
+        <para>
+            R            
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+-->
+    
+    <section>
+        <title>Mély MNIST</title>
+        <para>
+            Python            
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+<!--
+    <section>
+        <title>Deep dream</title>
+        <para>
+            Keras            
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+-->                  
+    <section>
+        <title>Minecraft-MALMÖ</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/bAPSu3Rndi8">https://youtu.be/bAPSu3Rndi8</link>      
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+</chapter>     
+
+    <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Chaitin!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Iteratív és rekurzív faktoriális Lisp-ben</title>
+        <para>
+                
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/z6NJE2a1zIA">https://youtu.be/z6NJE2a1zIA</link>      
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+    </section>        
+<!--        
+    <section>
+        <title>Weizenbaum Eliza programja</title>
+        <para>
+            Éleszd fel Weizenbaum Eliza programját!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+    </section>        
+-->
+    <section>
+        <title>Gimp Scheme Script-fu: króm effekt</title>
+        <para>
+            Írj olyan script-fu kiterjesztést a GIMP programhoz, amely megvalósítja a króm effektet egy 
+            bemenő szövegre!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/OKdAkI_c7Sc">https://youtu.be/OKdAkI_c7Sc</link>      
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Chrome">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Chrome</link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>    
+    </section>        
+
+    <section>
+        <title>Gimp Scheme Script-fu: név mandala</title>
+        <para>
+            Írj olyan script-fu kiterjesztést a GIMP programhoz, amely név-mandalát készít a
+            bemenő szövegből!               
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2019/01/10/a_gimp_lisp_hackelese_a_scheme_programozasi_nyelv">https://bhaxor.blog.hu/2019/01/10/a_gimp_lisp_hackelese_a_scheme_programozasi_nyelv</link>      
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Mandala">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Mandala</link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+
+<!--    
+    <section>
+        <title>Lambda</title>
+        <para>
+            Hasonlítsd össze a következő programokat!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href=""></link>      
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=""></link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+-->    
+
+<!--
+    <section>
+        <title>Omega</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+    </section>        
+-->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+</chapter>     
+    
+    <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Gutenberg!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+        <cover>
+            <para>
+                Programozás tankönyvek rövid olvasónaplói.
+            </para>
+        </cover>
+    </info>
+    <section>
+        <title>Programozási alapfogalmak</title>
+        <para>         
+	<citation>PICI KONYV</citation> 
+	</para>
+	<para>
+	Kicsi a bors de erős!
+ 	<para>
+	Legelső sorban be kell, hogy valljam, az iskolás éveim alatt akárhányszor kötelező olvasmányt kaptunk, azt leginkább a hátam közepére kívántam volna mivel tipikusan olyan könyveket kellet olvasnunk ami nem az én érdeklődési körömbe tartozott. Sosem értettem, hogy miért nem adnak meg a gyereknek mondjuk 10 témát amiben keresgélhet és választani kell egy vagy több könyvet, (természeteset az általa kiválasztott témában) amit a saját szórakoztatására olvashat.
+        </para>
+	<para>
+	Ezúttal már láttam a fényt az alagút végén mivel habár az olvasás iránti szeretetem nem nőtt azóta de mostmár legalább olyan témáról kellet olvasnom ami érdekelt és tudtam, hogy a könyv tartalma a tanulmányi évim során még akár a hasznomra is válhat. Ez a meglátásom többynire be is igazolódott és miközben olvastam a könyvet, nem jött elő az régi és jólismert szituáció miszerint: csak olvasok és olvasok majd egy 10 perc után realizálom, hogy az eddigi elolvasott 'x' oldal teljesen kiesett és nem emlkészek belőle semmire. 
+        </para>
+	<para>
+	Összességében, habár számunkra nem az egész könyv volt feladva de biztos vagyok benne hogy a könyv töbi része is tartalmaz hasznos információkat és azoknak akik kicsit szeretnének belelátni a dolgokba kicsit mélyebben annak nyugodt szívvel tudom ajánlani. Mindamellet, hogy érdekesnek találtam a könyvet, ezzel egyidőben egyértelműen tudom ajánlani azoknak az embereknek is akik insomnia-val szenvednek ugyanis egy fárasztóbb nap után saját tabasztalatból mondhatom, hogy meglehetősen könnyen és gyorsan el tudtam mellette aludni.
+        </para>
+	
+		-
+        </para>
+    </section>     
+ 
+    <section>
+        <title>Bevezetés a mobilprogramozásba</title>
+        <para>                
+            <citation>MOBIL</citation>
+        </para>
+	<para>
+	A könyv ahogy azt a címéből is ésszerűen kikövetkeztethetjük, a mobilprogramozásról és amellett még a mobilok tulajdonságairól, funkcióiról és típusairól szól. A könyv olvasás közben azért néha elmosolyodunk az olyan kijelentéseken min, hogy a "Ez a legbővebb kategória, a ma  kapható készülékek jelentős része idetartozik". Nem, a könyv írója itt nem a mai okostelefonokra gondolt, hanem az akkoriban mindenki álatal használt egyszerűbb, általános mobilkészülékek. Ezek mára már elfeledetté váltak, csak nagyok kevesek által használt a technológiai visszamaradottsága miatt. Természetesen 5,10,20 év múlva a mi fiaink vagy később az unokáink valószínűleg ugyan így fognak érezni mint mi és röhögve fogják olvasni ezt a kis olvasónaplót.
+	</para>
+	<para>
+	Mindemmellett a könyv rengeteg hasznos dolgot leír és segít megértettni azokkal akik a közeljövőben a mobilprogramozásban képzelik el a jövőjüket. Számomra is nagyon vonzó ez a téma ugyanis mint mindenki énis napi rendszerességgel használom a telefonomat, legyen az zenehallgatás, olvasás, média és természetesen itt se felejthetjük el a játékokat, amik egyre inkább modernizálódnak és lassan már nem fogunk tudni különbséget tenni egy film és egy telefonos játék grafikája között. Habár engem nagyon kevés telefonos játék tud hosszabb időre lekötni, ennek ellenére ha rendelkeznék a megfelelő tudással programozás terén és felkérne egy cég, hogy segítsek nekik kifejleszteni a legújabb játékukat, valószínűleg szó nélkül és örömmel belemennék.
+	</para>
+	<para>
+	Természetesen azonban nem csak a játékokra kell gondolni amikor a programozásról beszélünk, ugyanis ez egy sokkal tágabb kör. Mindaz ami számunkra ma már természetesnek tűnhet a telefonunk használata közben, gondolok itt például az érintőképernyő, Face ID, wifi folytonos működésére, elérésére.
+	</para>
+    </section>   
+    <section>
+
+        <title>A C programozási nyelv</title>
+        <para>                
+            <citation>KERNIGHANRITCHIE</citation>
+        </para>
+        <para>
+		//csak példa
+            Megoldás videó: <link xlink:href="https://youtu.be/zmfT9miB-jY">https://youtu.be/zmfT9miB-jY</link>
+		//
+        </para>        
+    </section>        
+    <section>
+        <title>Szoftverfejlesztés C++ nyelven</title>
+        <para>                
+            <citation>BMECPP</citation>
+        </para>
+    </section>        
+</chapter>     
+            
+</part>                                                              
+
+    <part xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <title>Második felvonás</title>
+    <partintro>
+        <para> 
+        </para>
+<tip>
+              <title>Bátf41 Haxor Stream</title>
+              <para>
+                  A feladatokkal kapcsolatos élő adásokat sugároz
+                  a <link xlink:href="https://www.twitch.tv/nbatfai">https://www.twitch.tv/nbatfai</link> csatorna,
+                  melynek permanens archívuma a <link xlink:href="https://www.youtube.com/c/nbatfai">https://www.youtube.com/c/nbatfai</link> 
+                  csatornán található.
+              </para>            
+            </tip>    
+        
+    </partintro>
+    
+    <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Arroway!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+
+    <section>
+        <title>A BPP algoritmus Java megvalósítása</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+
+    <section>
+        <title>Java osztályok a Pi-ben</title>
+        <para>
+            Az előző feladat kódját fejleszd tovább: vizsgáld, hogy Vannak-e Java osztályok a Pi hexadecimális kifejtésében!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>     
+    
+    
+            
+</part>                                                              
+
+
+    <bibliography xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <title>Irodalomjegyzék</title>
+	<bibliodiv>
+        <title>Programozási nyelvek</title>
+        <biblioentry xml:lang="hu">
+            <abbrev>PICI KONYV</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <firstname>István</firstname>
+                        <surname>Juhász</surname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <title>Magas szintű programozási nyelvek 1</title>
+            <publisher>
+                <publishername>
+                    mobiDIÁK könyvtár
+                </publishername>
+            </publisher>
+            <pubdate>2008</pubdate>
+        </biblioentry>  
+    </bibliodiv> 
+    <bibliodiv>
+        <title>Általános</title>
+        <biblioentry xml:lang="hu">
+            <abbrev>MARX</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <firstname>György</firstname>
+                        <surname>Marx</surname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <title>Gyorsuló idő</title>
+            <publisher>
+                <publishername>
+                    Typotex
+                </publishername>
+            </publisher>
+            <pubdate>2005</pubdate>
+        </biblioentry>  
+    </bibliodiv> 
+    <bibliodiv>
+        <title>C</title>
+        <biblioentry>
+            <abbrev>KERNIGHANRITCHIE</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <firstname>Brian W.</firstname>
+                        <surname>Kernighan</surname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <firstname>Dennis M.</firstname>
+                        <surname>Ritchie</surname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <title>A C programozási nyelv</title>
+            <publisher>
+                <publishername>Bp., Műszaki</publishername>
+            </publisher>
+            <pubdate>1993</pubdate>
+        </biblioentry>            
+    </bibliodiv>
+    <bibliodiv>
+        <title>C++</title>
+        <biblioentry>
+            <abbrev>BMECPP</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <firstname>Zoltán</firstname>
+                        <surname>Benedek</surname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <firstname>Tihamér</firstname>
+                        <surname>Levendovszky</surname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <title>Szoftverfejlesztés C++ nyelven</title>
+            <publisher>
+                <publishername>Bp., Szak Kiadó</publishername>
+            </publisher>
+            <pubdate>2013</pubdate>
+        </biblioentry>            
+    </bibliodiv>
+    <bibliodiv>
+        <title>Lisp</title>
+        <biblioentry>
+            <abbrev>METAMATH</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <firstname>Gregory</firstname>
+                        <surname>Chaitin</surname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <title>META MATH! The Quest for Omega</title>
+            <publisher>
+                <publishername>
+                    <link xlink:href="http://arxiv.org/PS_cache/math/pdf/0404/0404335v7.pdf">http://arxiv.org/PS_cache/math/pdf/0404/0404335v7.pdf</link>
+                </publishername>
+            </publisher>
+            <pubdate>2004</pubdate>
+        </biblioentry> 
+    </bibliodiv>    
+	<bibliodiv>
+        <title>Mobilprogramozás (Java, Python)</title>
+        <biblioentry xml:lang="hu">
+            <abbrev>MOBIL</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <firstname>Péter</firstname>
+                        <surname>Ekler</surname>
+                    </personname>
+                </author>
+				<author>
+                    <personname>
+                        <firstname>Bertalan</firstname>
+                        <surname>Forstner</surname>
+                    </personname>
+                </author>
+				<author>
+                    <personname>
+                        <firstname>Imre</firstname>
+                        <surname>Kelényi</surname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <title>Bevezetés a mobilprogramozásba</title>
+            <publisher>
+                <publishername>
+                    Szak Kiadó Kft.
+                </publishername>
+            </publisher>
+            <pubdate>2008</pubdate>
+        </biblioentry>  
+    </bibliodiv> 
+</bibliography>     
+          
+            <acknowledgements xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <para>
+        Köszönet illeti a
+        NEMESPOR, <link xlink:href="https://groups.google.com/forum/#!forum/nemespor">https://groups.google.com/forum/#!forum/nemespor</link>, 
+        az UDPROG tanulószoba, <link xlink:href="https://www.facebook.com/groups/udprog">https://www.facebook.com/groups/udprog</link>, 
+        a DEAC-Hackers előszoba, <link xlink:href="https://www.facebook.com/groups/DEACHackers">https://www.facebook.com/groups/DEACHackers</link> 
+        (illetve egyéb alkalmi szerveződésű szakmai csoportok) 
+        tagjait inspiráló érdeklődésükért és hasznos észrevételeikért.         
+    </para>                 
+    <para>
+        Ezen túl kiemelt köszönet illeti az említett UDPROG közösséget, mely a Debreceni Egyetem reguláris 
+        programozás oktatása tartalmi szervezését támogatja. Sok példa eleve ebben a közösségben született, vagy itt került
+        említésre és adott esetekben szerepet kapott, mint oktatási példa.         
+    </para>                 
+</acknowledgements>     
+
+</book>
