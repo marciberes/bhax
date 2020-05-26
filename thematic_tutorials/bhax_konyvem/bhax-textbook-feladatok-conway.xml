@@ -140,9 +140,17 @@ A mi feladatunk egész pontosan, hogy a saját négyzetünket kövessük az egé
 egy eredményt abból számítva, hogy hányszor vesztettük el a négyzetünket vagy éppen mennyire tudtuk követni.
         </para>
        <para>
-
-
         </para>            
-    </section>        
+    </section>  
+
+    <section>
+        <title>Vörös Pipacs Pokol/19RF</title>
+        <para>   
+	   Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=C_mv5tk_KSo">Saját kóddal</link> 22 pipacs.
+	</para>
+	<para>
+          Megoldás forrása: <link xlink:href="https://github.com/marciberes/bhax/tree/master/thematic_tutorials/bhax_konyvem/Conway">Fentrolle22.py</link> kód.            
+        </para>
+	</section>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>                
