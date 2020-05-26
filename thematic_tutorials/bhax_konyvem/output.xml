@@ -552,9 +552,7 @@ false]]></screen>
             Akkor most hogy fog működni? Sajnos legfőképp sehogy, mert ilyen <function>Lefagy</function>
             függvényt, azaz a T100 program nem is létezik.                
         </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+
     </section>        
                 
     <section>
@@ -700,7 +698,7 @@ Ahogy azt eddig is megszoktuk, a program itt is 'C' nyelvben íródott.
             Használd ugyanazt a while ciklus fejet, amit Linus Torvalds a BogoMIPS rutinjában! 
         </para>
         <para>
-            Megoldás videó: <link xlink:href=""/>
+            Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=9KnMqrkj_kUt=299s">Így neveld a programozód! VIII. - VirtBox-os 4.</link> és <link xlink:href="https://www.youtube.com/watch?v=KRZlt1ZJ3qkt=4s">Így neveld a programozód! IX. - VirtBox-os 5.</link>
         </para>
         <para>
             Megoldás forrása: <link xlink:href=""/>
@@ -745,14 +743,74 @@ Adj meg egy számot: 1
             értékét!
         </para>
         <para>
-            Megoldás videó: <link xlink:href=""/>
+            Megoldás forrása: <link xlink:href="https://progpater.blog.hu/2011/02/13/bearazzuk_a_masodik_labort">Programozó Páternoszter</link>
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""/>
+          <programlisting language="c++"><![CDATA[
+#include <stdio.h>
+#include <math.h>
+
+void printResult(double array[], int n);
+
+double distance(double PR[], double PRv[], int n);
+
+int main(){
+double L[4][4] = {
+{0.0, 0.0, 1.0/3.0, 0.0},
+{1.0, 1.0/2.0, 1.0/3.0, 1.0},
+{0.0, 1.0/2.0, 0.0, 0.0},
+{0.0, 0.0, 1.0/3.0, 0.0}
+};
+
+double PR[4] = {0.0, 0.0, 0.0, 0.0};
+double PRv[4] = {1.0 / 4.0, 1.0 / 4.0, 1.0 / 4.0, 1.0 / 4.0};
+
+for(;;)
+{
+	for(int i = 0; i < 4; i++)
+		PR[i] = PRv[i];
+	for(int i = 0; i < 4; i++)
+	{
+		PRv[i] = 0.0;
+	for(int j = 0; j < 4; j++){
+		PRv[i] += L[i][j]*PR[j];
+		}
+	}
+	if(distance(PR, PRv, 4) < 0.000001)
+	break;
+}
+printResult(PR, 4);
+
+return 0;
+}
+
+void printResult(double array[], int n){
+	for(int i = 0; i < n; ++i){
+		printf("%f\n", array[i]);
+	}
+}
+double distance(double PR[], double PRv[], int n){
+	double sum = 0.0;
+	for(int i = 0; i < n; ++i){
+		sum += (PR[i] - PRv[i])*(PR[i]-PRv[i]);
+	}
+return sqrt(sum);
+}
+	]]></programlisting> 
+A forrásban ugyan ott van a futtatása is, azonban jobb kétszer mint soha:
+       <programlisting><![CDATA[
+hp@b3r3s:~/Dokumentumok$ g++ pagerank.c -o pagerank
+hp@b3r3s:~/Dokumentumok$ ./pagerank 
+0.090909
+0.545454
+0.272728
+0.090909
+	]]></programlisting> 
+Egy gyorstalpaló a <link xlink:href="https://www.link-assistant.com/news/google-page-rank-2019.html">link-assistant</link> weboldal segítségével:
         </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+<para>
+A PageRank (vagy röviden PR) a Google alapítói, Larry Page és Sergey Brin által a Stanfordi Egyetemen kifejlesztett webhelyek rangsorolására szolgál. Arra használják, hogy az egyes oldalak relatív pontszámot és tekintélyt kapjanak a linkek minőségének és mennyiségének értékelésével. Ezzel optimalizálva később a keresést, illetve a linkek sorrendjét. Azonban fontos tudni, hogy nem csupán a weblapokat tudunk beárazni.
+</para>
     </section>
 
     <section xml:id="Brun">
@@ -850,9 +908,8 @@ Végül pedig ábrázoljuk az alábbi pontokat.
         <para>
 	Ezt a Monty hall féle problémát vagy paradoxont, a forrásban lévő programsorokkal jól tudjuk szemléltetni de többeknek már biztosan ismerős akár sorozatokból, akár filmekből is.
 	Egy gyors talpaló előtte: A Monthy Hall probléma a Let’s make a deal nevű amerikai TV-s vetélkedo híres műsorvezetőjéről kapta a nevét. A probléma a következoképpen néz ki: a műsorvezető mutat 3 ajtót a játékosnak, amelyek közül ˝
-valamelyik mögött egy autó lapul. A játékos választ a 3 ajtó közül 1-et, majd ha a játékosnak nem sikerült beletrafálni, a műsorvezeto a maradék 2 ajtó közül kinyit egyet, amelyik mögött garantáltan nincsen a nyeremény. Ezután a játékos választhat, hogy a döntését megtartja-e vagy megváltoztatja a másik zárt ajtóra.
+valamelyik mögött egy autó lapul. A játékos választ a 3 ajtó közül 1-et, majd ha a játékosnak nem sikerült beletrafálni, a műsorvezető a maradék 2 ajtó közül kinyit egyet, amelyik mögött garantáltan nincsen a nyeremény. Ezután a játékos választhat, hogy a döntését megtartja-e vagy megváltoztatja a másik zárt ajtóra.
 	<programlisting language="R"><![CDATA[
-	hp@b3r3s:~$ R	
 
 	kiserletek_szama=10000000
 	kiserlet = sample(1:3, kiserletek_szama, replace=T)
@@ -908,6 +965,37 @@ valamelyik mögött egy autó lapul. A játékos választ a 3 ajtó közül 1-et
         </para>
     </section>
 
+	<section>
+       		 <title>Vörös Pipacs Pokol</title>
+<para>
+A feladat megtalálható a Turing mappában csigafel.py néven
+</para>
+<para>
+A feladatunk az volt, hogy módosítsuk úgy a kódunkat, hogy Steve egy bizonyos csiga alakban haladjon felfelé az arénánkban.
+A megoldás megértéséhez elegendő lesz ez a rövidke kódrészlet. Mindenek előtt ledeklaráltam egy halad nevű változót aminek adtunk egy 2-es kezdőértéket. Amint látjuk utána következik egy while ciklus, amin belül látjuk a Steve-nek kiadott parancsokat. Ezek közül is a legfontosabb a "self.agent_host.sendCommand("move 1")   time.sleep(halad)" parancs ami a későbbi "halad = halad + 1" változó növelésének segítségével teszi lehetővé azt, hogy Steve minden egyes alkalommal amikor lefut a while ciklus(vagyis amikor Steve elfordul) növeljük a megtett út időtartamát.
+	<programlisting language="c"><![CDATA[
+        halad = 2
+
+        # Loop until mission ends:
+        while world_state.is_mission_running:
+            self.agent_host.sendCommand("move 1")
+            time.sleep(halad)
+            self.agent_host.sendCommand("jump 1")
+            time.sleep(0.2)
+            self.agent_host.sendCommand("jump 0")
+            time.sleep(0.1)
+            self.agent_host.sendCommand("turn 1")
+            time.sleep(0.5)
+            self.agent_host.sendCommand("turn 0")
+            time.sleep(0.1)
+
+            halad = halad + 1
+            
+            world_state = self.agent_host.getWorldState()
+]]></programlisting>
+</para>
+	</section>
+
 </chapter>     
     
     <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
@@ -926,11 +1014,55 @@ valamelyik mögött egy autó lapul. A játékos választ a 3 ajtó közül 1-et
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+             Megoldás forrása: Az előadás <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_1.pdf">27.</link> fóliája.               
         </para>
         <para>
-            Az első elképzelésem szerint haladtam miszerint az 1-es legyen a '|', a 2 legyen '||' és így tovább 5-ig ami pedig '||/||'.
+            Az első elképzelésem szerint haladtam miszerint az 1-es legyen a '|', a 2 legyen '||' és így tovább...
         </para>
+<para>
+<programlisting language="c++"><![CDATA[
+#include <stdio.h>
+int main(){
+int a = 0;
+	printf("Irj be egy számot: ");
+	scanf("%d",&a);
+	printf("Unáris megjelenése: ");
+	for(int i = 0; i<a;++i){
+		printf("|\n");
+}
+printf("\n");
+return 0;
+}
+]]></programlisting>
+Habár a programunk egy kicsit primitív és biztosan van ettől jobban, szebben működő is, egyelőre megteszi. Az egyetlen hátránya, hogy a nagyobb számoknál a kiiratás nem túlzottan kedvező a szemnek.
+<programlisting><![CDATA[
+hp@b3r3s:~/Dokumentumok$ g++ decimalis.c -o decimalis
+hp@b3r3s:~/Dokumentumok$ ./decimalis
+Irj be egy számot: 20
+Unáris megjelenése: ||||||||||||||||||||
+hp@b3r3s:~/Dokumentumok$ 
+]]></programlisting>
+</para>
+<para>
+	<figure>
+            <title>Az előadás során is tárgyalt Turing gép működése</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Chomsky/Turing.png" scale="50"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+</para>
+<para>
+Forrás a működés megértéséhez: <link xlink:href="http://bodaistvan.hu/infalap/infotort/Turing_gep.html">http://bodaistvan.hu/infalap/infotort/Turing_gep.html</link> 
+</para>
+<para>
+
+</para>
+
     </section>        
         
     <section>
@@ -939,23 +1071,20 @@ valamelyik mögött egy autó lapul. A játékos választ a 3 ajtó közül 1-et
             Mutass be legalább két környezetfüggő generatív grammatikát, amely ezt a nyelvet generálja!
         </para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
+              Megoldás forrása: Az előadás <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_1.pdf">30-32.</link> fóliája.               
         </para>
 	<para>
+Nézzük meg milyen amikor A,B,C változók és a,b,c konstansok:
 <programlisting language="R"><![CDATA[
 1. A -> aAB
 2. A -> aC
 3. CB -> bCc
 4. cB -> Bc
 5. C -> bc
-Például:
+
 A (A -> aC)
 aC (C -> bc)
 abc
-vagy:
 A (A -> aAB)
 aAB (A -> aAB)
 aaABB (A -> aC)
@@ -964,6 +1093,9 @@ aaabCcB (cB -> Bc)
 aaabCBc (CB -> bCc)
 aaabbCcc (C -> bc)
 aaabbbccc
+]]></programlisting>
+Ez kicsit zavaró lehet, ezért adjunk a változóknak valami eltérő nevet, mondjuk S,X,Y a konstansaink pedig változatlanul is a,b,c.
+<programlisting language="R"><![CDATA[
 1. S -> abc
 2. S -> aXbc
 3. Xb -> bX
@@ -972,7 +1104,7 @@ aaabbbccc
 6. aY -> aaX
 7. aY -> aa
 
-Például:
+
 S (S -> aXbc)
 aXbc (Xb -> bX)
 abXc (Xc -> Ybcc)
@@ -995,9 +1127,6 @@ aaaYbbbbcccc (aY -> aa)
 aaaabbbbcccc
 ]]></programlisting>
 	</para>	
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
     </section>        
                 
     <section>
@@ -1008,10 +1137,7 @@ aaaabbbbcccc
             Majd mutass be olyan kódcsipeteket, amelyek adott szabvánnyal nem fordulnak (például C89), mással (például C99) igen.
         </para>
         <para>
-            Megoldás videó: 
-        </para>
-        <para>
-            Megoldás forrása:  
+            Megoldás forrása: Az előadás <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_1.pdf">63-65.</link> fóliája.          
         </para>
         <para>
 	Nézzünk egy programot erre a C89 és C99 közti különbségre a  <link xlink:href="https://www.geeksforgeeks.org/inline-function-in-c/">geeksforgeeks</link> segítségét felhasználva.
@@ -1096,7 +1222,7 @@ main ()
     <section>
         <title>Leetspeak</title>
         <para>
-           Egész biztos vagyok benne, hogy mindenki találkozott már a leetspek-el ég akkor is ha nem tudott róla, de a biztonság kedvéért <link xlink:href="https://www.urbandictionary.com/define.php?term=leet%20speak">ITT</link> egy gyorstalpaló róla. Az interneten gyorsan elterjedté és kedveltté vált. Én személy szerinte elsőnek egy számítógépes játékon belül találkoztam ezzel, ahol az illetőnek H3nt3s volt a felhasználóneve. Igaz akkor még csak azt tudtam, hogy mit helyettesítenek azok a hármasok, de a történetéről és a valódi hátteréről még nem sejtettem semmit.
+           Egész biztos vagyok benne, hogy mindenki találkozott már a leetspek-el még akkor is ha nem tudott róla, de a biztonság kedvéért <link xlink:href="https://www.urbandictionary.com/define.php?term=leet%20speak">ITT</link> egy gyorstalpaló róla. Az interneten gyorsan elterjedté és kedveltté vált. Én személy szerinte elsőnek egy számítógépes játékon belül találkoztam ezzel, ahol az illetőnek H3nt3s volt a felhasználóneve. Igaz akkor még csak azt tudtam, hogy mit helyettesítenek azok a hármasok, de a történetéről és a valódi hátteréről még nem sejtettem semmit.
         </para>
         <para>
             Megoldás videó: <link xlink:href="https://youtu.be/06C_PqDpD_k">https://youtu.be/06C_PqDpD_k</link>
@@ -1278,16 +1404,32 @@ main()
             </listitem>
         </orderedlist>
         <para>
-            Megoldás forrása:  
+Kezdjük tehát a legegyszerűbbtől, a bonyolultak felé, tehát fentről lefelé.
         </para>
-
-        <para>
-            Megoldás videó: 
-        </para>
-
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+	<para>
+i: Ha a SIGINT jel nem volt figyelmen kívül hagyva, akkor ezen túl se legyen. Ez a példánk nagyban hasonlít a mintapéldához, itt azonban a '!=' párossal úgymond negáljuk az egyenlőségjelet.
+	</para>
+	<para>
+ii: Jelen esetben van egy for ciklusunk ami előreláthatólag 5x fog lefutni ugyanis az i változónk rendelkezik egy kezdeti 0 értékkel (i=0) ami folyamatosan növekszik 1-el (++i) egészen addig amíg kisebb mint 5, vagyis 4-ig.
+	</para>
+	<para>
+iii: A példánk lényegében ugyan az mint az előző, annyi eltéréssel, hogy itt elsőnek megkapjuk az i értékét és aztán növeljük.
+	</para>
+	<para>
+iv: A ciklusunk változatlanul 5x fog lefutni, viszont bevezettünk egy tömböt is, melynek i-edik eleméhez folyamatosan (iterációnként) hozzárendeljük az i++ értékét.
+	</para>
+	<para>
+v: A forrásunk legfontosabb az az első ';' után található dupla feltétel, melynek mindkettőnek teljesülnie kell, hogy a ciklusunk tovább fusson.
+	</para>
+	<para>
+vi: Az már a legelején látszik, hogy két számot fogunk kiiratni, mégpedig a két f függvényünk egy-egy értékét.
+	</para>
+	<para>
+vii: A már jól megszokott kiiratást láthatjuk a printf felhasználásával, mégpedig az f függvény visszatérési értékét, majd pedig magát az 'a'-t (nem elfeledve, hogy 'a' jelen esetben egy szám lesz).
+	</para>
+	<para>
+viii: És végül de nem utolsó sorban, a már jól begyakorolt kiiratás fog lezajlani, elsőnek tehát f visszatérési értéke (Figyelem! Most a-nak a memóriacíme a paraméter.) majd pedig maga az 'a'.
+	</para>
 
     </section>                     
 
@@ -1518,11 +1660,20 @@ main ()
     return 0;
 }
 ]]></programlisting>            
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>                     
 
+
+    </section>   
+                  
+
+    <section>
+        <title>Vörös Pipacs Pokol/csiga diszkrét mozgási parancsokkal</title>
+	<para>
+	A feladatunk megoldás megtalálható a Chomsky mappában secondcircle.py néven.
+	</para>
+	<para>
+	A mappában található kód már egy kicsit előrehaladott, ugyanis tartalmazza a pipacsok érzékelését, illetve azoknak kiszedését is és ez alapján halad felfele az arénában.
+	</para>
+    </section>                     
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>     
 
@@ -1543,13 +1694,17 @@ main ()
         <para>
             Megoldás videó: <link xlink:href="https://youtu.be/1MRTuKwRsB0">https://youtu.be/1MRTuKwRsB0</link>,
             <link xlink:href="https://youtu.be/RKbX5-EWpzA">https://youtu.be/RKbX5-EWpzA</link>.
-        </para>
+ 	</para>
+	<para>
+	Illetve a saját videó <link xlink:href="https://www.youtube.com/watch?v=8HSc1-dwNic">https://www.youtube.com/watch?v=8HSc1-dwNic</link>
+       	</para>
         <para>
             Megoldás forrása: <link xlink:href="Caesar/tm.c">
                 <filename>bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Caesar/tm.c</filename>
             </link> 
         </para>
-        <programlisting language="c"><![CDATA[#include <stdio.h>
+        <programlisting language="c"><![CDATA[
+#include <stdio.h>
 #include <stdlib.h>
 
 int main(){
@@ -1557,10 +1712,15 @@ int main(){
 int nr = 5;
 double**tm;
 
+	printf("%p\n", &tm);	
+	
 	if ((tm = (double**) malloc (nr*sizeof (double*))) == NULL)
 	{
 		return -1;
 	}
+
+	printf("%p\n", tm);	
+
 	for (int i = 0; i < nr; ++i)
 	{
 		if ((tm[i] = (double*) malloc ((i + 1)*sizeof (double))) == NULL)
@@ -1568,10 +1728,15 @@ double**tm;
 		return -1;
 		}
 	}
+
+
+	printf("%p\n", tm[0]);	
+
 	
 	for (int i = 0; i < nr; ++i)
 		for (int j = 0; j < i + 1; ++j)
 			tm[i][j] = i*(i + 1) / 2 + j;
+
 	for (int i = 0; i < nr; ++i)
 	{
 		for (int j = 0; j < i + 1; ++j)
@@ -1583,6 +1748,7 @@ double**tm;
 	(*(tm + 3))[1] = 43.0; 
 	*(tm[3] + 2) = 44.0;
 	*(*(tm + 3) + 3) = 45.0;
+
 	for (int i = 0; i < nr; ++i)
 	{
 		for (int j = 0; j < i + 1; ++j)
@@ -1693,9 +1859,6 @@ hp@b3r3s:~/Dokumentumok/prog1$ ./e kercerece <titkos.szoveg
         <para>
            Az előző programunkból kiindulva , megírjuk a java féle titkosítónkat is, ezúttal azonban az eddigiektől eltérően, Java-t fogunk használni.
         </para>
-	<para>
-            Megoldás videó:
-        </para>
         <para>
             Megoldás forrása: <link xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#exor_titkosito">https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#exor_titkosito</link>               
         </para>
@@ -1761,73 +1924,136 @@ Malmö Svédország harmadik legnépesebb városa.
             Írj egy olyan C programot, amely megtöri az első feladatban előállított titkos szövegeket!
         </para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-        <para>
-A program írásánál arra kell figyelnünk, pontosabban az mindennek az alapja, hogy tudnunk kell a kulcs hosszát illetve annak az 'X' hosszúságú kulcs elemeit.
-Emellet tudjuk a nyelvét is erre azonban csak a szöveg gyorsabb és egyszerűbb megtalalása miatt van szükség.
-Ezt úgy döntjük el, hogy a "feltört" szövegnél megnézzük, hogy tartalmazza-e a leg-
-gyakoribb magyar szavakat (pl.: hogy, nem, az, ha) és ha igen, akkor csak ezeket a szövegeket írjuk ki az
-output-ra.
-Az én esetemben a kulcs 6 karakter hosszúságúra sikeredett és nagyon kreatív módon a [s, b, e, r, e, m] karaktereket kapta. Gondolom senkinek sem jelent nagyobb fejtörést, hogy honnan jöttek ezek a betűk.
-</para>
+            Megoldás forrása: <link xlink:href="https://progpater.blog.hu/2011/02/15/felvetelt_hirdet_a_cia">Programozó Páternoszter</link> illetve a t.c fájl.
+        </para>   
+
 <para>
-A programunkba lényegében vektort hozhatunk létre, amiben tárolni fogjuk a használatos karaktereket. A léptetéssel nekünk nem kell bajlódni, arra ott lesz a for ciklusunk, a kulcs hossz pedig azt adja meg, hogy hány helyen kell
-léptetnünk az adott karaktereket, vagyis a for ciklusok számát adja meg.
-A törés nagyon hasonlít az előző feladatokban tárgyalt és bemutatott titkosító algoritmusainkra, annyi különbséggel, hogy most nem adunk meg argumentumokat. Mivel ismerjük a kulcsot (hiszen mi adjuk meg), így könnyen visszakapjuk az eredeti szöveget is.
-        </para>     
-	<para>
-Illetve bemutatom előtte a program fordítását, futtatását.
-</para>
-<para>
- <programlisting><![CDATA[ 
-hp@b3r3s:~/Dokumentumok/bhax/prog1$  gcc toro_c.c -o toro_c -O3
-hp@b3r3s:~/Dokumentumok/bhax/prog1$  ./brute_c < titkos.szoveg
-]]></programlisting>
-</para>
-<para>
-Ha a kulcsunk és a tiszta szöveg megjelenik, akkor sikerrel jártunk.
-<programlisting><![CDATA[ 
-Kulcs: [beresm]
-Tiszta szoveg: Kezdetben vala az Íge, és az Íge vala az Istennél, és Isten vala az Íge.
-Ez kezdetben az Istennél vala.
-Minden ő általa lett és nála nélkül semmi sem lett, ami lett...
-]]></programlisting>
-</para>
-<para>
-A programunk megértéséhez elegendő lesz ez a toro.c kódból származó 'kisebb' kódcsipet.
 <programlisting language="c"><![CDATA[
-  char letters[] = {'s','b','e','r','e','m'};
-  int letterCount = sizeof(letters)/sizeof(letters[0]);
+#define MAX_TITKOS 4096
+#define OLVASAS_BUFFER 256
+#define KULCS_MERET 8
+#define _GNU_SOURCE
 
-  for (int ii = 0; ii <= letterCount; ++ii)
-    for (int ji = 0; ji <= letterCount; ++ji)
-      for (int ki = 0; ki <= letterCount; ++ki)
-	      for (int li = 0; li <= letterCount; ++li)
-	        for (int mi = 0; mi <= letterCount; ++mi)
-	          for (int ni = 0; ni <= letterCount; ++ni)
-	            for (int oi = 0; oi <= letterCount; ++oi)
-		          {
-                kulcs[0] = letters[ii];
-                kulcs[1] = letters[ji];
-                kulcs[2] = letters[ki];
-                kulcs[3] = letters[li];
-                kulcs[4] = letters[mi];
-                kulcs[5] = letters[ni];
-                kulcs[6] = letters[oi];
-                if (exor_tores (kulcs, KULCS_MERET, titkos, p - titkos))
-                  printf("Kulcs: [%c%c%c%c%c%c%c]\nTiszta szoveg: [%s]\n",letters[ii], letters[ji], letters[ki], letters[li], letters[mi], letters[ni], letters[oi], titkos);
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
 
+double
+atlagos_szohossz (const char *titkos, int titkos_meret)
+{
+  int sz = 0;
+  for (int i = 0; i < titkos_meret; ++i)
+    if (titkos[i] == ' ')
+      ++sz;
 
-                exor (kulcs, KULCS_MERET, titkos, p - titkos);
-              }
+  return (double) titkos_meret / sz;
+}
+
+int
+tiszta_lehet (const char *titkos, int titkos_meret)
+{
+
+	// A tiszta szöveg feltehetően tartalmazza a gyakori magyar szavakat illetve az átlagos szóhossz vizsgálatával csökkentjük a potenciális töréseket.
+  double szohossz = atlagos_szohossz (titkos, titkos_meret);
+
+  return szohossz > 6.0 && szohossz < 9.0
+    && strcasestr (titkos, "hogy") && strcasestr (titkos, "nem")
+    && strcasestr (titkos, "az") && strcasestr (titkos, "ha");
+
+}
+
+void
+exor (const char kulcs[], int kulcs_meret, char titkos[], int titkos_meret)
+{
+
+  int kulcs_index = 0;
+
+  for (int i = 0; i < titkos_meret; ++i)
+    {
+
+      titkos[i] = titkos[i] ^ kulcs[kulcs_index];
+      kulcs_index = (kulcs_index + 1) % kulcs_meret;
+
+    }
+
+}
+
+int
+exor_tores (const char kulcs[], int kulcs_meret, char titkos[], int titkos_meret)
+{
+
+  exor (kulcs, kulcs_meret, titkos, titkos_meret);
+
+  return tiszta_lehet (titkos, titkos_meret);
+
+}
+
+int
+main (void)
+{
+
+  char kulcs[KULCS_MERET];
+  char titkos[MAX_TITKOS];
+  char *p = titkos;
+  int olvasott_bajtok;
+
+  // titkos bájt berántása
+  while ((olvasott_bajtok =
+	  read (0, (void *) p,
+		(p - titkos + OLVASAS_BUFFER < MAX_TITKOS) ? OLVASAS_BUFFER : titkos + MAX_TITKOS - p)))
+    p += olvasott_bajtok;
+
+  // maradék hely nullázása a titkos bufferben  
+  for (int i = 0; i < MAX_TITKOS - (p - titkos); ++i)
+    titkos[p - titkos + i] = '\0';
+
+  // összes kulcs előállítása
+  for (int ii = '0'; ii <= '9'; ++ii)
+    for (int ji = '0'; ji <= '9'; ++ji)
+      for (int ki = '0'; ki <= '9'; ++ki)
+	for (int li = '0'; li <= '9'; ++li)
+	  for (int mi = '0'; mi <= '9'; ++mi)
+	    for (int ni = '0'; ni <= '9'; ++ni)
+	      for (int oi = '0'; oi <= '9'; ++oi)
+		for (int pi = '0'; pi <= '9'; ++pi)
+		  {
+		    kulcs[0] = ii;
+		    kulcs[1] = ji;
+		    kulcs[2] = ki;
+		    kulcs[3] = li;
+		    kulcs[4] = mi;
+		    kulcs[5] = ni;
+		    kulcs[6] = oi;
+		    kulcs[7] = pi;
+
+		    if (exor_tores (kulcs, KULCS_MERET, titkos, p - titkos))
+		      printf
+			("Kulcs: [%c%c%c%c%c%c%c%c]\nTiszta szoveg: [%s]\n",
+			 ii, ji, ki, li, mi, ni, oi, pi, titkos);
+
+		    // újra EXOR-ozunk, igy nem kell egy második buffer  
+		    exor (kulcs, KULCS_MERET, titkos, p - titkos);
+		  }
+
   return 0;
 }
 ]]></programlisting>
-	</para>       
+	</para>  
+<para>
+A program fordítása és futtatása előtt győződjünk meg róla, hogy elkészült a titkos szövegünk.
+</para>
+<para>
+ <programlisting><![CDATA[ 
+hp@b3r3s:~/Dokumentumok/bhax/prog1$  ./e kercerece <tiszta.szoveg > titkos.szoveg
+]]></programlisting>
+</para>
+<para>
+Ezután jöhet a jól megszokott parancs páros amivel ha minden igaz vissza tudjuk fejteni a lekódolt szöveget.
+<programlisting><![CDATA[ 
+hp@b3r3s:~/Dokumentumok/bhax/prog1$  gcc t.c -o t
+hp@b3r3s:~/Dokumentumok/bhax/prog1$  ./t < titkos.szoveg
+]]></programlisting>
+</para>     
     </section>        
     <section>
         <title>Neurális OR, AND és EXOR kapu</title>
@@ -1991,7 +2217,36 @@ réteg, itt alakítjuk át a bemeneten kapott információt, itt számolások t�
 ciklussal történik. A harmadik réteg a kimeneti réteg, itt a kapott eredményt iratjuk ki.
 	</para>          
     </section>        
-        
+        <section>
+        <title>Vörös Pipacs Pokol/ írd ki mit lát Steve</title>
+        <para>  
+Mivel a Chomsky-féle programunk már egyébként tartalmazta ezt a tulajdonságot is, így elég ha csak azt az aprócska kódcsipetet ide bemásolom.
+<programlisting language="c"><![CDATA[
+while world_state.is_mission_running:
+            if world_state.number_of_observations_since_last_state != 0:
+                sensations = world_state.observations[-1].text
+                observations = json.loads(sensations)
+                nbr3x3x3 = observations.get("nbr3x3", 0)
+
+                if "LineOfSight" in observations :
+                    lineOfSight = observations["LineOfSight"]
+                    self.lookingat = lineOfSight["type"]
+                    print("\(    O__O )/: ", self.lookingat)
+]]></programlisting>
+Ez lényegében annyit jelent, hogy ameddig a programunk fut, a terminálba folyamatosan látni fogjuk amire éppen Steve néz.
+<figure>
+            <title>Lássuk, mit lát Steve</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Caesar/pipacs.png" scale="30"/>
+                </imageobject>
+                <textobject>
+                    <phrase>Gráf alapú modell</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	</para>  
+</section>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>     
 
@@ -2700,9 +2955,17 @@ public class MandelbrotHalmazNagyító extends MandelbrotHalmaz {
     }
 } ]]></programlisting>   
 	</para>
-
-
     </section>
+
+<section>
+        <title>Vörös Pipacs Pokol/fel a láváig és vissza</title>
+        <para>
+	Az ehhez használatos kód megtalálható a Mandelbrot nevű mappában, lentrolfel.py néven.
+	</para>
+	<para>
+
+	</para>
+</section>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>     
 
@@ -2747,7 +3010,7 @@ class PolarGen
 	double Tarolt;
 };
 #endif
-]]></programlisting>  
+	]]></programlisting>  
         </para>
         <para>
           Ezután definiáljuk a Polargen osztályt:
@@ -2781,7 +3044,7 @@ PolarGen::kovetkezo ()
 	return Tarolt;
 	}
 }
-]]></programlisting>  
+	]]></programlisting>  
         </para>
 	<para>
 Nem szabad megfeledkeznünk a main függvényünk megírásáról sem:
@@ -2837,10 +3100,8 @@ hp@b3r3s:~/Dokumentumok$ ./polargen
             Járd be az előző (inorder bejárású) fát pre- és posztorder is!
         </para>
         <para>
-
-        </para>
-        <para>
             Egy fát mint azt már az Adatszerkezetek és algoritmusok órán is elsajátíthattuk, 3 féle képpen tudjuk bejárni. Ezek a bejárások pedig a következők: Inorder, postorder és preorder. 
+	</para>
 	<para>
 	Ezek szemléltetésére igénybe kellet hogy vegyem a hatalmas paint tudásomat. Ha esetleg nem lenne elég egyértelmű, a zöld színnel jelölt számok, az egyes csomópontok beolvasási sorszámát jelöli. (1-től 7-ig)
 	</para> 
@@ -2879,7 +3140,6 @@ hp@b3r3s:~/Dokumentumok$ ./polargen
             </mediaobject>
         </figure>
 	</para>            
-        </para>
     </section>        
                         
     <section>
@@ -2921,17 +3181,17 @@ Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=QBD3zh5OJ0Y"
         </para>
 	<para>
 	A feladat során csak pár kód csipetet jelenítünk meg de akinek szüksége lenne az egészre, az megtalálja a Welch mappában "LZWBinFa.cpp" néven.
+	</para>
 	<para>
 Természetesen ezekben a csipetekben fellelhetőek lesznek az előző feladatokban beígérteket is.
-	</para>
         </para>
         <para>
 	A program, vagyis a fa építése a BinRandTree class létrehozásával kezdődik, azon belül is a Node osztály elhelyezésével egy protected részben. Gondolom senkinek sem árulok el nagy titkot ha felfedem, hogy a node, a csomópontokat jelenti, vagyis ezeknek lehet (max) 1 jobb, illetve 1 bal oldali gyermeke. Természetesen minden ilyen gyermek egy-egy újabb csomópont lesz.
         </para>
-        <para>
-<para>
+	<para>
 6.4
-</para>
+	</para>
+        <para>
 <programlisting language="c++"><![CDATA[
 template <typename ValueType>
 class BinRandTree {
@@ -2964,9 +3224,9 @@ protected:
 ]]></programlisting>  
         </para>
 	<para>
-<para>
 6.5
-</para>
+	</para>
+	<para>
 	Mint azt már említettük, kelleni fognak a mutatók is, ezt a szerepet fogja betölteni a " * ". A *root értelemszerűen a gyökérmutatónka lesz, míg a *treep jelzi, hogy hol is járunk éppen.
 <programlisting language="c++"><![CDATA[
     Node *root;
@@ -3053,8 +3313,33 @@ public:
 };
 ]]></programlisting>  
 	</para>
-    </section>                     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    </section> 
+ 
+<section>
+        <title>Vörös Pipacs Pokol/5x5x5 ObservationFromGrid</title>
+        <para>   
+       A feladatunk tulajdonképpen nem túl bonyolúlt. Eddig ugyebár csak 3x3x3 érzékelőink voltak vagyis Steve csak ezekről a blokkokról kapott információt. Ezt most azonban kiterjesztjük 5x5x5-re, az nb4tf4i_d.xml belepiszkálásával. Mindenképp ennek az átírásával kell kezdenünk, hisz a python fájlunk is ezt fogja majd használni.
+<programlisting language="c"><![CDATA[
+ <ObservationFromGrid>
+     <Grid name="nbr5x5">
+          <min x="-2" y="-2" z="-2"/>
+          <max x="2" y="2" z="2"/>
+     </Grid>
+ </ObservationFromGrid> 
+]]></programlisting> 
+Amint ez kész, kezdődhet a pipacs szedés egy jóval nagyob griddel. Azonban ne felejtsük el a programunkon belül is végrehajtani a módosításokat.
+<programlisting language="c"><![CDATA[
+            if world_state.number_of_observations_since_last_state != 0:
+
+                sensations = world_state.observations[-1].text
+                observations = json.loads(sensations)
+                nbr5x5x5 = observations.get("nbr5x5", 0)
+		print(" 5x5x5 neighborhood of Steve: ", nbr5x5x5)
+]]></programlisting> 
+Így ni, hajrá előre Haxorok!
+ 	</para>
+</section>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 </chapter>     
 
     <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
@@ -3124,13 +3409,13 @@ Ahogy azt a diagrammon is látjuk, a programunk 3 főbb osztályból fog kialaku
 </para>
 <para>
 Élő sejt élő marad, ha kettő vagy három élő szomszédja van, különben halott lesz.
+</para> 
 <para>
 Halott sejt halott marad, ha három élő szomszédja van, különben élő lesz.
-</para>             
+</para>            
 <para>
 Ezeket az átmeneti szabályokat az időFejlődés() függvényben fogalmaztuk meg. "
  </para>            
-  </para> 
 <para>
 A programunk fordítás illetve futtatása bizonyára senkinek sem jelent már gondot de azért parancsorosn belül gyorsan bemutatom.
 <programlisting><![CDATA[
@@ -3180,16 +3465,15 @@ Ha minden rendeltetésszerűen működik, az alsó képet kell kapnunk eredmény
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>            
-    </section>        
+    </section>  
+      
     <section>
         <title>BrainB Benchmark</title>
-        <para>
         <para>
             Megoldás forrása: <link xlink:href="https://github.com/nbatfai/esport-talent-search">https://github.com/nbatfai/esport-talent-search</link>               
         </para>
         <para>
             Megoldás videó: <link xlink:href="https://www.twitch.tv/videos/139186614">https://www.twitch.tv/videos/139186614</link>               
-        </para>
         </para>
         <para>
 Ez a feladatunk tulajdonképpen egy teszt lenne, ami azt méri, hogy mennyire tudjuk követni a karakterünket (jelen esetben egy négyzetet) az egyre növekedő káoszban. Akik játszottak már a League of Legends játékkal, azoknak biztosan ismerős az az 5 az 5 elleni teamfight helyzet, hogy nyomja a spelleket bízván abba, hogy azok be is találnak hiába sejtelme sincs a hőse helyzetéről a nagy kavalkádban. Ez a program pontosan az ilyen helyzetek leküzdésének fejlesztésére szolgál.
@@ -3197,18 +3481,257 @@ Ez a feladatunk tulajdonképpen egy teszt lenne, ami azt méri, hogy mennyire tu
 <para>
 A mi feladatunk egész pontosan, hogy a saját négyzetünket kövessük az egérmutatónkkal miközben nyomva tartjuk a balegérgombunkat. Erre időlimit van ami maximum 10 perc. Végül kapunk
 egy eredményt abból számítva, hogy hányszor vesztettük el a négyzetünket vagy éppen mennyire tudtuk követni.
+ 	<figure>
+            <title>BrainB teszt saját eredmény</title>						
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Conway/brainb.jpg" scale="30"/>
+                </imageobject>
+                <textobject>
+                    <phrase>Életjáték, miután közbeavatkoztunk</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+
         </para>
        <para>
-
-
         </para>            
-    </section>        
+    </section>  
+
+    <section>
+        <title>Vörös Pipacs Pokol/19RF</title>
+        <para>   
+	   Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=C_mv5tk_KSo">Saját kóddal</link> 22 pipacs.
+	</para>
+	<para>
+          Megoldás forrása: <link xlink:href="https://github.com/marciberes/bhax/tree/master/thematic_tutorials/bhax_konyvem/Conway">Fentrolle22.py</link> kód.
+            
+        </para>
+	<para>
+A kód amit használtam a RFH 3 során, illetve ezzel volt 22 pipacs a saját rekordom.
+       <programlisting language="python"><![CDATA[
+from __future__ import print_function
+# ------------------------------------------------------------------------------------------------
+# Copyright (c) 2016 Microsoft Corporation
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+# associated documentation files (the "Software"), to deal in the Software without restriction,
+# including without limitation the rights to use, copy, modify, merge, publish, distribute,
+# sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all copies or
+# substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+# NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+# ------------------------------------------------------------------------------------------------
+
+# Tutorial sample #2: Run simple mission using raw XML
+
+# Added modifications by Norbert Bátfai (nb4tf4i) batfai.norbert@inf.unideb.hu, mine.ly/nb4tf4i.1
+# 2018.10.18, https://bhaxor.blog.hu/2018/10/18/malmo_minecraft
+# 2020.02.02, NB4tf4i's Red Flowers, http://smartcity.inf.unideb.hu/~norbi/NB4tf4iRedFlowerHell
+
+
+from builtins import range
+import MalmoPython
+import os
+import sys
+import time
+import random
+import json
+import math
+
+if sys.version_info[0] == 2:
+    sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)  # flush print output immediately
+else:
+    import functools
+    print = functools.partial(print, flush=True)
+
+# Create default Malmo objects:
+
+agent_host = MalmoPython.AgentHost()
+try:
+    agent_host.parse( sys.argv )
+except RuntimeError as e:
+    print('ERROR:',e)
+    print(agent_host.getUsage())
+    exit(1)
+if agent_host.receivedArgument("help"):
+    print(agent_host.getUsage())
+    exit(0)
+
+# -- set up the mission -- #
+missionXML_file='nb4tf4i_d.xml'
+with open(missionXML_file, 'r') as f:
+    print("NB4tf4i's Red Flowers (Red Flower Hell) - DEAC-Hackers Battle Royale Arena\n")
+    print("NB4tf4i vörös pipacsai (Vörös Pipacs Pokol) - DEAC-Hackers Battle Royale Arena\n\n")
+    print("The aim of this first challenge, called nb4tf4i's red flowers, is to collect as many red flowers as possible before the lava flows down the hillside.\n")
+    print("Ennek az első, az nb4tf4i vörös virágai nevű kihívásnak a célja összegyűjteni annyi piros virágot, amennyit csak lehet, mielőtt a láva lefolyik a hegyoldalon.\n")    
+    print("Norbert Bátfai, batfai.norbert@inf.unideb.hu, https://arato.inf.unideb.hu/batfai.norbert/\n\n")    
+    print("Loading mission from %s" % missionXML_file)
+    mission_xml = f.read()
+    my_mission = MalmoPython.MissionSpec(mission_xml, True)
+    my_mission.drawBlock( 0, 0, 0, "lava")
+
+
+class Hourglass:
+    def __init__(self, charSet):
+        self.charSet = charSet
+        self.index = 0
+    def cursor(self):
+        self.index=(self.index+1)%len(self.charSet)
+        return self.charSet[self.index]
+
+hg = Hourglass('|/-\|')
+
+class Steve:
+    def __init__(self, agent_host):
+        self.agent_host = agent_host
+        self.x = 0
+        self.y = 0
+        self.z = 0        
+        self.yaw = 0
+        self.pitch = 0        
+        
+    def run(self):
+        world_state = self.agent_host.getWorldState()
+
+        for x in range (6):
+            self.agent_host.sendCommand("move 1")
+            time.sleep(.1)
+        for y in range (21):
+            self.agent_host.sendCommand("jumpmove 1")
+            time.sleep(.1)
+            self.agent_host.sendCommand("move 1")
+            time.sleep(.1)
+        self.agent_host.sendCommand("look 1")
+        time.sleep(.1)
+        self.agent_host.sendCommand("look 1")
+        time.sleep(.1)
+        self.agent_host.sendCommand("turn -1")
+        time.sleep(.1)
+
+        # Loop until mission ends:
+        while world_state.is_mission_running:
+            if world_state.number_of_observations_since_last_state != 0:
+                sensations = world_state.observations[-1].text
+                observations = json.loads(sensations)
+                nbr3x3x3 = observations.get("nbr3x3", 0)
+           
+                if "Yaw" in observations:
+                    self.yaw = int(observations["Yaw"])
+                if "Pitch" in observations:
+                    self.pitch = int(observations["Pitch"])
+                if "XPos" in observations:
+                    self.x = int(observations["XPos"])
+                if "ZPos" in observations:
+                    self.z = int(observations["ZPos"])        
+                if "YPos" in observations:
+                    self.y = int(observations["YPos"])
+
+                if "LineOfSight" in observations :
+                    lineOfSight = observations["LineOfSight"]
+                    self.lookingat = lineOfSight["type"]
+                print("\(    O__O )/: ", self.lookingat)
+
+
+                if nbr3x3x3[13] == "red_flower":
+                    print("     KAPD KI!")
+                    self.agent_host.sendCommand("attack 1")
+                    time.sleep(1.5)
+                    self.agent_host.sendCommand("jumpmove -1")
+                    time.sleep(.1)
+                    self.agent_host.sendCommand("move -1")
+                    time.sleep(.1)
+                    self.agent_host.sendCommand("strafe -1")
+                    time.sleep(.1)
+                    self.agent_host.sendCommand("strafe -1")
+                    time.sleep(.1)
+                    self.agent_host.sendCommand("move 1")
+                    time.sleep(.1)
+                    self.agent_host.sendCommand("move 1")
+                    time.sleep(.1)
+
+                self.agent_host.sendCommand("move 1")
+                time.sleep(.1)
+
+                if nbr3x3x3 [16] =='dirt' and nbr3x3x3[12] =='dirt':
+                    self.agent_host.sendCommand("turn -1")
+                    time.sleep(.1)
+                    self.agent_host.sendCommand("move 1")
+                    time.sleep(.1)
+                if nbr3x3x3[16] =='dirt' and nbr3x3x3[14] =='dirt':
+                    self.agent_host.sendCommand("turn -1")
+                    time.sleep(.1)
+                    self.agent_host.sendCommand("move 1")
+                    time.sleep(.1)
+                if nbr3x3x3[14]=='dirt'  and nbr3x3x3[10]=='dirt':
+                    self.agent_host.sendCommand("turn -1")
+                    time.sleep(.1)
+                    self.agent_host.sendCommand("move 1")
+                    time.sleep(.1)
+                if nbr3x3x3[10]=='dirt'  and nbr3x3x3[12]== 'dirt':
+                    self.agent_host.sendCommand("turn -1")
+                    time.sleep(.1)
+                    self.agent_host.sendCommand("move 1")
+                    time.sleep(.1)
+
+
+
+            world_state = self.agent_host.getWorldState()
+
+num_repeats = 1
+for ii in range(num_repeats):
+
+    my_mission_record = MalmoPython.MissionRecordSpec()
+
+    # Attempt to start a mission:
+    max_retries = 6
+    for retry in range(max_retries):
+        try:
+            agent_host.startMission( my_mission, my_mission_record )
+            break
+        except RuntimeError as e:
+            if retry == max_retries - 1:
+                print("Error starting mission:", e)
+                exit(1)
+            else:
+                print("Attempting to start the mission:")
+                time.sleep(2)
+
+    # Loop until mission starts:
+    print("   Waiting for the mission to start ")
+    world_state = agent_host.getWorldState()
+
+    while not world_state.has_mission_begun:
+        print("\r"+hg.cursor(), end="")
+        time.sleep(0.15)
+        world_state = agent_host.getWorldState()
+        for error in world_state.errors:
+            print("Error:",error.text)
+
+    print("NB4tf4i Red Flower Hell running\n")
+    steve = Steve(agent_host)
+    steve.run()
+
+print("Mission ended")
+# Mission has ended.
+
+
+]]></programlisting>  
+	</para>
+	</section>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 </chapter>     
 
     <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
     <info>
-        <title>Helló, Schwarzenegger!</title>
+        <title>Helló, Schwarzenegger! (4passzolás)</title>
         <keywordset>
             <keyword/>
         </keywordset>
@@ -3298,7 +3821,7 @@ egy eredményt abból számítva, hogy hányszor vesztettük el a négyzetünket
 
     <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
     <info>
-        <title>Helló, Chaitin!</title>
+        <title>Helló, Chaitin! (4Passzolás)</title>
         <keywordset>
             <keyword/>
         </keywordset>
