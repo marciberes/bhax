@@ -21,7 +21,8 @@
                 <filename>bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Caesar/tm.c</filename>
             </link> 
         </para>
-        <programlisting language="c"><![CDATA[#include <stdio.h>
+        <programlisting language="c"><![CDATA[
+#include <stdio.h>
 #include <stdlib.h>
 
 int main(){
@@ -29,10 +30,15 @@ int main(){
 int nr = 5;
 double**tm;
 
+	printf("%p\n", &tm);	
+	
 	if ((tm = (double**) malloc (nr*sizeof (double*))) == NULL)
 	{
 		return -1;
 	}
+
+	printf("%p\n", tm);	
+
 	for (int i = 0; i < nr; ++i)
 	{
 		if ((tm[i] = (double*) malloc ((i + 1)*sizeof (double))) == NULL)
@@ -40,10 +46,15 @@ double**tm;
 		return -1;
 		}
 	}
+
+
+	printf("%p\n", tm[0]);	
+
 	
 	for (int i = 0; i < nr; ++i)
 		for (int j = 0; j < i + 1; ++j)
 			tm[i][j] = i*(i + 1) / 2 + j;
+
 	for (int i = 0; i < nr; ++i)
 	{
 		for (int j = 0; j < i + 1; ++j)
@@ -55,6 +66,7 @@ double**tm;
 	(*(tm + 3))[1] = 43.0; 
 	*(tm[3] + 2) = 44.0;
 	*(*(tm + 3) + 3) = 45.0;
+
 	for (int i = 0; i < nr; ++i)
 	{
 		for (int j = 0; j < i + 1; ++j)
