@@ -39,7 +39,7 @@ class PolarGen
 	double Tarolt;
 };
 #endif
-]]></programlisting>  
+	]]></programlisting>  
         </para>
         <para>
           Ezután definiáljuk a Polargen osztályt:
@@ -73,7 +73,7 @@ PolarGen::kovetkezo ()
 	return Tarolt;
 	}
 }
-]]></programlisting>  
+	]]></programlisting>  
         </para>
 	<para>
 Nem szabad megfeledkeznünk a main függvényünk megírásáról sem:
@@ -129,10 +129,8 @@ hp@b3r3s:~/Dokumentumok$ ./polargen
             Járd be az előző (inorder bejárású) fát pre- és posztorder is!
         </para>
         <para>
-
-        </para>
-        <para>
             Egy fát mint azt már az Adatszerkezetek és algoritmusok órán is elsajátíthattuk, 3 féle képpen tudjuk bejárni. Ezek a bejárások pedig a következők: Inorder, postorder és preorder. 
+	</para>
 	<para>
 	Ezek szemléltetésére igénybe kellet hogy vegyem a hatalmas paint tudásomat. Ha esetleg nem lenne elég egyértelmű, a zöld színnel jelölt számok, az egyes csomópontok beolvasási sorszámát jelöli. (1-től 7-ig)
 	</para> 
@@ -171,7 +169,6 @@ hp@b3r3s:~/Dokumentumok$ ./polargen
             </mediaobject>
         </figure>
 	</para>            
-        </para>
     </section>        
                         
     <section>
@@ -213,17 +210,17 @@ Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=QBD3zh5OJ0Y"
         </para>
 	<para>
 	A feladat során csak pár kód csipetet jelenítünk meg de akinek szüksége lenne az egészre, az megtalálja a Welch mappában "LZWBinFa.cpp" néven.
+	</para>
 	<para>
 Természetesen ezekben a csipetekben fellelhetőek lesznek az előző feladatokban beígérteket is.
-	</para>
         </para>
         <para>
 	A program, vagyis a fa építése a BinRandTree class létrehozásával kezdődik, azon belül is a Node osztály elhelyezésével egy protected részben. Gondolom senkinek sem árulok el nagy titkot ha felfedem, hogy a node, a csomópontokat jelenti, vagyis ezeknek lehet (max) 1 jobb, illetve 1 bal oldali gyermeke. Természetesen minden ilyen gyermek egy-egy újabb csomópont lesz.
         </para>
-        <para>
-<para>
+	<para>
 6.4
-</para>
+	</para>
+        <para>
 <programlisting language="c++"><![CDATA[
 template <typename ValueType>
 class BinRandTree {
@@ -256,9 +253,9 @@ protected:
 ]]></programlisting>  
         </para>
 	<para>
-<para>
 6.5
-</para>
+	</para>
+	<para>
 	Mint azt már említettük, kelleni fognak a mutatók is, ezt a szerepet fogja betölteni a " * ". A *root értelemszerűen a gyökérmutatónka lesz, míg a *treep jelzi, hogy hol is járunk éppen.
 <programlisting language="c++"><![CDATA[
     Node *root;
@@ -345,7 +342,8 @@ public:
 };
 ]]></programlisting>  
 	</para>
-    </section>  
+    </section> 
+ 
 <section>
         <title>Vörös Pipacs Pokol/5x5x5 ObservationFromGrid</title>
         <para>   

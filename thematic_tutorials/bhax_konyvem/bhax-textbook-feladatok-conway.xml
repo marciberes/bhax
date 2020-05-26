@@ -65,13 +65,13 @@ Ahogy azt a diagrammon is látjuk, a programunk 3 főbb osztályból fog kialaku
 </para>
 <para>
 Élő sejt élő marad, ha kettő vagy három élő szomszédja van, különben halott lesz.
+</para> 
 <para>
 Halott sejt halott marad, ha három élő szomszédja van, különben élő lesz.
-</para>             
+</para>            
 <para>
 Ezeket az átmeneti szabályokat az időFejlődés() függvényben fogalmaztuk meg. "
  </para>            
-  </para> 
 <para>
 A programunk fordítás illetve futtatása bizonyára senkinek sem jelent már gondot de azért parancsorosn belül gyorsan bemutatom.
 <programlisting><![CDATA[
@@ -121,16 +121,15 @@ Ha minden rendeltetésszerűen működik, az alsó képet kell kapnunk eredmény
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>            
-    </section>        
+    </section>  
+      
     <section>
         <title>BrainB Benchmark</title>
-        <para>
         <para>
             Megoldás forrása: <link xlink:href="https://github.com/nbatfai/esport-talent-search">https://github.com/nbatfai/esport-talent-search</link>               
         </para>
         <para>
             Megoldás videó: <link xlink:href="https://www.twitch.tv/videos/139186614">https://www.twitch.tv/videos/139186614</link>               
-        </para>
         </para>
         <para>
 Ez a feladatunk tulajdonképpen egy teszt lenne, ami azt méri, hogy mennyire tudjuk követni a karakterünket (jelen esetben egy négyzetet) az egyre növekedő káoszban. Akik játszottak már a League of Legends játékkal, azoknak biztosan ismerős az az 5 az 5 elleni teamfight helyzet, hogy nyomja a spelleket bízván abba, hogy azok be is találnak hiába sejtelme sincs a hőse helyzetéről a nagy kavalkádban. Ez a program pontosan az ilyen helyzetek leküzdésének fejlesztésére szolgál.
