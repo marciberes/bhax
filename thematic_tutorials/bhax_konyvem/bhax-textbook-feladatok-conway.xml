@@ -39,7 +39,7 @@ Ahogy azt a diagrammon is látjuk, a programunk 3 főbb osztályból fog kialaku
             <title>A szimuláció</title>						
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="Conway/hangya2.png" scale="25" />
+                    <imagedata fileref="Conway/hangyak.png" scale="25" />
                 </imageobject>
                 <textobject>
                     <phrase>A Mandelbrot halmaz</phrase>
@@ -106,21 +106,46 @@ Ha minden rendeltetésszerűen működik, az alsó képet kell kapnunk eredmény
             </mediaobject>
         </figure>
 	</para>            
-    </section>        
+    </section>
+        
     <section>
         <title>Qt C++ életjáték</title>
         <para>
             Most Qt C++-ban!
         </para>
         <para>
-            Megoldás videó: 
-        </para>
+            Megoldás videó és forrása: <link xlink:href="https://bhaxor.blog.hu/2018/09/09/ismerkedes_az_eletjatekkal">https://bhaxor.blog.hu/2018/09/09/ismerkedes_az_eletjatekkal</link>   
+        </para>             
+
         <para>
-            Megoldás forrása: <link xlink:href="https://bhaxor.blog.hu/2018/09/09/ismerkedes_az_eletjatekkal">https://bhaxor.blog.hu/2018/09/09/ismerkedes_az_eletjatekkal</link>               
-        </para>
+ 	<figure>
+            <title>Qt C++ életjáték</title>						
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Conway/mozgo.png" scale="35" />
+                </imageobject>
+                <textobject>
+                    <phrase>Életjáték, miután közbeavatkoztunk</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	</para>
+
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>            
+ 	<figure>
+            <title>Qt C++ életjáték, kis idő eltelte után</title>						
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Conway/mozgo2.png" scale="35" />
+                </imageobject>
+                <textobject>
+                    <phrase>Életjáték, miután közbeavatkoztunk</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+	</para>
+ 
+          
     </section>  
       
     <section>
