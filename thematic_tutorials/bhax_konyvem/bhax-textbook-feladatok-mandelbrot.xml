@@ -23,7 +23,7 @@
             <title>A Mandelbrot halmaz a komplex síkon</title>
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="Caesar/mandel.png" scale="40" />
+                    <imagedata fileref="Mandelbrot/mandel2.png" scale="40" />
                 </imageobject>
                 <textobject>
                     <phrase>A Mandelbrot halmaz a komplex síkon</phrase>
@@ -123,7 +123,7 @@ mandel (int kepadat[MERET][MERET]) {
 		{
 		// c = (reC, imC) a rács csomópontjainak
 		// megfelelő komplex szám
-		reC = a + k * dx;Univerzális programozás
+		reC = a + k * dx;
 
 		imC = d - j * dy;
 		// z_0 = 0 = (reZ, imZ)
@@ -167,7 +167,7 @@ int main (int argc, char *argv[])
 	int kepadat[MERET][MERET];
 	mandel(kepadat);
 	png::image < png::rgb_pixel > kep (MERET, MERET);
-	FT
+
 	for (int j = 0; j < MERET; ++j)
 	{
 		//sor = j;
@@ -288,7 +288,7 @@ main ( int argc, char *argv[] )
 }
 ]]></programlisting> 
 <para>
-A fordítása és a futtatása hasonló az előző feladatunkéhoz csupán más fájlnevekkel.
+Arról, hogy miképpen kell futtatnunk a megírt programunkat, arról a-../../../bhax/attention_raising/Mandelbrot/3.1.2.cpp- fájlon belül pontos leírást kapunk.
 </para>
       <figure>
             <title>A Mandelbrot halmaz</title>
@@ -474,7 +474,7 @@ main ( int argc, char *argv[] )
             <title>A biomorf</title>
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="Mandelbrot/biomorf.png" scale="15" />
+                    <imagedata fileref="Mandelbrot/bmorf.png" scale="25" />
                 </imageobject>
                 <textobject>
                     <phrase>A Mandelbrot halmaz</phrase>
@@ -496,6 +496,9 @@ main ( int argc, char *argv[] )
                 <filename>bhax/attention_raising/CUDA/mandelpngc_60x60_100.cu</filename>
             </link> nevű állománya.            
         </para>
+	<para>
+A CUDA (Compute Unified Device Architecture) – az NVIDIA grafikus processzorainak általános célú programozására használható környezet. Tudhatjuk meg az <link xlink:href="http://nyelvek.inf.elte.hu/leirasok/CUDA/index.php?chapter=1">Elte</link> tudástárának segítségével.
+	</para>
         <para>
 <programlisting language="c++"><![CDATA[
 #include <png++/image.hpp>
@@ -653,6 +656,9 @@ main (int argc, char *argv[])
 ]]></programlisting>   
         </para>
 	<para>
+A CUDA SDK az <command> nvcc </command> saját fordítóval érkezik, mind Windows mind Linux operációs rendszerekre. Ez az egy fordító végzi a gazda kódok fordítását is. Működése a következő: lefordítja a GPU kódot majd a CPU kódba behelyettesíti a megfelelő CUDA hívásokat. A CPU kódot a továbbiakban pedig átadja az adott platformon alapértelmezett fordítónak. Ez Windows rendszereken a Visual C++ fordító, míg Linux rendszereken a GCC. 
+	</para>
+	<para>
 A program fordítása előtt előfordulat, hogy szükségünk lesz az nvcc parancsra, ugyanis nem mindenkinek áll egyből rendelkezésre, úgyhogy ajánlott a <command> sudo apt install nvidia-cuda-toolkit</command> command-al letölteni.
 	</para>
 	<para>
@@ -660,7 +666,7 @@ Ezután már fordíthatjuk és futtathatjuk is a következőképpen:
 	</para>
 	<para>
 <programlisting><![CDATA[
-hp@b3r3s:~/Dokumentumok$ nvcc mandelpngc.cu -lpng -o mandelpngc
+hp@b3r3s:~/Dokumentumok$ nvcc mandelpngc.cu -lpng16 -o mandelpngc
 hp@b3r3s:~/Dokumentumok$ ./mandelpngc cuda.png
 ]]></programlisting>   
 	</para>
