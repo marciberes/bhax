@@ -12,10 +12,10 @@
             100 százalékban minden magot!
         </para>
         <para>
-            Megoldás videó:
+            Megoldás videó: Így neveld a programozód!<link xlink:href="https://www.youtube.com/watch?v=lvmi6tyz-nI">VII. - VirtBox-os 3.</link>
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása: <link xlink:href="https://github.com/marciberes/bhax/tree/master/thematic_tutorials/bhax_konyvem/Turing">Turing </link> mappában fellelhető fájlok.            
         </para>
         <para>
         Ha csak azt akarjuk, hogy egy mag fusson 100 százalékban:
@@ -135,7 +135,6 @@ false]]></screen>
 	}
 
 }]]></programlisting>            
-        <programlisting><![CDATA[]]></programlisting>            
         <para>
             Mit fog kiírni erre a <computeroutput>T1000(T1000)</computeroutput> futtatásra?
                                 
@@ -160,10 +159,7 @@ false]]></screen>
             nasználata nélkül!
         </para>
         <para>
-            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk">https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk</link>
-        </para>
-        <para>
-            Megoldás forrása: <link xlink:href=""></link>
+            Megoldás videó és forrása: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk">https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk</link>
         </para>
         <para>
             Változókat többféleképpen is fel tudunk cserélni. Talán az egyik legegyszerűbb módja (segéd változó nélkül) az alábbi példa:
@@ -303,7 +299,7 @@ Ahogy azt eddig is megszoktuk, a program itt is 'C' nyelvben íródott.
         </para>
         <para>
 	<programlisting language="C"><![CDATA[
-          #include <stdio.h>
+#include <stdio.h>
 #include <stdbool.h>
 
 int main()

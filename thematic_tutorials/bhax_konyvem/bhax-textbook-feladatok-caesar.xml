@@ -17,7 +17,7 @@
             <link xlink:href="https://youtu.be/RKbX5-EWpzA">https://youtu.be/RKbX5-EWpzA</link>.
  	</para>
 	<para>
-	Illetve a saját videó <link xlink:href="https://www.youtube.com/watch?v=8HSc1-dwNic">https://www.youtube.com/watch?v=8HSc1-dwNic</link>
+	Illetve a saját (védési) videó <link xlink:href="https://www.youtube.com/watch?v=8HSc1-dwNic">https://www.youtube.com/watch?v=8HSc1-dwNic</link>
        	</para>
         <para>
             Megoldás forrása: <link xlink:href="Caesar/tm.c">
@@ -107,10 +107,7 @@ A lefoglalt terület nagyságát malloc paramétereként kell megadni.
             Írj egy EXOR titkosítót C-ben!
         </para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:                
+            Megoldás forrása: <link xlink:href="https://progpater.blog.hu/2011/02/15/felvetelt_hirdet_a_cia">Felvételt hirdet a CIA</link>       
         </para>
 	<para>
 	Itt látható a C nyelvben íródott titkosítóprogram.
@@ -182,37 +179,32 @@ hp@b3r3s:~/Dokumentumok/prog1$ ./e kercerece <titkos.szoveg
         </para>
         <para>
             Megoldás forrása: <link xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#exor_titkosito">https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#exor_titkosito</link>               
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>       
+        </para>     
 	<para>
 <programlisting language="java"><![CDATA[
-public class NullaEgyDump {
-    public NullaEgyDump() {
-                
-        try {
-            
-            byte [] buffer = new byte[1];
-            
-            while(System.in.read(buffer) != -1) {
-                
-                for(int i=0; i<8; ++i) {
+public class ExorTitkosító {
+    
+    public ExorTitkosító(String kulcsSzöveg,
+            java.io.InputStream bejövőCsatorna,
+            java.io.OutputStream kimenőCsatorna)
+            throws java.io.IOException {
+        
+        byte [] kulcs = kulcsSzöveg.getBytes();		//Adjunk értéket a kulcsunknak	
+        byte [] buffer = new byte[256];			//Megkreáljuk a buffert
+        int kulcsIndex = 0;	
+        int olvasottBájtok = 0;
 
-                    int egye = buffer[0] & 0x00000080;
-                    
-                    if((egye>>>7) == 1)
-                        System.out.print(1);
-                    else
-                        System.out.print(0);
-
-                    buffer[0] <<= 1;
-                }
+        while((olvasottBájtok =
+                bejövőCsatorna.read(buffer)) != -1) {
+            
+            for(int i=0; i<olvasottBájtok; ++i) {
+                
+                buffer[i] = (byte)(buffer[i] ^ kulcs[kulcsIndex]); //XOR művelet végrehajtása a buffer és a kulcs között, vagyis titkosítunk.
+                kulcsIndex = (kulcsIndex+1) % kulcs.length;
+                
             }
             
-        } catch(java.io.IOException e) {
-            
-            System.out.println("Hiba az olvasáskor, kilépek. " + e);
+            kimenőCsatorna.write(buffer, 0, olvasottBájtok);
             
         }
         
@@ -220,7 +212,15 @@ public class NullaEgyDump {
     
     public static void main(String[] args) {
         
-        new NullaEgyDump();
+        try {
+            
+            new ExorTitkosító(args[0], System.in, System.out);
+            
+        } catch(java.io.IOException e) {
+            
+            e.printStackTrace();
+            
+        }
         
     }
     
