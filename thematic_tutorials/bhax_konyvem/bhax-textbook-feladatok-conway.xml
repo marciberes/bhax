@@ -39,7 +39,7 @@ Ahogy azt a diagrammon is látjuk, a programunk 3 főbb osztályból fog kialaku
             <title>A szimuláció</title>						
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="Conway/hangyak.png" scale="25" />
+                    <imagedata fileref="Conway/hangyak.png" scale="30" />
                 </imageobject>
                 <textobject>
                     <phrase>A Mandelbrot halmaz</phrase>

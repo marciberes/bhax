@@ -682,10 +682,21 @@ hp@b3r3s:~/Dokumentumok$ ./mandelpngc cuda.png
 	A program fordítása és futtatás után a lenti képet fogjuk kapni eredményül, amin belül az egér segítségével nagyíthatunk kedvünkre.
 	</para>
 	<figure>
-            <title>A felnagyított Mandelbrot halmaz</title>
+            <title>Nagyító használata</title>
             <mediaobject>
                 <imageobject>
                     <imagedata fileref="Mandelbrot/nagyito.png" scale="30" />
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure> 
+	<figure>
+            <title>A felnagyított Mandelbrot halmaz</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="Mandelbrot/nagyito2.png" scale="30" />
                 </imageobject>
                 <textobject>
                     <phrase>A Mandelbrot halmaz</phrase>
