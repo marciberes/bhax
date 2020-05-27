@@ -115,8 +115,17 @@ Ha minden rendeltetésszerűen működik, az alsó képet kell kapnunk eredmény
         </para>
         <para>
             Megoldás videó és forrása: <link xlink:href="https://bhaxor.blog.hu/2018/09/09/ismerkedes_az_eletjatekkal">https://bhaxor.blog.hu/2018/09/09/ismerkedes_az_eletjatekkal</link>   
-        </para>             
-
+        </para>
+     
+	<para>
+	A programunk futtatására először is be kell lépnünk (parancssoron belül) abba a mappánkba ahol korábban létrehoztuk a .cpp illetve a header fájljainkat. Amint ez megtörtént, kiadunk egy qmake-qt4 -project parancsot ami remélhetőleg létrehoz egy .pro fájlt. Ezután erre ráküldhetjük a qmake-t ami egy újabb fájlt fog létrehozni, mégpedig a MakeFile-t. Előtte azonban érdemes egy <command> apt-get update</command> illetve egy <command>sudo apt-get install libqt4-dev</command> parancsot is lefuttatni (személyes tapasztalat).
+	</para>     
+	<para>
+Végül de nem utolsósorban egy dolgunk maradt, mégpedig lefuttatni, (az én esetemben) a Sejtauto fájlt.
+	</para>  
+	<para>
+Az eredmény pedig magáért beszél:
+	</para>    
         <para>
  	<figure>
             <title>Qt C++ életjáték</title>						
@@ -144,8 +153,22 @@ Ha minden rendeltetésszerűen működik, az alsó képet kell kapnunk eredmény
             </mediaobject>
         </figure>
 	</para>
- 
-          
+
+	<para>
+Gyors magyarázat by: <link xlink:href="https://hu.wikipedia.org/wiki/%C3%89letj%C3%A1t%C3%A9k">Wikipédia</link>
+	</para>
+	<para>
+A négyzetrács mezőit celláknak, a korongokat sejteknek nevezzük. Egy cella környezete a hozzá legközelebb eső 8 mező (tehát a cellához képest „átlósan” elhelyezkedő cellákat is figyelembe vesszük, feltesszük hogy a négyzetrácsnak nincs széle). Egy sejt/cella szomszédjai a környezetében lévő sejtek. A játék körökre osztott, a kezdő állapotban tetszőleges számú (egy vagy több) cellába sejteket helyezünk. Ezt követően a játékosnak nincs beleszólása a játékmenetbe. Egy sejttel (cellával) egy körben a következő három dolog történhet:
+	</para>
+	<para>
+   1. A sejt túléli a kört, ha két vagy három szomszédja van.
+	</para>
+	<para>
+   2. A sejt elpusztul, ha kettőnél kevesebb (elszigetelődés), vagy háromnál több (túlnépesedés) szomszédja van.
+	</para>
+	<para>
+   3. Új sejt születik minden olyan cellában, melynek környezetében pontosan három sejt található.
+	</para>
     </section>  
       
     <section>
