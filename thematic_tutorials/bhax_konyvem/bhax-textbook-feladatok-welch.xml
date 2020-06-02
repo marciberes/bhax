@@ -202,8 +202,8 @@ hp@b3r3s:~/Dokumentumok$ ./polargen
     <section>
         <title>Mozgató szemantika</title>
         <para>
-            Írj az előző programhoz mozgató konstruktort és értékadást, a mozgató konstruktor legyen a mozgató
-            értékadásra alapozva!
+            Írj az előző programhoz másoló/mozgató konstruktort és értékadást, a mozgató konstruktor legyen a mozgató
+            értékadásra alapozva, a másoló értékadás pedig a másoló konstruktorra.
         </para>
         <para>
 Megoldás videó: <link xlink:href="https://www.youtube.com/watch?v=QBD3zh5OJ0Y">https://www.youtube.com/watch?v=QBD3zh5OJ0Y</link>
